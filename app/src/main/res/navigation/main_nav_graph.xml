@@ -43,9 +43,6 @@
         <action
             android:id="@+id/action_registrationMethodFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_registrationMethodFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -56,5 +53,12 @@
         android:id="@+id/welcomeFragment"
         android:name="com.dyrelosh.pethotels.presentation.welcome.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_registrationMethodFragment"
+            app:destination="@id/registrationMethodFragment" />
+    </fragment>
 </navigation>
