@@ -1,14 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.register.RegisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleTextviewInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_registration"
+                android:textSize="26sp"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iconRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_registration"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/titleTextviewInput"
+                app:layout_constraintStart_toStartOf="@+id/titleTextviewInput"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextviewInput" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/INNLayoutRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundColor="@color/text_input"
+                android:textColorHint="@color/text_hint"
+                app:boxStrokeColor="@color/text_hint"
+                app:hintTextColor="@color/text_hint"
+                app:layout_constraintEnd_toEndOf="@+id/iconRegistration"
+                app:layout_constraintStart_toStartOf="@+id/iconRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/iconRegistration">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/INNEditTextRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_INN"
+                    android:textSize="16sp"
+                    android:minHeight="48dp"
+                    android:paddingStart="33dp"
+                    android:paddingEnd="33dp"
+                    android:textColorLink="@android:color/transparent"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameHotelLayoutRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundColor="@color/text_input"
+                android:textColorHint="@color/text_hint"
+                app:boxStrokeColor="@color/text_hint"
+                app:hintTextColor="@color/text_hint"
+                app:layout_constraintEnd_toEndOf="@+id/INNLayoutRegistration"
+                app:layout_constraintStart_toStartOf="@+id/INNLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/INNLayoutRegistration">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameHotelEditTextRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_name_hotel"
+                    android:textSize="16sp"
+                    android:minHeight="48dp"
+                    android:paddingStart="33dp"
+                    android:paddingEnd="33dp"
+                    android:textColorLink="@android:color/transparent"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLayoutRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundColor="@color/text_input"
+                android:textColorHint="@color/text_hint"
+                app:boxStrokeColor="@color/text_hint"
+                app:hintTextColor="@color/text_hint"
+                app:layout_constraintEnd_toEndOf="@+id/nameHotelLayoutRegistration"
+                app:layout_constraintStart_toStartOf="@+id/nameHotelLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/nameHotelLayoutRegistration">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditTextRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_email"
+                    android:textSize="16sp"
+                    android:minHeight="48dp"
+                    android:paddingStart="33dp"
+                    android:paddingEnd="33dp"
+                    android:textColorLink="@android:color/transparent"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordLayoutRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:boxBackgroundColor="@color/text_input"
+                android:layout_marginTop="10dp"
+                android:textColorHint="@color/text_hint"
+                app:boxStrokeColor="@color/text_hint"
+                app:hintTextColor="@color/text_hint"
+                app:layout_constraintEnd_toEndOf="@+id/emailLayoutRegistration"
+                app:layout_constraintStart_toStartOf="@+id/emailLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/emailLayoutRegistration">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditTextRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_password"
+                    android:textSize="16sp"
+                    android:minHeight="48dp"
+                    android:paddingStart="33dp"
+                    android:paddingEnd="33dp"
+                    android:inputType="textPassword"
+                    android:textColor="@color/text_hint"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/returnPasswordLayoutRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:boxBackgroundColor="@color/text_input"
+                android:layout_marginTop="10dp"
+                android:textColorHint="@color/text_hint"
+                app:boxStrokeColor="@color/text_hint"
+                app:hintTextColor="@color/text_hint"
+                app:layout_constraintEnd_toEndOf="@+id/passwordLayoutRegistration"
+                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLayoutRegistration">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/returnPasswordEditTextRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_return_password"
+                    android:textSize="16sp"
+                    android:minHeight="48dp"
+                    android:paddingStart="33dp"
+                    android:paddingEnd="33dp"
+                    android:inputType="textPassword"
+                    android:textColor="@color/text_hint"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/registrationButtonRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="@string/reg_button"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/orange"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/returnPasswordLayoutRegistration"
+                app:layout_constraintStart_toStartOf="@+id/returnPasswordLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/returnPasswordLayoutRegistration" />
+
+            <TextView
+                android:id="@+id/hintTextRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_registration"
+                android:textColor="@color/text"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="65dp"
+                app:layout_constraintStart_toStartOf="@+id/registrationButtonRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/registrationButtonRegistration" />
+
+            <TextView
+                android:id="@+id/hintInputTextRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_button"
+                android:textColor="@color/orange"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintStart_toEndOf="@+id/hintTextRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/registrationButtonRegistration" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="@+id/hintInputTextRegistration"
+                app:layout_constraintStart_toStartOf="@+id/hintInputTextRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/hintInputTextRegistration" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
