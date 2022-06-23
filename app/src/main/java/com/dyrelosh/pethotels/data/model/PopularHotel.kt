@@ -1,4 +1,4 @@
-package com.dyrelosh.pethotels.adapter.model
+package com.dyrelosh.pethotels.data.model
 
 data class PopularHotel(
     val nameHotel: String,
