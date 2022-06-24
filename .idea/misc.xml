@@ -8,8 +8,11 @@
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/drawable/ic_splash_background.xml" value="0.1" />
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_add_ad.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_change_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_change_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_company_ads.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_company_ads_empty.xml" value="0.176" />
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_favourite.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Desktop/Pet-Hotels/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />

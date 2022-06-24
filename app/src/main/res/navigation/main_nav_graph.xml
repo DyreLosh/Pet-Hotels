@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_splashFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -23,11 +20,11 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_companyAdsEmptyFragment"
+            app:destination="@id/companyAdsEmptyFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -35,11 +32,11 @@
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_registerFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_companyAdsEmptyFragment"
+            app:destination="@id/companyAdsEmptyFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationMethodFragment"
@@ -70,4 +67,9 @@
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/companyAdsEmptyFragment"
+        android:name="com.dyrelosh.pethotels.presentation.company_ads_empty.CompanyAdsEmptyFragment"
+        android:label="fragment_company_ads_empty"
+        tools:layout="@layout/fragment_company_ads_empty" />
 </navigation>

@@ -24,6 +24,9 @@ class LoginFragment : Fragment() {
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
+        binding.inputButtonInput.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_companyAdsEmptyFragment)
+        }
         return binding.root
     }
 

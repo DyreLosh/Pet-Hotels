@@ -22,5 +22,13 @@
     <string name="hint_name_hotel">Введите название Вашего отеля</string>
     <string name="title_input">Вход</string>
     <string name="title_registration">Регистрация</string>
+    <string name="hint_city">Укажите город</string>
+    <string name="hint_address">Укажите адрес</string>
+    <string name="hint_number">Укажите номер для связи</string>
+    <string name="hint_describe_add_ad">Описание Вашего отеля</string>
+    <string name="hint_photo">Загрузите фото</string>
+    <string name="title_company_ads">Ваши объявления</string>
+
+    <string name="title_add_empty">У Вас сейчас нет объявлений! \n \n Скорее добавьте его! =)</string>
 
 </resources>

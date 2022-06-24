@@ -24,6 +24,9 @@ class RegisterFragment : Fragment() {
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
+        binding.registrationButtonRegistration.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_companyAdsEmptyFragment)
+        }
         return binding.root
     }
 
