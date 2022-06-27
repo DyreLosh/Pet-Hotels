@@ -19,34 +19,7 @@ class MainFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        val adapter = PopularHotelAdapter()
-        binding.popularHotelRecycler.adapter = adapter
 
-
-        val list = listOf(
-            PopularHotel(
-                "dsf",
-            "dsfd",
-                true
-            ),
-            PopularHotel(
-                "dsf",
-                "dsfd",
-                true
-            ),
-            PopularHotel(
-                "dsf",
-                "dsfd",
-                true
-            ),
-            PopularHotel(
-                "dsf",
-                "dsfd",
-                true
-            )
-        )
-
-        adapter.submitList(list)
         return binding.root
     }
 }
