@@ -19,7 +19,7 @@ class CompanyAdsEmptyFragment : Fragment() {
     ): View? {
         binding = FragmentCompanyAdsEmptyBinding.inflate(inflater, container, false)
         binding.newAddButton.setOnClickListener {
-            findNavController().navigate(R.id.action_companyAdsEmptyFragment_to_addAdFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_addAdFragment)
         }
         return binding.root
     }

@@ -3,9 +3,9 @@
     <item
         android:id="@+id/menuAd"
         android:icon="@drawable/ic_ad"
-        android:title="" />
+        android:title="@string/title_menu_ad" />
     <item android:id="@+id/menuHotel"
-        android:title=""
+        android:title="@string/title_menu_profile"
         android:icon="@drawable/ic_hotel"/>
 
 </menu>

@@ -36,6 +36,8 @@
     <string name="animal_fish">Рыбки</string>
     <string name="animal_other">Другие</string>
     <string name="save">Сохранить</string>
+    <string name="title_menu_ad">Объявления</string>
+    <string name="title_menu_profile">Профиль</string>
     <string name="title_profile">Добро пожаловать в профиль Вашего отеля!</string>
 
 </resources>

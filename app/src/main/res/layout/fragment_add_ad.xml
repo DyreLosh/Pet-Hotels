@@ -246,8 +246,10 @@
                 android:maxLines="10"
                 android:minLines="6"
                 android:scrollbars="vertical"
-                android:shadowColor="@color/orange"
-                android:shadowRadius="40"
+                android:shadowColor="@color/text_hint"
+                android:shadowRadius="15"
+                android:textColorLink="@color/text"
+                android:backgroundTint="@color/text"
                 app:layout_constraintEnd_toEndOf="@+id/hintDescribeHotelAddAd"
                 app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAddAd"
                 app:layout_constraintTop_toBottomOf="@+id/hintDescribeHotelAddAd" />

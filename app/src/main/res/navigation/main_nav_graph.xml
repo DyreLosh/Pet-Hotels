@@ -54,7 +54,11 @@
         android:id="@+id/mainFragment"
         android:name="com.dyrelosh.pethotels.presentation.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addAdFragment"
+            app:destination="@id/addAdFragment" />
+    </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.dyrelosh.pethotels.presentation.welcome.WelcomeFragment"
@@ -71,11 +75,7 @@
         android:id="@+id/companyAdsEmptyFragment"
         android:name="com.dyrelosh.pethotels.presentation.company_ads_empty.CompanyAdsEmptyFragment"
         android:label="fragment_company_ads_empty"
-        tools:layout="@layout/fragment_company_ads_empty" >
-        <action
-            android:id="@+id/action_companyAdsEmptyFragment_to_addAdFragment"
-            app:destination="@id/addAdFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_company_ads_empty" />
     <fragment
         android:id="@+id/addAdFragment"
         android:name="com.dyrelosh.pethotels.presentation.add_ad.AddAdFragment"
