@@ -25,7 +25,7 @@ class LoginFragment : Fragment() {
             findNavController().popBackStack()
         }
         binding.inputButtonInput.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_companyAdsEmptyFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
         }
         return binding.root
     }

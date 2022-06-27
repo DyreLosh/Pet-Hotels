@@ -23,8 +23,8 @@
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_companyAdsEmptyFragment"
-            app:destination="@id/companyAdsEmptyFragment" />
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -35,8 +35,8 @@
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_registerFragment_to_companyAdsEmptyFragment"
-            app:destination="@id/companyAdsEmptyFragment" />
+            android:id="@+id/action_registerFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationMethodFragment"
@@ -71,5 +71,14 @@
         android:id="@+id/companyAdsEmptyFragment"
         android:name="com.dyrelosh.pethotels.presentation.company_ads_empty.CompanyAdsEmptyFragment"
         android:label="fragment_company_ads_empty"
-        tools:layout="@layout/fragment_company_ads_empty" />
+        tools:layout="@layout/fragment_company_ads_empty" >
+        <action
+            android:id="@+id/action_companyAdsEmptyFragment_to_addAdFragment"
+            app:destination="@id/addAdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAdFragment"
+        android:name="com.dyrelosh.pethotels.presentation.add_ad.AddAdFragment"
+        android:label="fragment_add_ad"
+        tools:layout="@layout/fragment_add_ad" />
 </navigation>

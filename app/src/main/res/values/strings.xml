@@ -28,7 +28,14 @@
     <string name="hint_describe_add_ad">Описание Вашего отеля</string>
     <string name="hint_photo">Загрузите фото</string>
     <string name="title_company_ads">Ваши объявления</string>
-
     <string name="title_add_empty">У Вас сейчас нет объявлений! \n \n Скорее добавьте его! =)</string>
+    <string name="hint_animals_add_ad">Выберите тех питомцев, которых сможете принять</string>
+    <string name="animal_cat">Кошечки</string>
+    <string name="animal_dog">Собачки</string>
+    <string name="animal_rodent">Грызуны</string>
+    <string name="animal_fish">Рыбки</string>
+    <string name="animal_other">Другие</string>
+    <string name="save">Сохранить</string>
+    <string name="title_profile">Добро пожаловать в профиль Вашего отеля!</string>
 
 </resources>

@@ -16,13 +16,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/nameHotelLayoutAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:textColorHint="@color/text_hint"
                 app:boxBackgroundColor="@color/text_input"
                 app:boxStrokeColor="@color/text_hint"
@@ -39,7 +49,8 @@
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
-                    android:textColorLink="@android:color/transparent"
+                    android:textColorLink="@color/text_hint"
+                    android:textColor="@color/text_hint"
                     android:textSize="16sp"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -67,7 +78,8 @@
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
-                    android:textColorLink="@android:color/transparent"
+                    android:textColorLink="@color/text_hint"
+                    android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +107,8 @@
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
-                    android:textColorLink="@android:color/transparent"
+                    android:textColorLink="@color/text_hint"
+                    android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,43 +134,172 @@
                     android:hint="@string/hint_number"
                     android:textSize="16sp"
                     android:minHeight="48dp"
+                    android:inputType="phone"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
-                    android:inputType="textPassword"
+                    android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/hintAnimalsAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/hint_animals_add_ad"
+                android:textColor="@color/text"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLayoutRegistration" />
 
-            <!--<TextView
-                 android:layout_width="wrap_content"
-                 android:layout_height="match_parent"/>
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/hintAnimalsAddAd"
+                app:layout_constraintStart_toStartOf="@+id/hintAnimalsAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAddAd">
+
+                <LinearLayout
+                    android:id="@+id/linerAnimalAddAd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxCatAddAd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/animal_cat"
+                        android:buttonTint="@color/orange"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxDogAddAd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/animal_dog"
+                        android:buttonTint="@color/orange"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxRodentAddAd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/animal_rodent"
+                        android:buttonTint="@color/orange"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxFishAddAd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/animal_fish"
+                        android:buttonTint="@color/orange"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxOtherAnimalAddAd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/animal_other"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/hintDescribeHotelAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/hint_describe_add_ad"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hintDescribeAddAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="top|left"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:shadowColor="@color/orange"
+                android:shadowRadius="40"
+                app:layout_constraintEnd_toEndOf="@+id/hintDescribeHotelAddAd"
+                app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/hintDescribeHotelAddAd" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:text="@string/hint_photo"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
+                app:layout_constraintTop_toBottomOf="@+id/hintDescribeAddAd" />
+
+            <ImageView
+                android:id="@+id/hintPhotoAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_photo"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                android:layout_marginStart="18dp"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
          <com.google.android.material.button.MaterialButton
-                 android:id="@+id/registrationButtonRegistration"
+                 android:id="@+id/saveButtonAddAd"
                  android:layout_width="match_parent"
                  android:layout_height="60dp"
-                 android:hint="@string/reg_button"
+                 android:hint="@string/save"
                  android:textColorHint="@color/white"
                  android:textSize="20sp"
                  android:textStyle="bold"
                  app:backgroundTint="@color/orange"
                  app:cornerRadius="20dp"
-                 android:layout_marginTop="30dp"
+                 android:layout_marginTop="20dp"
                  android:layout_marginEnd="20dp"
                  android:layout_marginStart="20dp"
-                 app:layout_constraintEnd_toEndOf="@+id/returnPasswordLayoutRegistration"
-                 app:layout_constraintStart_toStartOf="@+id/returnPasswordLayoutRegistration"
-                 app:layout_constraintTop_toBottomOf="@+id/returnPasswordLayoutRegistration" />
+                 app:layout_constraintEnd_toEndOf="@+id/hintPhotoAddAd"
+                 app:layout_constraintStart_toStartOf="@+id/hintPhotoAddAd"
+                 app:layout_constraintTop_toBottomOf="@+id/hintPhotoAddAd" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
-                app:layout_constraintEnd_toEndOf="@+id/hintInputTextRegistration"
-                app:layout_constraintStart_toStartOf="@+id/hintInputTextRegistration"
-                app:layout_constraintTop_toBottomOf="@+id/hintInputTextRegistration" />
-            -->  </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintEnd_toEndOf="@+id/saveButtonAddAd"
+                app:layout_constraintStart_toStartOf="@+id/saveButtonAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/saveButtonAddAd" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

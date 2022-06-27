@@ -72,7 +72,8 @@
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
-                    android:textColorLink="@android:color/transparent"
+                    android:textColorLink="@color/text_hint"
+                    android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,6 +102,7 @@
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
                     android:inputType="textPassword"
+                    android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
