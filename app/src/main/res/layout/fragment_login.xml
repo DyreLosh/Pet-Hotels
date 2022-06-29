@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/title_input"
                 android:textSize="26sp"
+                android:fontFamily="@font/poppins"
                 android:layout_marginTop="40dp"
                 android:textColor="@color/orange"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +72,7 @@
                     android:textSize="16sp"
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
+                    android:fontFamily="@font/poppins"
                     android:paddingEnd="33dp"
                     android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
@@ -100,6 +102,7 @@
                     android:textSize="16sp"
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
+                    android:fontFamily="@font/poppins"
                     android:paddingEnd="33dp"
                     android:inputType="textPassword"
                     android:textColorLink="@color/text_hint"
@@ -115,6 +118,7 @@
                 android:textColor="@color/orange"
                 android:layout_marginTop="10dp"
                 android:textSize="15sp"
+                android:fontFamily="@font/poppins"
                 app:layout_constraintEnd_toEndOf="@+id/passwordLayoutInput"
                 app:layout_constraintTop_toBottomOf="@+id/passwordLayoutInput" />
 
@@ -128,6 +132,7 @@
                 android:textStyle="bold"
                 app:backgroundTint="@color/orange"
                 app:cornerRadius="20dp"
+                android:fontFamily="@font/poppins"
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
@@ -142,6 +147,7 @@
                 android:text="@string/hint_input"
                 android:textColor="@color/text"
                 android:textSize="15sp"
+                android:fontFamily="@font/poppins"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="25dp"
                 app:layout_constraintStart_toStartOf="@+id/inputButtonInput"
@@ -154,8 +160,9 @@
                 android:text="@string/hint_input_registration"
                 android:textColor="@color/orange"
                 android:textSize="15sp"
+                android:fontFamily="@font/poppins"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintStart_toEndOf="@+id/hintTextInput"
                 app:layout_constraintTop_toBottomOf="@+id/inputButtonInput" />
 
@@ -163,6 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins"
                 app:layout_constraintEnd_toEndOf="@+id/hintRegTextInput"
                 app:layout_constraintStart_toStartOf="@+id/hintTextInput"
                 app:layout_constraintTop_toBottomOf="@+id/inputButtonInput" />

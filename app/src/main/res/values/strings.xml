@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Pet Hotels</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_splash">Pet \nHotels</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_HI">Добро пожаловать в приложение для поиска временного дома для вашего питомца!</string>
     <string name="title_registration_method">Выберите способ регистрации</string>
@@ -34,6 +35,7 @@
     <string name="animal_dog">Собачки</string>
     <string name="animal_rodent">Грызуны</string>
     <string name="animal_fish">Рыбки</string>
+    <string name="animal_bird">Птички</string>
     <string name="animal_other">Другие</string>
     <string name="save">Сохранить</string>
     <string name="title_menu_ad">Объявления</string>

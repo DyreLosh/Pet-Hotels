@@ -21,6 +21,9 @@ class CompanyAdsEmptyFragment : Fragment() {
         binding.newAddButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_addAdFragment)
         }
+        binding.buttonAds.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_companyAdsFragment)
+        }
         return binding.root
     }
 

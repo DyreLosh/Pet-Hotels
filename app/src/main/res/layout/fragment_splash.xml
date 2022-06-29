@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/poppins"
-            android:text="Pet \nHotels"
+            android:text="@string/title_splash"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="40sp"

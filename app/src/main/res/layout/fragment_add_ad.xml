@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +49,7 @@
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
+                    android:fontFamily="@font/poppins"
                     android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
                     android:textSize="16sp"
@@ -78,6 +79,7 @@
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
+                    android:fontFamily="@font/poppins"
                     android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />
@@ -107,6 +109,7 @@
                     android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
+                    android:fontFamily="@font/poppins"
                     android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />
@@ -135,6 +138,7 @@
                     android:textSize="16sp"
                     android:minHeight="48dp"
                     android:inputType="phone"
+                    android:fontFamily="@font/poppins"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
                     android:textColorLink="@color/text_hint"
@@ -150,89 +154,94 @@
                 android:text="@string/hint_animals_add_ad"
                 android:textColor="@color/text"
                 android:textSize="15sp"
+                android:fontFamily="@font/poppins"
                 app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
                 app:layout_constraintTop_toBottomOf="@+id/passwordLayoutRegistration" />
 
-            <HorizontalScrollView
-                android:id="@+id/horizontalScrollView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="20dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/hintAnimalsAddAd"
+            <CheckBox
+                android:id="@+id/checkboxCatAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/animal_cat"
+                android:buttonTint="@color/orange"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
                 app:layout_constraintStart_toStartOf="@+id/hintAnimalsAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAddAd">
+                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAddAd"/>
 
-                <LinearLayout
-                    android:id="@+id/linerAnimalAddAd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
 
-                    <CheckBox
-                        android:id="@+id/checkboxCatAddAd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/animal_cat"
-                        android:buttonTint="@color/orange"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+            <CheckBox
+                android:id="@+id/checkboxDogAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/orange"
+                android:text="@string/animal_dog"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                android:layout_marginStart="40dp"
+                app:layout_constraintStart_toEndOf="@+id/checkboxCatAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAddAd" />
 
-                    <CheckBox
-                        android:id="@+id/checkboxDogAddAd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/animal_dog"
-                        android:buttonTint="@color/orange"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+            <CheckBox
+                android:id="@+id/checkboxRodentAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/orange"
+                android:text="@string/animal_rodent"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="@+id/checkboxCatAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxCatAddAd" />
 
-                    <CheckBox
-                        android:id="@+id/checkboxRodentAddAd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/animal_rodent"
-                        android:buttonTint="@color/orange"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+            <CheckBox
+                android:id="@+id/checkboxFishAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/orange"
+                android:text="@string/animal_fish"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="@+id/checkboxDogAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxDogAddAd" />
 
-                    <CheckBox
-                        android:id="@+id/checkboxFishAddAd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/animal_fish"
-                        android:buttonTint="@color/orange"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+            <CheckBox
+                android:id="@+id/checkboxBirdAnimalAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/orange"
+                android:text="@string/animal_bird"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="@+id/checkboxRodentAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxRodentAddAd" />
 
-                    <CheckBox
-                        android:id="@+id/checkboxOtherAnimalAddAd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:buttonTint="@color/orange"
-                        android:text="@string/animal_other"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
+            <CheckBox
+                android:id="@+id/checkboxOtherAnimalAddAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/orange"
+                android:text="@string/animal_other"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="@+id/checkboxFishAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxFishAddAd" />
 
             <TextView
                 android:id="@+id/hintDescribeHotelAddAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="@string/hint_describe_add_ad"
                 android:textColor="@color/text"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="@+id/checkboxBirdAnimalAddAd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxBirdAnimalAddAd" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/hintDescribeAddAd"
@@ -245,6 +254,7 @@
                 android:lines="8"
                 android:maxLines="10"
                 android:minLines="6"
+                android:fontFamily="@font/poppins"
                 android:scrollbars="vertical"
                 android:shadowColor="@color/text_hint"
                 android:shadowRadius="15"
@@ -259,7 +269,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-
+                android:fontFamily="@font/poppins"
                 android:text="@string/hint_photo"
                 android:textColor="@color/text"
                 android:textSize="16sp"
@@ -287,6 +297,7 @@
                  android:textStyle="bold"
                  app:backgroundTint="@color/orange"
                  app:cornerRadius="20dp"
+                 android:fontFamily="@font/poppins"
                  android:layout_marginTop="20dp"
                  android:layout_marginEnd="20dp"
                  android:layout_marginStart="20dp"
@@ -298,12 +309,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins"
                 app:layout_constraintEnd_toEndOf="@+id/saveButtonAddAd"
                 app:layout_constraintStart_toStartOf="@+id/saveButtonAddAd"
                 app:layout_constraintTop_toBottomOf="@+id/saveButtonAddAd" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-
 
 </androidx.core.widget.NestedScrollView>
