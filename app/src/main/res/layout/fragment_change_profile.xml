@@ -57,4 +57,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/button_color"
+        android:layout_marginHorizontal="20dp"
+        android:text="Сохранить"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
+        android:paddingVertical="15dp"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="330dp"/>
 </LinearLayout>

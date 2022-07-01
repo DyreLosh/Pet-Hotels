@@ -33,7 +33,7 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/poppins"
                 android:maxLength="15"
-                android:text="dsadfhgdas"
+                android:text="Friends for pets"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"

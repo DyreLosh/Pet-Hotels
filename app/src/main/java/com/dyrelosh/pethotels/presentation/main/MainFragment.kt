@@ -19,7 +19,17 @@ class MainFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
+        val adapter = PopularHotelAdapter()
+        val popularAdapter = binding.popularRecycler
+        popularAdapter.adapter = adapter
 
+
+        val list = listOf(
+            PopularHotel("Friends for pets", "Москва", true),
+                    PopularHotel("Petwish", "Москва", true),
+        PopularHotel("Friends for pets", "Москва", true),
+
+        )
         return binding.root
     }
 }

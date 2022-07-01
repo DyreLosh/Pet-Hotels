@@ -138,9 +138,7 @@
                 android:text="Зарегистрируйтесь"
                 android:textColor="@color/button_color"
                 android:textSize="16sp" />
-
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
