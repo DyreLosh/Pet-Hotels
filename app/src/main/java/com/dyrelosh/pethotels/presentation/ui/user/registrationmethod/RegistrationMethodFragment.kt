@@ -10,8 +10,8 @@ import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentRegistrationMethodBinding
 
 class RegistrationMethodFragment : Fragment() {
-
-    lateinit var binding: FragmentRegistrationMethodBinding
+    //TODO название фрагмента не понятное
+    private lateinit var binding: FragmentRegistrationMethodBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentRegisterBinding
 
-class RegisterFragment : Fragment() {
+class UserRegisterFragment : Fragment() {
 
     lateinit var binding: FragmentRegisterBinding
 

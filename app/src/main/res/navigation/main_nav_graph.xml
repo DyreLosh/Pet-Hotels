@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.dyrelosh.pethotels.presentation.ui.user.register.RegisterFragment"
+        android:name="com.dyrelosh.pethotels.presentation.ui.user.register.UserRegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -77,7 +77,7 @@
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.dyrelosh.pethotels.presentation.ui.user.profile.ProfileFragment"
+        android:name="com.dyrelosh.pethotels.presentation.ui.user.profile.UserProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action

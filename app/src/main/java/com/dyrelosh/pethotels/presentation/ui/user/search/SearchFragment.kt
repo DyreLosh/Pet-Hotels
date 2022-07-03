@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.dyrelosh.pethotels.R
 
 class SearchFragment : Fragment() {
-
+//TODO rename fragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

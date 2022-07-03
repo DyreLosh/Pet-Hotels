@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.dyrelosh.pethotels.R
 
-class ProfileFragment : Fragment() {
+class UserProfileFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

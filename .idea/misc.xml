@@ -6,7 +6,9 @@
         <entry key="..\:/Users/dinar/AndroidStudioProjects/PetHotels/app/src/main/res/layout-v28/fragment_splash.xml" value="0.25" />
         <entry key="..\:/Users/dinar/AndroidStudioProjects/PetHotels/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dinar/AndroidStudioProjects/PetHotels/app/src/main/res/layout/fragment_splash.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/fragment_change_password.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/fragment_favourite.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/fragment_registration_method.xml" value="0.15520833333333334" />
       </map>
     </option>
   </component>
