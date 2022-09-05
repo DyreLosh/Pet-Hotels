@@ -9,17 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.databinding.FragmentSplashBinding
+import com.dyrelosh.pethotels.databinding.FragmentSplashCompanyBinding
 
-class SplashFragment : Fragment() {
+class CompanySplashFragment : Fragment() {
 
-    lateinit var binding : FragmentSplashBinding
+    lateinit var binding : FragmentSplashCompanyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSplashBinding.inflate(inflater, container, false)
+        binding = FragmentSplashCompanyBinding.inflate(inflater, container, false)
         Handler(Looper.getMainLooper()).postDelayed({
             findNavController().navigate(R.id.action_splashFragment_to_welcomeFragment)
         }, 2000)

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.main.MainFragment">
+    tools:context=".presentation.main.CompanyMainFragment">
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/containerViewCompany"

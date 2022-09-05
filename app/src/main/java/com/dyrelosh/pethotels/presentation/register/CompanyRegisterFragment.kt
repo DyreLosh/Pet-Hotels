@@ -7,17 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.databinding.FragmentRegisterBinding
+import com.dyrelosh.pethotels.databinding.FragmentRegisterCompanyBinding
 
-class RegisterFragment : Fragment() {
+class CompanyRegisterFragment : Fragment() {
 
-    lateinit var binding : FragmentRegisterBinding
+    lateinit var binding : FragmentRegisterCompanyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        binding = FragmentRegisterCompanyBinding.inflate(inflater, container, false)
         binding.hintInputTextRegistration.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }

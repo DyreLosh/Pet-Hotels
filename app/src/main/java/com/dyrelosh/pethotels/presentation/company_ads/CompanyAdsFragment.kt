@@ -22,34 +22,7 @@ class CompanyAdsFragment : Fragment() {
         binding = FragmentCompanyAdsBinding.inflate(inflater, container, false)
 
         val cardCompanyAd = listOf(
-            CardAd(
-                nameHotel = "Petwish",
-                addressHotel = "Московская область, Пушкинск..."
-            ),
-            CardAd(
-                nameHotel = "SwishPishPish",
-                addressHotel = "RBFDEF..."
-          ),
-                    CardAd(
-                    nameHotel = "Petwish",
-            addressHotel = "Московская область, Пушкинск..."
-        ),
-            CardAd(
-                nameHotel = "Petwish",
-                addressHotel = "Московская область, Пушкинск..."
-            ),
-            CardAd(
-                nameHotel = "Petwish",
-                addressHotel = "Московская область, Пушкинск..."
-            ),
-            CardAd(
-                nameHotel = "Petwish",
-                addressHotel = "Московская область, Пушкинск..."
-            ),
-            CardAd(
-                nameHotel = "Petwish",
-                addressHotel = "Московская область, Пушкинск..."
-            ),
+
             CardAd(
                 nameHotel = "Petwish",
                 addressHotel = "Московская область, Пушкинск..."

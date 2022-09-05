@@ -9,18 +9,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.databinding.FragmentRegistrationMethodBinding
-import com.dyrelosh.pethotels.databinding.FragmentSplashBinding
+import com.dyrelosh.pethotels.databinding.FragmentRegistrationMethodCompanyBinding
+import com.dyrelosh.pethotels.databinding.FragmentSplashCompanyBinding
 
-class RegistrationMethodFragment : Fragment() {
+class CompanyRegistrationMethodFragment : Fragment() {
 
-    lateinit var binding: FragmentRegistrationMethodBinding
+    lateinit var binding: FragmentRegistrationMethodCompanyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRegistrationMethodBinding.inflate(inflater, container, false)
+        binding = FragmentRegistrationMethodCompanyBinding.inflate(inflater, container, false)
         binding.companyButtonRegMeth.setOnClickListener {
             findNavController().navigate(R.id.action_registrationMethodFragment_to_registerFragment)
         }

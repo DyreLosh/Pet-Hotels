@@ -7,18 +7,18 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.dyrelosh.pethotels.presentation.splash.SplashFragment"
+        android:name="com.dyrelosh.pethotels.presentation.splash.CompanySplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash_company" >
         <action
             android:id="@+id/action_splashFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.dyrelosh.pethotels.presentation.login.LoginFragment"
+        android:name="com.dyrelosh.pethotels.presentation.login.CompanyLoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login_company" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -28,9 +28,9 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.dyrelosh.pethotels.presentation.register.RegisterFragment"
+        android:name="com.dyrelosh.pethotels.presentation.register.CompanyRegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        tools:layout="@layout/fragment_register_company" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -40,9 +40,9 @@
     </fragment>
     <fragment
         android:id="@+id/registrationMethodFragment"
-        android:name="com.dyrelosh.pethotels.presentation.registrationmethod.RegistrationMethodFragment"
+        android:name="com.dyrelosh.pethotels.presentation.registrationmethod.CompanyRegistrationMethodFragment"
         android:label="fragment_registration_method"
-        tools:layout="@layout/fragment_registration_method" >
+        tools:layout="@layout/fragment_registration_method_company" >
         <action
             android:id="@+id/action_registrationMethodFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -52,9 +52,9 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.dyrelosh.pethotels.presentation.main.MainFragment"
+        android:name="com.dyrelosh.pethotels.presentation.main.CompanyMainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main_company" >
         <action
             android:id="@+id/action_mainFragment_to_addAdFragment"
             app:destination="@id/addAdFragment" />
@@ -64,9 +64,9 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.dyrelosh.pethotels.presentation.welcome.WelcomeFragment"
+        android:name="com.dyrelosh.pethotels.presentation.welcome.CompanyWelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        tools:layout="@layout/fragment_welcome_company" >
         <action
             android:id="@+id/action_welcomeFragment_to_registrationMethodFragment"
             app:destination="@id/registrationMethodFragment" />

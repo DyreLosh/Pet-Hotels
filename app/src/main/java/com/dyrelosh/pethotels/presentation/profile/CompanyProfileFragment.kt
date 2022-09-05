@@ -6,17 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.databinding.FragmentProfileBinding
+import com.dyrelosh.pethotels.databinding.FragmentProfileCompanyBinding
 
-class ProfileFragment : Fragment() {
+class CompanyProfileFragment : Fragment() {
 
-    lateinit var binding: FragmentProfileBinding
+    lateinit var binding: FragmentProfileCompanyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        binding = FragmentProfileCompanyBinding.inflate(inflater, container, false)
 
 
 
