@@ -53,10 +53,8 @@ class CompanyLoginFragment : Fragment() {
             if (tokenResult != null) {
                 viewModel.setEmail(hotelLoginModel.emailHotel)
                 findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
-//                Toast.makeText(context, getString(R.string.success), Toast.LENGTH_SHORT)
-//                    .show()
-//            } else {
-//                Toast.makeText(context, getString(R.string.not_success), Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context,"Не успешно", Toast.LENGTH_SHORT).show()
             }
         }
 //            viewModel.auth(

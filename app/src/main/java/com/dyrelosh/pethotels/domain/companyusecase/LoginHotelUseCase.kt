@@ -1,12 +1,12 @@
 package com.dyrelosh.pethotels.domain.companyusecase
 
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
-import com.dyrelosh.pethotels.domain.companyrepository.HotelRepositoryImpl
+import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
-class LoginHotelUseCase(private val hotelRepository: HotelRepositoryImpl) {
-    fun execute(hotelLoginModel: HotelLoginModel): String? {
-        //return hotelRepository.loginCompany(hotelLoginModel)?.
-    return null
+class LoginHotelUseCase(private val hotelRepository: HotelRepository) {
+    suspend fun execute(hotelLoginModel: HotelLoginModel): String? {
+        return hotelRepository.loginCompany(hotelLoginModel)
+
     }
 }
 

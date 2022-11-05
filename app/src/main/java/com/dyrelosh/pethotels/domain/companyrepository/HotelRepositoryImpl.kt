@@ -12,13 +12,9 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 
     private val preferenceStorage = PreferenceStorage(context)
 
-    override suspend fun registrationHotel(hotelCreateModel: HotelCreateModel)  {
+    override suspend fun registrationHotel(hotelCreateModel: HotelCreateModel) {
         ApiService.registrationHotel(hotelCreateModel)
     }
-
-//    override suspend fun registrationHotel(hotelCreateModel: HotelCreateModel) {
-//        TODO("Not yet implemented")
-//    }
 
     override fun getToken(): String? {
         return preferenceStorage.accessToken
@@ -37,7 +33,7 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     }
 
     override suspend fun loginCompany(hotelLoginModel: HotelLoginModel) : String? {
-       return ApiService.loginCompany(hotelLoginModel)
+      return ApiService.loginCompany(hotelLoginModel).toString()
     }
 
 //    override suspend fun loginCompany(hotelLoginModel: HotelLoginModel): TokenCompanyModel? {

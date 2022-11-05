@@ -8,7 +8,7 @@ object ApiService {
 
 
     val hotels = mutableListOf<HotelCreateModel>(
-        HotelCreateModel("", "", "", ""),
+        HotelCreateModel("123456789101112", "UUUUU", "yfcnzvfcz@mail.ru", "123456789101112"),
         HotelCreateModel("", "", "", ""),
 
     ) //изменяемый массив
