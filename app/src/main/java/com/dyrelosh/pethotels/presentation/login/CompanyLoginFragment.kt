@@ -20,7 +20,6 @@ class CompanyLoginFragment : Fragment() {
 
     lateinit var binding: FragmentLoginCompanyBinding
     private val validator = Validator()
-    private val bundle = Bundle()
     private lateinit var hotelLoginModel: HotelLoginModel
     private val viewModel by viewModel<CompanyLoginViewModel>()
 

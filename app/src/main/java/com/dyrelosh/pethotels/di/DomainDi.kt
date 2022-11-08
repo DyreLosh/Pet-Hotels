@@ -1,5 +1,6 @@
 package com.dyrelosh.pethotels.di
 
+import com.dyrelosh.pethotels.domain.companyusecase.LoginHotelUseCase
 import com.dyrelosh.pethotels.domain.companyusecase.RegisterHotelUseCase
 import com.dyrelosh.pethotels.domain.companyusecase.SetEmailCompanyUseCase
 import com.dyrelosh.pethotels.domain.companyusecase.SetTokenCompanyUseCase
@@ -14,5 +15,8 @@ val domainDi = module {
     }
     factory {
         SetEmailCompanyUseCase(get())
+    }
+    factory {
+        LoginHotelUseCase(get())
     }
 }

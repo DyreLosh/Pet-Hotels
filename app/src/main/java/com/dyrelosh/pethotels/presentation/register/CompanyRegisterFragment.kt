@@ -16,7 +16,6 @@ class CompanyRegisterFragment : Fragment() {
 
     lateinit var binding : FragmentRegisterCompanyBinding
     private val validator = Validator()
-    private val bundle = Bundle()
     private lateinit var hotelCreateModel: HotelCreateModel
     private val viewModel by viewModel<CompanyRegisterViewModel>()
 
