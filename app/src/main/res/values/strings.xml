@@ -40,6 +40,19 @@
     <string name="save">Сохранить</string>
     <string name="title_menu_ad">Объявления</string>
     <string name="title_menu_profile">Профиль</string>
-    <string name="title_profile">Добро пожаловать в профиль Вашего отеля!</string>
+    <string name="title_profile">Название отеля</string>
+    <string name="hint_email_profile"> Ваш email</string>
+    <string name="hint_INN_profile">Ваш ИНН</string>
+    <string name="email_profile">a@mail.ru</string>
+    <string name="INN_profile">111111111111</string>
+    <string name="citi_viewing_ad">Город отеля</string>
+    <string name="address_viewing_ad">Адрес отеля</string>
+    <string name="description_viewing_ad">Friends for pets — гостиница для животных в полном смысле этого слова:
+        питомцев содержат не в клетках, а в комнатах с высокими потолками и декором на стенах, имитирующим домашнюю обстановку.
+        Для котов есть номера площадью 2,5 и 5 м2, а для собак — от 2,7 до 11 м2. Нескольких животных из одной семьи
+        можно разместить в одном номере, чтобы они не скучали друг по другу.
+</string>
+    <string name="number_viewing_ad">89271925654</string>
+
 
 </resources>
