@@ -2,6 +2,6 @@ package com.dyrelosh.pethotels.domain.companyusecase
 
 import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
-class GetTokenHotelUseCase (private val repository: HotelRepository) {
-    fun execute() = repository.getToken()
+class GetTokenHotelUseCase (private val hotelRepository: HotelRepository) {
+    fun execute() = hotelRepository.getToken()
 }

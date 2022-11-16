@@ -2,8 +2,8 @@ package com.dyrelosh.pethotels.domain.companyusecase
 
 import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
-class GetEmailCompanyUseCase(private val repository: HotelRepository) {
+class GetEmailCompanyUseCase(private val hotelRepository: HotelRepository) {
     fun execute(): String? {
-        return repository.getEmail()
+        return hotelRepository.getEmail()
     }
 }

@@ -10,13 +10,13 @@ import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.databinding.FragmentRegisterCompanyBinding
-import com.dyrelosh.pethotels.domain.companymodels.HotelCreateModel
+import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 class CompanyRegisterFragment : Fragment() {
 
     lateinit var binding : FragmentRegisterCompanyBinding
     private val validator = Validator()
-    private lateinit var hotelCreateModel: HotelCreateModel
+    private lateinit var hotelRegisterModel: HotelRegisterModel
     private val viewModel by viewModel<CompanyRegisterViewModel>()
 
     override fun onCreateView(
@@ -44,18 +44,18 @@ class CompanyRegisterFragment : Fragment() {
                     emailLayoutRegistration.error == null &&
                     returnPasswordLayoutRegistration.error == null
                 ) {
-                    hotelCreateModel = HotelCreateModel(
+                    hotelRegisterModel = HotelRegisterModel(
                         INNHotel = INNEditTextRegistration.text.toString(),
                         nameHotel = nameHotelEditTextRegistration.text.toString(),
                         emailHotel = emailEditTextRegistration.text.toString(),
                         passwordHotel = passwordEditTextRegistration.text.toString()
                     )
-                    viewModel.registrationUser(hotelCreateModel)
+                    viewModel.registrationUser(hotelRegisterModel)
                 }
             }
             viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
                 if (tokenResult != null) {
-                    viewModel.setEmail(hotelCreateModel.emailHotel)
+                    viewModel.setEmail(hotelRegisterModel.emailHotel)
                     ( findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                     )
                 } else {

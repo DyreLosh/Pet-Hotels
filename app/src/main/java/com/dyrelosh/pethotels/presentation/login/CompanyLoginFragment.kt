@@ -1,6 +1,8 @@
 package com.dyrelosh.pethotels.presentation.login
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -49,11 +51,16 @@ class CompanyLoginFragment : Fragment() {
             }
         }
         viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
-            if (tokenResult != null) {
-                viewModel.setEmail(hotelLoginModel.emailHotel)
-                findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+            Log.d(TAG, "onCreateView: $tokenResult")
+            if (tokenResult.toString() != "null") {
+                Log.d(TAG, "onCreateView: true")
+                Toast.makeText(context, "успешно", Toast.LENGTH_SHORT).show()
+                // viewModel.setEmail(hotelLoginModel.emailHotel)
+                this.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
             } else {
-                Toast.makeText(context,"Не успешно", Toast.LENGTH_SHORT).show()
+                Log.d(TAG, "onCreateView: false")
+
+                Toast.makeText(context, "Не успешно", Toast.LENGTH_SHORT).show()
             }
         }
 //            viewModel.auth(

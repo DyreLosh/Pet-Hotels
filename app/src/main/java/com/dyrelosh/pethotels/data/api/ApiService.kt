@@ -1,15 +1,15 @@
 package com.dyrelosh.pethotels.data.api
 
-import com.dyrelosh.pethotels.domain.companymodels.HotelCreateModel
+import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
 
 
 object ApiService {
 
 
-    val hotels = mutableListOf<HotelCreateModel>(
-        HotelCreateModel("123456789101112", "UUUUU", "yfcnzvfcz@mail.ru", "123456789101112"),
-        HotelCreateModel("111111111111", "qazwsx1", "qwerty@mail.ru", "qaz123!"),
+    val hotels = mutableListOf<HotelRegisterModel>(
+        HotelRegisterModel("123456789101112", "UUUUU", "yfcnzvfcz@mail.ru", "123456789101112"),
+        HotelRegisterModel("111111111111", "qazwsx1", "qwerty@mail.ru", "qaz123!"),
 
     ) //изменяемый массив
 
@@ -19,14 +19,14 @@ object ApiService {
                     it.emailHotel == hotelLoginModel.emailHotel }
         if(response != null){
             return token
-        }
-        return null
+        } else
+            return null
     }
 
 
-    fun registrationHotel(hotelCreateModel: HotelCreateModel) { //параметр
+    fun registrationHotel(hotelRegisterModel: HotelRegisterModel) { //параметр
         hotels.add(
-           hotelCreateModel
+           hotelRegisterModel
         )
     }
 
