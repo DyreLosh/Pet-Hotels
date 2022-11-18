@@ -8,11 +8,11 @@ import retrofit2.http.*
 
 interface ApiPetHotels {
 
-    @POST("api/petHotel/auth/registration")
+    @POST("api/pethotel/auth/registration")
     @Headers("Content-Type: application/json")
     suspend fun registration(@Body body: HotelRegisterModel): Response<TokenHotelModel>
 
-    @POST("api/petHotel/auth/login")
+    @POST("api/pethotel/auth/login")
     @Headers("Content-Type: application/json")
     suspend fun login(@Body body: HotelLoginModel): Response<TokenHotelModel>
 

@@ -13,12 +13,14 @@ import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.databinding.FragmentRegisterCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 class CompanyRegisterFragment : Fragment() {
 
 
     private lateinit var binding: FragmentRegisterCompanyBinding
     private val validator = Validator()
-    private lateinit var hotelRegisterModel: HotelRegisterModel
+
+    // private lateinit var hotelRegisterModel: HotelRegisterModel
     private val viewModel by viewModel<CompanyRegisterViewModel>()
 
     override fun onCreateView(
@@ -75,7 +77,7 @@ class CompanyRegisterFragment : Fragment() {
 
         viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
             if (tokenResult != null) {
-                viewModel.setEmail(hotelRegisterModel.emailHotel)
+                //   viewModel.setEmail(hotelRegisterModel.emailHotel)
                 this.findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
             } else {
                 Toast.makeText(context, "не успешно", Toast.LENGTH_SHORT).show()

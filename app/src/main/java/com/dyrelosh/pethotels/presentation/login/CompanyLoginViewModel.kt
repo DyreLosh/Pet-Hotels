@@ -26,6 +26,7 @@ class CompanyLoginViewModel(
         }
     }
 
+        //TODO Зачем это?
         fun setEmail(emailHotel: String) {
             setEmailCompanyUseCase.execute(emailHotel)
         }

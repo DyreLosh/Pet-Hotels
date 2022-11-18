@@ -1,6 +1,7 @@
 package com.dyrelosh.pethotels.domain.companymodels
 
 data class HotelLoginModel(
-    val emailHotel: String,
-    val passwordHotel: String
+    val email: String,
+    val password: String
 )
+//TODO обращай внимание на названия свойств

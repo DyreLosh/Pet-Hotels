@@ -1,21 +1,16 @@
 package com.dyrelosh.pethotels.presentation.login
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.databinding.FragmentLoginCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
-import com.dyrelosh.pethotels.domain.companyrepository.HotelRepositoryImpl
-import com.dyrelosh.pethotels.domain.companyusecase.LoginHotelUseCase
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -51,15 +46,16 @@ class CompanyLoginFragment : Fragment() {
 //                        passwordHotel = passwordEditTextInput.text.toString()
 //                    )
                     viewModel.loginHotel(HotelLoginModel(
-                        emailHotel = emailEditTextInput.text.toString(),
-                        passwordHotel = passwordEditTextInput.text.toString()
+                        email = emailEditTextInput.text.toString(),
+                        password = passwordEditTextInput.text.toString()
                     ))
                 }
             }
         }
         viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
             if (tokenResult != null) {
-                viewModel.setEmail(hotelLoginModel.emailHotel)
+
+//    TODO это не нужно, код который не будет использоваться нужно удалять            viewModel.setEmail(hotelLoginModel.email)
                 this.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
             } else {
                 Toast.makeText(context, "Не успешно", Toast.LENGTH_SHORT).show()
