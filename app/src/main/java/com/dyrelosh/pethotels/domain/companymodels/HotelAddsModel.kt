@@ -7,7 +7,7 @@ data class HotelAddsModel (
     val addressHotel: String,
     val numberHotel: String,
     val descriptionHotel: String,
-    val photoHotel: String,
+  //  val photoHotel: String,
     val catCategory: Boolean,
     val rodentCategory: Boolean,
     val dogCategory: Boolean,

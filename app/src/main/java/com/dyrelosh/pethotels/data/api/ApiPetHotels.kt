@@ -1,47 +1,44 @@
 package com.dyrelosh.pethotels.data.api
 
-import com.dyrelosh.pethotels.domain.companymodels.*
-import okhttp3.MultipartBody
+import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
+import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
+import com.dyrelosh.pethotels.domain.companymodels.TokenHotelModel
 import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiPetHotels {
 
-//    @POST("api/auth/registration")
-//    @Headers("Content-Type: application/json")
-//    suspend fun registration(@Body body: UserCreateModel): Response<TokenModel>
+    @POST("api/petHotel/auth/registration")
+    @Headers("Content-Type: application/json")
+    suspend fun registration(@Body body: HotelRegisterModel): Response<TokenHotelModel>
 
-    @POST("api/auth/login")
+    @POST("api/petHotel/auth/login")
     @Headers("Content-Type: application/json")
     suspend fun login(@Body body: HotelLoginModel): Response<TokenHotelModel>
 
-    @GET("api/todos")
-    suspend fun getTodos(
-        @Header("Authorization") token: String?
-    ): Response<List<HotelAddsModel>>
-
-    @POST("api/todos")
-    suspend fun createTodos(
-        @Header("Authorization") token: String?,
-        @Body body: HotelAppendAddModel
-    ): Response<Unit>
-
-    @DELETE("api/todos/{id}")
-    suspend fun deleteTodos(
-        @Header("Authorization") token: String?,
-        @Path("id") id: String
-    ): Response<Unit>
-
-//    @PUT("api/todos/mark/{id}")
-//    suspend fun markTodos(
+//    @GET("api/todos")
+//    suspend fun getTodos(
+//        @Header("Authorization") token: String?
+//    ): Response<List<HotelAddsModel>>
+//
+//    @POST("api/todos")
+//    suspend fun createTodos(
+//        @Header("Authorization") token: String?,
+//        @Body body: HotelAppendAddModel
+//    ): Response<Unit>
+//
+//    @DELETE("api/todos/{id}")
+//    suspend fun deleteTodos(
 //        @Header("Authorization") token: String?,
 //        @Path("id") id: String
 //    ): Response<Unit>
-
-    @GET("api/user")
-    suspend fun getUserInfo(
-        @Header("Authorization") token: String?
-    ): Response<HotelRegisterModel>
+//
+//
+//
+//    @GET("api/user")
+//    suspend fun getUserInfo(
+//        @Header("Authorization") token: String?
+//    ): Response<HotelRegisterModel>
 
 //    @Multipart
 //    @POST("api/user/photo")

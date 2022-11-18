@@ -19,7 +19,7 @@ class CompanyRegisterViewModel(
     private val _token: MutableLiveData<String?> = MutableLiveData<String?>()
     val token: LiveData<String?> = _token
 
-    fun registrationUser(hotelRegisterModel: HotelRegisterModel) {
+    fun registrationHotel(hotelRegisterModel: HotelRegisterModel) {
         viewModelScope.launch {
             _token.value = registerHotelUseCase.execute(hotelRegisterModel)
             _token.value?.let { setTokenCompanyUseCase.execute(it) }

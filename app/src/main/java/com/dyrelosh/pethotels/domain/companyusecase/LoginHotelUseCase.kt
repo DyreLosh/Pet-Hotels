@@ -5,7 +5,7 @@ import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
 class LoginHotelUseCase(private val hotelRepository: HotelRepository) {
     suspend fun execute(hotelLoginModel: HotelLoginModel): String? {
-        return hotelRepository.loginCompany(hotelLoginModel)
+        return hotelRepository.loginCompany(hotelLoginModel)?.newToken
 
     }
 }

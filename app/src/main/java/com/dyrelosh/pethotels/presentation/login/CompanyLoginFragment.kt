@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.databinding.FragmentLoginCompanyBinding
@@ -20,7 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CompanyLoginFragment : Fragment() {
 
-    lateinit var binding: FragmentLoginCompanyBinding
+    private lateinit var binding: FragmentLoginCompanyBinding
     private val validator = Validator()
     private lateinit var hotelLoginModel: HotelLoginModel
     private val viewModel by viewModel<CompanyLoginViewModel>()
@@ -30,36 +31,37 @@ class CompanyLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLoginCompanyBinding.inflate(inflater, container, false)
+
         binding.hintRegTextInput.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
+
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
+
         binding.inputButtonInput.setOnClickListener {
             with(binding) {
                 emailLayoutInput.error = validator.validateEmailHotel(emailEditTextInput.text)
                 passwordLayoutInput.error =
                     validator.validatePasswordHotel(passwordEditTextInput.text)
                 if (emailLayoutInput.error == passwordLayoutInput.error) {
-                    hotelLoginModel = HotelLoginModel(
+//                    hotelLoginModel = HotelLoginModel(
+//                        emailHotel = emailEditTextInput.text.toString(),
+//                        passwordHotel = passwordEditTextInput.text.toString()
+//                    )
+                    viewModel.loginHotel(HotelLoginModel(
                         emailHotel = emailEditTextInput.text.toString(),
                         passwordHotel = passwordEditTextInput.text.toString()
-                    )
-                    viewModel.loginHotel(hotelLoginModel)
+                    ))
                 }
             }
         }
         viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
-            Log.d(TAG, "onCreateView: $tokenResult")
-            if (tokenResult.toString() != "null") {
-                Log.d(TAG, "onCreateView: true")
-                Toast.makeText(context, "успешно", Toast.LENGTH_SHORT).show()
-                // viewModel.setEmail(hotelLoginModel.emailHotel)
+            if (tokenResult != null) {
+                viewModel.setEmail(hotelLoginModel.emailHotel)
                 this.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
             } else {
-                Log.d(TAG, "onCreateView: false")
-
                 Toast.makeText(context, "Не успешно", Toast.LENGTH_SHORT).show()
             }
         }

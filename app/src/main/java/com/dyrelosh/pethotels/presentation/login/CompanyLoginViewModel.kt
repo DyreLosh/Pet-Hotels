@@ -16,22 +16,17 @@ class CompanyLoginViewModel(
     private val setEmailCompanyUseCase: SetEmailCompanyUseCase
     ) : ViewModel() {
 
-    private var _token : MutableLiveData<String?> = MutableLiveData<String?>(null)
-    val token : LiveData<String?> = _token
+    private var _token: MutableLiveData<String?> = MutableLiveData<String?>()
+    val token: LiveData<String?> = _token
 
     fun loginHotel(hotelLoginModel: HotelLoginModel) {
         viewModelScope.launch {
-
-            var peremennay =  loginHotelUseCase.execute(hotelLoginModel)
-            if (peremennay != null){
-                _token.value = peremennay
-                _token.value?.let { setTokenCompanyUseCase.execute(it) }
-            }
-
+            _token.value = loginHotelUseCase.execute(hotelLoginModel)
+            _token.value?.let { setTokenCompanyUseCase.execute(it) }
         }
     }
 
-    fun setEmail(emailHotel: String){
-        setEmailCompanyUseCase.execute(emailHotel)
+        fun setEmail(emailHotel: String) {
+            setEmailCompanyUseCase.execute(emailHotel)
+        }
     }
-}

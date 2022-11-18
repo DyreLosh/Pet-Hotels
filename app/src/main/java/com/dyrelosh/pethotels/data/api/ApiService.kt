@@ -2,15 +2,15 @@ package com.dyrelosh.pethotels.data.api
 
 import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
-
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
-    val retrofit: ApiPetHotels.Builder()
-    .baseUrl("http://45.144.64.179/")
-    .addConverterFactory(GsonConverterFactory.create())
-    .build()
-    .create(ApiWater::
-    class.java)
+    val retrofit: ApiPetHotels = Retrofit.Builder()
+        .baseUrl("http://45.144.64.179/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(ApiPetHotels::class.java)
 }
 
 //

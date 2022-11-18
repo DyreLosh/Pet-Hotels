@@ -1,10 +1,10 @@
 package com.dyrelosh.pethotels.domain.companyrepository
 
 import com.dyrelosh.pethotels.domain.companymodels.*
-import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
+//import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
 
 interface HotelRepository {
-    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel)
+    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): TokenHotelModel?
 
     fun getToken(): String?
 
@@ -14,18 +14,18 @@ interface HotelRepository {
 
     fun setEmail(emailHotel: String)
 
-    suspend fun loginCompany(hotelLoginModel: HotelLoginModel) : String?
+    suspend fun loginCompany(hotelLoginModel: HotelLoginModel): TokenHotelModel?
 
-    suspend fun getAdds(token: String): List<HotelAddsModel>?
-
-    suspend fun appendAdd(
-        token: String,
-        hotelAppendAddModel: HotelAppendAddModel
-    ): Boolean
-
-    suspend fun deleteAdd(token: String, id: String): Boolean
-
-    suspend fun getHotelInfo(token: String): HotelInfoModel?
+//    suspend fun getAdds(token: String): List<HotelAddsModel>?
+//
+//    suspend fun appendAdd(
+//        token: String,
+//        hotelAppendAddModel: HotelAppendAddModel
+//    ): Boolean
+//
+//    suspend fun deleteAdd(token: String, id: String): Boolean
+//
+//    suspend fun getHotelInfo(token: String): HotelInfoModel?
 
     //suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int
 
