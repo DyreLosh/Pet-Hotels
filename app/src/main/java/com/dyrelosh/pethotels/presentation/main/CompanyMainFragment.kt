@@ -34,7 +34,7 @@ class CompanyMainFragment : Fragment() {
                 R.id.menuAd -> {
                     childFragmentManager
                         .beginTransaction()
-                        .replace(R.id.containerViewCompany, CompanyAdsEmptyFragment())
+                        .replace(R.id.containerViewCompany, CompanyAdsFragment())
                         .commit()
                     true
                 }

@@ -1,7 +1,5 @@
 package com.dyrelosh.pethotels.di
 
-import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
-import com.dyrelosh.pethotels.domain.companyusecase.GetTokenHotelUseCase
 import com.dyrelosh.pethotels.presentation.login.CompanyLoginViewModel
 import com.dyrelosh.pethotels.presentation.profile.CompanyProfileFragmentViewModel
 import com.dyrelosh.pethotels.presentation.register.CompanyRegisterViewModel

@@ -1,6 +1,5 @@
 package com.dyrelosh.pethotels.di
 
-import com.dyrelosh.pethotels.domain.companymodels.HotelInfoModel
 import com.dyrelosh.pethotels.domain.companyusecase.*
 import org.koin.dsl.module
 

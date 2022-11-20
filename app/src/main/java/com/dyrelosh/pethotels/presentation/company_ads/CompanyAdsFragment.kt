@@ -31,7 +31,7 @@ class CompanyAdsFragment : Fragment() {
 
         binding.recyclerViewCardAd.adapter = CardsAdsAdapter(cardCompanyAd)
         binding.newAddButton.setOnClickListener {
-            findNavController().navigate(R.id.action_companyAdsFragment_to_addAdFragment)
+            findNavController().navigate(R.id.action_mainFragment_to_addAdFragment)
         }
         return binding.root
     }

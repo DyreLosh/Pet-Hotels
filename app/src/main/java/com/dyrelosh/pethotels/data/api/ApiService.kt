@@ -1,7 +1,5 @@
 package com.dyrelosh.pethotels.data.api
 
-import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
-import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

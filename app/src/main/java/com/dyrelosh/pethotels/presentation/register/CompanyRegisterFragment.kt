@@ -57,12 +57,6 @@ class CompanyRegisterFragment : Fragment() {
                     emailLayoutRegistration.error == null &&
                     returnPasswordLayoutRegistration.error == null
                 ) {
-//                    hotelRegisterModel = HotelRegisterModel(
-//                        INNHotel = INNEditTextRegistration.text.toString(),
-//                        nameHotel = nameHotelEditTextRegistration.text.toString(),
-//                        emailHotel = emailEditTextRegistration.text.toString(),
-//                        passwordHotel = passwordEditTextRegistration.text.toString()
-//                    )
                     viewModel.registrationHotel(
                         HotelRegisterModel(
                             INN = INNEditTextRegistration.text.toString(),

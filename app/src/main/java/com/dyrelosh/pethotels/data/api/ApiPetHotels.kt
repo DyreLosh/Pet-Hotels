@@ -17,6 +17,10 @@ interface ApiPetHotels {
     @Headers("Content-Type: application/json")
     suspend fun login(@Body body: HotelLoginModel): Response<TokenHotelModel>
 
+    @GET("api/pethotel/hotelinfo")
+    suspend fun getUserInfo(
+        @Header("Authorization") token: String?
+    ): Response<HotelInfoModel>
 //    @GET("api/todos")
 //    suspend fun getTodos(
 //        @Header("Authorization") token: String?
@@ -36,10 +40,7 @@ interface ApiPetHotels {
 //
 //
 //
-    @GET("api/pethotel/hotelinfo")
-    suspend fun getUserInfo(
-        @Header("Authorization") token: String?
-    ): Response<HotelInfoModel>
+
 
 //    @Multipart
 //    @POST("api/user/photo")

@@ -8,14 +8,14 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/containerViewCompany"
-                android:name="com.dyrelosh.pethotels.presentation.company_ads_empty.CompanyAdsEmptyFragment"
+                android:name="com.dyrelosh.pethotels.presentation.company_ads.CompanyAdsFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toTopOf="@+id/bottomNavigationCompany"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout="@layout/fragment_company_ads_empty" />
+                tools:layout="@layout/fragment_company_ads" />
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigationCompany"
