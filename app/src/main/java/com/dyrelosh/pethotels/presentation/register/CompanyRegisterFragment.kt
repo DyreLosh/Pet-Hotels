@@ -65,10 +65,10 @@ class CompanyRegisterFragment : Fragment() {
 //                    )
                     viewModel.registrationHotel(
                         HotelRegisterModel(
-                            INNHotel = INNEditTextRegistration.text.toString(),
-                            nameHotel = nameHotelEditTextRegistration.text.toString(),
-                            emailHotel = emailEditTextRegistration.text.toString(),
-                            passwordHotel = passwordEditTextRegistration.text.toString()
+                            INN = INNEditTextRegistration.text.toString(),
+                            name = nameHotelEditTextRegistration.text.toString(),
+                            email = emailEditTextRegistration.text.toString(),
+                            password = passwordEditTextRegistration.text.toString()
                         )
                     )
                 }

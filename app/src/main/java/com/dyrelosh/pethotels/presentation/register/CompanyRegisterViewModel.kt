@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class CompanyRegisterViewModel(
     private val registerHotelUseCase: RegisterHotelUseCase,
     private val setTokenCompanyUseCase: SetTokenCompanyUseCase,
-    private val setEmailCompanyUseCase: SetEmailCompanyUseCase
+   // private val setEmailCompanyUseCase: SetEmailCompanyUseCase
 ) : ViewModel() {
 
     private val _token: MutableLiveData<String?> = MutableLiveData<String?>()
@@ -26,9 +26,9 @@ class CompanyRegisterViewModel(
         }
     }
 
-    fun setEmail(email: String) {
-        setEmailCompanyUseCase.execute(email)
-    }
+//    fun setEmail(email: String) {
+//        setEmailCompanyUseCase.execute(email)
+//    }
 
 
 }

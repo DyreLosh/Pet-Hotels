@@ -32,9 +32,9 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     override suspend fun loginCompany(hotelLoginModel: HotelLoginModel): TokenHotelModel? {
       return ApiService.retrofit.login(hotelLoginModel).body()
     }
-//    override suspend fun getHotelInfo(token: String): HotelInfoModel? {
-//        return ApiService.retrofit.getUserInfo("Bearer $token").body()
-//    }
+    override suspend fun getHotelInfo(token: String): HotelInfoModel? {
+        return ApiService.retrofit.getUserInfo("Bearer $token").body()
+    }
 
 //    override suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int {
 //        return ApiService.retrofit.setUserPhoto("Bearer $token", image).code()

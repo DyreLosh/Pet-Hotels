@@ -1,7 +1,9 @@
 package com.dyrelosh.pethotels.di
 
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
+import com.dyrelosh.pethotels.domain.companyusecase.GetTokenHotelUseCase
 import com.dyrelosh.pethotels.presentation.login.CompanyLoginViewModel
+import com.dyrelosh.pethotels.presentation.profile.CompanyProfileFragmentViewModel
 import com.dyrelosh.pethotels.presentation.register.CompanyRegisterViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -11,7 +13,7 @@ val presentationDi = module {
         CompanyRegisterViewModel(
             registerHotelUseCase = get(),
             setTokenCompanyUseCase = get(),
-            setEmailCompanyUseCase = get()
+            //setEmailCompanyUseCase = get()
 
         )
     }
@@ -22,13 +24,12 @@ val presentationDi = module {
             setEmailCompanyUseCase = get()
         )
     }
+    viewModel {
+        CompanyProfileFragmentViewModel(
+            getHotelInfoUseCase = get(),
+            getTokenUseCase = get()
+        )
+    }
 
-//    viewModel {
-//        RegistrationViewModel(
-//            registrationUserUseCase = get(),
-//            setTokenUseCase = get(),
-//            setEmailUseCase = get(),
-//        )
-//    }
 
 }

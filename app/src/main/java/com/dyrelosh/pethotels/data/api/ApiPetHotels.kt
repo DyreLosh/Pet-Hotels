@@ -1,5 +1,6 @@
 package com.dyrelosh.pethotels.data.api
 
+import com.dyrelosh.pethotels.domain.companymodels.HotelInfoModel
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
 import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import com.dyrelosh.pethotels.domain.companymodels.TokenHotelModel
@@ -35,10 +36,10 @@ interface ApiPetHotels {
 //
 //
 //
-//    @GET("api/user")
-//    suspend fun getUserInfo(
-//        @Header("Authorization") token: String?
-//    ): Response<HotelRegisterModel>
+    @GET("api/pethotel/hotelinfo")
+    suspend fun getUserInfo(
+        @Header("Authorization") token: String?
+    ): Response<HotelInfoModel>
 
 //    @Multipart
 //    @POST("api/user/photo")

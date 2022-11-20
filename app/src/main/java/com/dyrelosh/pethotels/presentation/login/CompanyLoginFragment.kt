@@ -54,8 +54,6 @@ class CompanyLoginFragment : Fragment() {
         }
         viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
             if (tokenResult != null) {
-
-//    TODO это не нужно, код который не будет использоваться нужно удалять            viewModel.setEmail(hotelLoginModel.email)
                 this.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
             } else {
                 Toast.makeText(context, "Не успешно", Toast.LENGTH_SHORT).show()

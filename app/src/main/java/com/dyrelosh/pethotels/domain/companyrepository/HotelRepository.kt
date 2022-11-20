@@ -25,7 +25,7 @@ interface HotelRepository {
 //
 //    suspend fun deleteAdd(token: String, id: String): Boolean
 //
-//    suspend fun getHotelInfo(token: String): HotelInfoModel?
+    suspend fun getHotelInfo(token: String): HotelInfoModel?
 
     //suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int
 
