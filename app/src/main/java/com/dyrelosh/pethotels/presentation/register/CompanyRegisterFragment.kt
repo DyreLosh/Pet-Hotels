@@ -19,8 +19,6 @@ class CompanyRegisterFragment : Fragment() {
 
     private lateinit var binding: FragmentRegisterCompanyBinding
     private val validator = Validator()
-
-    // private lateinit var hotelRegisterModel: HotelRegisterModel
     private val viewModel by viewModel<CompanyRegisterViewModel>()
 
     override fun onCreateView(
@@ -59,7 +57,7 @@ class CompanyRegisterFragment : Fragment() {
                 ) {
                     viewModel.registrationHotel(
                         HotelRegisterModel(
-                            INN = INNEditTextRegistration.text.toString(),
+                            inn = INNEditTextRegistration.text.toString(),
                             name = nameHotelEditTextRegistration.text.toString(),
                             email = emailEditTextRegistration.text.toString(),
                             password = passwordEditTextRegistration.text.toString()
@@ -71,7 +69,6 @@ class CompanyRegisterFragment : Fragment() {
 
         viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
             if (tokenResult != null) {
-                //   viewModel.setEmail(hotelRegisterModel.emailHotel)
                 this.findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
             } else {
                 Toast.makeText(context, "не успешно", Toast.LENGTH_SHORT).show()

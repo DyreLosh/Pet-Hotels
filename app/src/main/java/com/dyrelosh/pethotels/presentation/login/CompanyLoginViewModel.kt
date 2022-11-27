@@ -25,9 +25,4 @@ class CompanyLoginViewModel(
             _token.value?.let { setTokenCompanyUseCase.execute(it) }
         }
     }
-
-        //TODO Зачем это?
-//        fun setEmail(emailHotel: String) {
-//            setEmailCompanyUseCase.execute(emailHotel)
-//        }
     }

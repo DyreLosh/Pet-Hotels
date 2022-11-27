@@ -21,6 +21,13 @@ interface ApiPetHotels {
     suspend fun getUserInfo(
         @Header("Authorization") token: String?
     ): Response<HotelInfoModel>
+
+    @PUT("api/pethotel/hotelinfo")
+    suspend fun editProfileCompany(
+        @Header("Authorization") token: String?,
+        @Body body: HotelInfoModel
+    ): Response<HotelInfoModel>
+
 //    @GET("api/todos")
 //    suspend fun getTodos(
 //        @Header("Authorization") token: String?

@@ -27,6 +27,11 @@ interface HotelRepository {
 //
     suspend fun getHotelInfo(token: String): HotelInfoModel?
 
+    suspend fun editProfileCompany(
+        token: String,
+        hotelInfoModel: HotelInfoModel
+    ): HotelInfoModel?
+
     //suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int
 
     //suspend fun getUserPhoto(token: String, id: String): Bitmap?

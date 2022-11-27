@@ -26,9 +26,4 @@ class CompanyRegisterViewModel(
         }
     }
 
-//    fun setEmail(email: String) {
-//        setEmailCompanyUseCase.execute(email)
-//    }
-
-
 }

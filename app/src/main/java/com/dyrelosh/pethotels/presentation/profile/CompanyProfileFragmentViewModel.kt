@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class CompanyProfileFragmentViewModel(
     private val getHotelInfoUseCase: GetHotelInfoUseCase,
-    private  val getTokenUseCase: GetTokenHotelUseCase
+    private val getTokenUseCase: GetTokenHotelUseCase
 ) : ViewModel() {
     private val token = getTokenUseCase.execute()
 

@@ -25,4 +25,7 @@ val domainDi = module {
     factory {
         GetTokenHotelUseCase(get())
     }
+    factory {
+        EditProfileCompanyUseCase(get())
+    }
 }
