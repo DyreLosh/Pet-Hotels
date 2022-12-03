@@ -16,13 +16,13 @@ interface HotelRepository {
 
     suspend fun loginCompany(hotelLoginModel: HotelLoginModel): TokenHotelModel?
 
-//    suspend fun getAdds(token: String): List<HotelAddsModel>?
-//
-//    suspend fun appendAdd(
-//        token: String,
-//        hotelAppendAddModel: HotelAppendAddModel
-//    ): Boolean
-//
+    suspend fun getAdds(token: String): List<HotelAddsModel>?
+
+    suspend fun appendAdd(
+        token: String,
+        hotelAppendAddModel: HotelAppendAddModel
+    ): Boolean
+
 //    suspend fun deleteAdd(token: String, id: String): Boolean
 //
     suspend fun getHotelInfo(token: String): HotelInfoModel?

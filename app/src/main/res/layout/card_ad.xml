@@ -23,36 +23,127 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageCardAd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img_card"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imageCardAd"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/img_card"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewNameCardAd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="25sp"
             android:fontFamily="@font/poppins"
+            android:textColor="@color/orange"
+            android:text="Название"
+            android:textSize="27sp"
             android:textStyle="bold"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            app:layout_constraintStart_toEndOf="@+id/imageCardAd"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/editAdCompanyCard"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewCityCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:text="город"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNameCardAd" />
 
         <TextView
             android:id="@+id/textViewAddressCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="15sp"
             android:fontFamily="@font/poppins"
-            app:layout_constraintStart_toStartOf="@+id/textViewNameCardAd"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNameCardAd" />
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:text="адрес"
+            app:layout_constraintStart_toStartOf="@+id/textViewCityCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCityCard" />
+
+        <TextView
+            android:id="@+id/textViewDescriptionCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:text="описание"
+            app:layout_constraintStart_toStartOf="@+id/textViewAddressCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAddressCard" />
+
+        <TextView
+            android:id="@+id/textViewNumberCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:text="номер телефона"
+            app:layout_constraintStart_toStartOf="@+id/textViewDescriptionCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionCard" />
+
+        <TextView
+            android:id="@+id/textViewCatCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cat"
+            android:visibility="gone"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/textViewNumberCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumberCard" />
+        <TextView
+            android:id="@+id/textViewDogCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dog"
+
+            android:visibility="gone"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/textViewCatCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCatCard" />
+
+        <TextView
+            android:id="@+id/textViewRodentCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rodent"
+            android:textColor="@color/text"
+
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/textViewDogCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDogCard" />
+
+        <TextView
+            android:id="@+id/textViewOtherCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="other"
+            android:visibility="gone"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/textViewRodentCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRodentCard" />
+
+<!--        -->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/text"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/textViewNumberCard"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textViewNumberCard" />-->
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

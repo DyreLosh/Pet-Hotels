@@ -19,13 +19,19 @@ val domainDi = module {
     factory {
         GetHotelInfoUseCase(get())
     }
-//    factory {
-//        GetEmailCompanyUseCase(get())
-//    }
+    factory {
+        GetEmailCompanyUseCase(get())
+    }
     factory {
         GetTokenHotelUseCase(get())
     }
     factory {
         EditProfileCompanyUseCase(get())
+    }
+    factory {
+        AppendAddUseCase(get())
+    }
+    factory {
+        GetAddUseCase(get())
     }
 }

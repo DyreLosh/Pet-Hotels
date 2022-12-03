@@ -59,14 +59,14 @@
             android:id="@+id/action_mainFragment_to_companyAdsFragment"
             app:destination="@id/companyAdsFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_addAdFragment"
-            app:destination="@id/addAdFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_editAdFragment"
             app:destination="@id/editAdFragment" />
         <action
             android:id="@+id/action_mainFragment_to_editProfileCompanyFragment"
             app:destination="@id/editProfileCompanyFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_appendAddFragment"
+            app:destination="@id/appendAddFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -86,21 +86,16 @@
         android:label="fragment_company_ads_empty"
         tools:layout="@layout/fragment_company_ads_empty" />
     <fragment
-        android:id="@+id/addAdFragment"
-        android:name="com.dyrelosh.pethotels.presentation.add_ad.AddAdFragment"
-        android:label="fragment_add_ad"
-        tools:layout="@layout/fragment_add_ad" />
-    <fragment
         android:id="@+id/companyAdsFragment"
         android:name="com.dyrelosh.pethotels.presentation.company_ads.CompanyAdsFragment"
         android:label="fragment_company_ads"
         tools:layout="@layout/fragment_company_ads" >
         <action
-            android:id="@+id/action_companyAdsFragment_to_addAdFragment"
-            app:destination="@id/addAdFragment" />
-        <action
             android:id="@+id/action_companyAdsFragment_to_editAdFragment"
             app:destination="@id/editAdFragment" />
+        <action
+            android:id="@+id/action_companyAdsFragment_to_appendAddFragment"
+            app:destination="@id/appendAddFragment" />
     </fragment>
     <fragment
         android:id="@+id/editAdFragment"
@@ -112,4 +107,16 @@
         android:name="com.dyrelosh.pethotels.presentation.profile.EditProfileCompanyFragment"
         android:label="fragment_edit_profile_company"
         tools:layout="@layout/fragment_edit_profile_company" />
+    <fragment
+        android:id="@+id/appendAddFragment"
+        android:name="com.dyrelosh.pethotels.presentation.add_ad.AppendAddFragment"
+        android:label="fragment_add_append"
+        tools:layout="@layout/fragment_add_append" >
+        <action
+            android:id="@+id/action_appendAddFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_appendAddFragment_to_companyAdsFragment"
+            app:destination="@id/companyAdsFragment" />
+    </fragment>
 </navigation>

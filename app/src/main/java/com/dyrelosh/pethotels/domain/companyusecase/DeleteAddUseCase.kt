@@ -7,3 +7,9 @@ import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 //        return hotelRepository.deleteAdd(token, id)
 //    }
 //}
+
+//class DeleteTodoUseCase(private val todoRepository: TodoRepository) {
+//    suspend fun execute(token: String, id: String): Boolean {
+//        return todoRepository.deleteTodo(token, id)
+//    }
+//}

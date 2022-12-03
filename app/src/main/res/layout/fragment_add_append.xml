@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.add_ad.AddAdFragment">
+    tools:context=".presentation.add_ad.AppendAddFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -27,7 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nameHotelLayoutAdd"
+                android:id="@+id/nameHotelLayoutAppendAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nameHotelEditTextAdd"
+                    android:id="@+id/nameHotelEditTextAppendAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_name_hotel"
@@ -57,7 +57,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/cityHotelLayoutAdd"
+                android:id="@+id/cityHotelLayoutAppendAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -67,12 +67,12 @@
                 android:textColorHint="@color/text_hint"
                 app:boxStrokeColor="@color/text_hint"
                 app:hintTextColor="@color/text_hint"
-                app:layout_constraintEnd_toEndOf="@+id/nameHotelLayoutAdd"
-                app:layout_constraintStart_toStartOf="@+id/nameHotelLayoutAdd"
-                app:layout_constraintTop_toBottomOf="@+id/nameHotelLayoutAdd">
+                app:layout_constraintEnd_toEndOf="@+id/nameHotelLayoutAppendAdd"
+                app:layout_constraintStart_toStartOf="@+id/nameHotelLayoutAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/nameHotelLayoutAppendAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/cityHotelEditTextAdd"
+                    android:id="@+id/cityHotelEditTextAppendAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_city"
@@ -86,7 +86,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/addressHotelLayoutAdd"
+                android:id="@+id/addressHotelLayoutAppendAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -96,12 +96,12 @@
                 android:textColorHint="@color/text_hint"
                 app:boxStrokeColor="@color/text_hint"
                 app:hintTextColor="@color/text_hint"
-                app:layout_constraintEnd_toEndOf="@+id/cityHotelLayoutAdd"
-                app:layout_constraintStart_toStartOf="@+id/cityHotelLayoutAdd"
-                app:layout_constraintTop_toBottomOf="@+id/cityHotelLayoutAdd">
+                app:layout_constraintEnd_toEndOf="@+id/cityHotelLayoutAppendAdd"
+                app:layout_constraintStart_toStartOf="@+id/cityHotelLayoutAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/cityHotelLayoutAppendAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addressHotelEditTextAdd"
+                    android:id="@+id/addressHotelEditTextAppendAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_address"
@@ -116,7 +116,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordLayoutRegistration"
+                android:id="@+id/numberHotelLayoutAppendAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -126,12 +126,12 @@
                 android:textColorHint="@color/text_hint"
                 app:boxStrokeColor="@color/text_hint"
                 app:hintTextColor="@color/text_hint"
-                app:layout_constraintEnd_toEndOf="@+id/addressHotelLayoutAdd"
-                app:layout_constraintStart_toStartOf="@+id/addressHotelLayoutAdd"
-                app:layout_constraintTop_toBottomOf="@+id/addressHotelLayoutAdd">
+                app:layout_constraintEnd_toEndOf="@+id/addressHotelLayoutAppendAdd"
+                app:layout_constraintStart_toStartOf="@+id/addressHotelLayoutAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/addressHotelLayoutAppendAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwordEditTextRegistration"
+                    android:id="@+id/numberHotelEditTextAppendAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_number"
@@ -147,7 +147,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/hintAnimalsAddAd"
+                android:id="@+id/hintAnimalsAppendAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -155,11 +155,11 @@
                 android:textColor="@color/text"
                 android:textSize="15sp"
                 android:fontFamily="@font/poppins"
-                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
-                app:layout_constraintTop_toBottomOf="@+id/passwordLayoutRegistration" />
+                app:layout_constraintStart_toStartOf="@+id/numberHotelLayoutAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/numberHotelLayoutAppendAdd" />
 
             <CheckBox
-                android:id="@+id/checkboxCatAddAd"
+                android:id="@+id/checkboxCatAppendAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/animal_cat"
@@ -167,12 +167,12 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins"
-                app:layout_constraintStart_toStartOf="@+id/hintAnimalsAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAddAd"/>
+                app:layout_constraintStart_toStartOf="@+id/hintAnimalsAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAppendAdd"/>
 
 
             <CheckBox
-                android:id="@+id/checkboxDogAddAd"
+                android:id="@+id/checkboxDogAppendAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/orange"
@@ -181,11 +181,11 @@
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins"
                 android:layout_marginStart="40dp"
-                app:layout_constraintStart_toEndOf="@+id/checkboxCatAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAddAd" />
+                app:layout_constraintStart_toEndOf="@+id/checkboxCatAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/hintAnimalsAppendAdd" />
 
             <CheckBox
-                android:id="@+id/checkboxRodentAddAd"
+                android:id="@+id/checkboxRodentAppendAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/orange"
@@ -193,99 +193,107 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins"
-                app:layout_constraintStart_toStartOf="@+id/checkboxCatAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/checkboxCatAddAd" />
+                app:layout_constraintStart_toStartOf="@+id/checkboxCatAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxCatAppendAdd" />
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/checkboxFishAppendAdd"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:buttonTint="@color/orange"-->
+<!--                android:text="@string/animal_fish"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="16sp"-->
+<!--                android:fontFamily="@font/poppins"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/checkboxAppendAdd"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/checkboxAppendAdd" />-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/checkboxBirdAnimalAppendAdd"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:buttonTint="@color/orange"-->
+<!--                android:text="@string/animal_bird"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="16sp"-->
+<!--                android:fontFamily="@font/poppins"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/checkboxRodentAppendAdd"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/checkboxRodentAppendAdd" />-->
 
             <CheckBox
-                android:id="@+id/checkboxFishAddAd"
+                android:id="@+id/checkboxOtherAnimalAppendAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/orange"
-                android:text="@string/animal_fish"
-                android:textColor="@color/black"
-                android:textSize="16sp"
                 android:fontFamily="@font/poppins"
-                app:layout_constraintStart_toStartOf="@+id/checkboxDogAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/checkboxDogAddAd" />
-
-            <CheckBox
-                android:id="@+id/checkboxBirdAnimalAddAd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/orange"
-                android:text="@string/animal_bird"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:fontFamily="@font/poppins"
-                app:layout_constraintStart_toStartOf="@+id/checkboxRodentAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/checkboxRodentAddAd" />
-
-            <CheckBox
-                android:id="@+id/checkboxOtherAnimalAddAd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/orange"
                 android:text="@string/animal_other"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins"
-                app:layout_constraintStart_toStartOf="@+id/checkboxFishAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/checkboxFishAddAd" />
+                app:layout_constraintStart_toStartOf="@+id/checkboxDogAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxDogAppendAdd" />
 
             <TextView
-                android:id="@+id/hintDescribeHotelAddAd"
+                android:id="@+id/hintDescribeHotelAppendAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
                 android:text="@string/hint_describe_add_ad"
                 android:textColor="@color/text"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins"
-                app:layout_constraintStart_toStartOf="@+id/checkboxBirdAnimalAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/checkboxBirdAnimalAddAd" />
+                app:layout_constraintStart_toStartOf="@+id/checkboxRodentAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxRodentAppendAdd" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/hintDescribeAddAd"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/describeHotelLayoutAppendAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
                 android:layout_marginEnd="20dp"
-                android:gravity="top|left"
-                android:lines="8"
-                android:maxLines="10"
-                android:minLines="6"
-                android:fontFamily="@font/poppins"
-                android:scrollbars="vertical"
-                android:shadowColor="@color/text_hint"
-                android:shadowRadius="15"
-                android:textColorLink="@color/text"
-                android:backgroundTint="@color/text"
-                app:layout_constraintEnd_toEndOf="@+id/hintDescribeHotelAddAd"
-                app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/hintDescribeHotelAddAd" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/text_input"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins"
-                android:text="@string/hint_photo"
-                android:textColor="@color/text"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"
-                app:layout_constraintTop_toBottomOf="@+id/hintDescribeAddAd" />
+                android:textColorHint="@color/text_hint"
+                app:boxStrokeColor="@color/text_hint"
+                app:hintTextColor="@color/text_hint"
+                app:layout_constraintEnd_toEndOf="@+id/hintDescribeHotelAppendAdd"
+                app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/hintDescribeHotelAppendAdd">
 
-            <ImageView
-                android:id="@+id/hintPhotoAddAd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:src="@drawable/ic_photo"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                android:layout_marginStart="18dp"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/describeHotelEditTextAppendAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:minHeight="48dp"
+                    android:fontFamily="@font/poppins"
+                    android:paddingStart="33dp"
+                    android:paddingEnd="33dp"
+                    android:textColorLink="@color/text_hint"
+                    android:textColor="@color/text_hint"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:fontFamily="@font/poppins"-->
+<!--                android:text="@string/hint_photo"-->
+<!--                android:textColor="@color/text"-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/hintDescribeAddAd" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/hintPhotoAddAd"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="7dp"-->
+<!--                android:src="@drawable/ic_photo"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/textView"-->
+<!--                android:layout_marginStart="18dp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/textView"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/textView" />-->
 
          <com.google.android.material.button.MaterialButton
                  android:id="@+id/saveButtonAddAd"
@@ -301,9 +309,9 @@
                  android:layout_marginTop="20dp"
                  android:layout_marginEnd="20dp"
                  android:layout_marginStart="20dp"
-                 app:layout_constraintEnd_toEndOf="@+id/hintPhotoAddAd"
-                 app:layout_constraintStart_toStartOf="@+id/hintPhotoAddAd"
-                 app:layout_constraintTop_toBottomOf="@+id/hintPhotoAddAd" />
+                 app:layout_constraintEnd_toEndOf="@+id/describeHotelLayoutAppendAdd"
+                 app:layout_constraintStart_toStartOf="@+id/describeHotelLayoutAppendAdd"
+                 app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />
 
             <TextView
                 android:layout_width="match_parent"

@@ -48,13 +48,13 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 //        return BitmapFactory.decodeStream(ApiService.retrofit.getUserPhoto("Bearer $token", id).body()!!.byteStream())
 //    }
 
-//    override suspend fun getAdds(token: String): List<HotelAddsModel>? {
-//        return ApiService.retrofit.getTodos("Bearer $token").body()
-//    }
-//
-//    override suspend fun appendAdd(token: String, hotelAppendAddModel: HotelAppendAddModel): Boolean {
-//        return ApiService.retrofit.createTodos("Bearer $token", hotelAppendAddModel).isSuccessful
-//    }
+    override suspend fun getAdds(token: String): List<HotelAddsModel>? {
+        return ApiService.retrofit.getAdds("Bearer $token").body()
+    }
+
+    override suspend fun appendAdd(token: String, hotelAppendAddModel: HotelAppendAddModel): Boolean {
+        return ApiService.retrofit.appendAdd("Bearer $token", hotelAppendAddModel).isSuccessful
+    }
 //
 //    override suspend fun deleteAdd(token: String, id: String): Boolean {
 //        return ApiService.retrofit.deleteTodos("Bearer $token", id).isSuccessful

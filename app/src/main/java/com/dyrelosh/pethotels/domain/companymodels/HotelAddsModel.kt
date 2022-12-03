@@ -1,15 +1,15 @@
 package com.dyrelosh.pethotels.domain.companymodels
 
 data class HotelAddsModel (
-    val idAdd: String,
-    val nameHotel: String,
-    val cityHotel: String,
-    val addressHotel: String,
-    val numberHotel: String,
-    val descriptionHotel: String,
+    val id: String,
+    val name: String,
+    val city: String,
+    val address: String,
+    val number: String,
+    val description: String,
   //  val photoHotel: String,
-    val catCategory: Boolean,
-    val rodentCategory: Boolean,
-    val dogCategory: Boolean,
-    val otherCategory: Boolean
+    val cat: Boolean,
+    val rodent: Boolean,
+    val dog: Boolean,
+    val other: Boolean
 )
