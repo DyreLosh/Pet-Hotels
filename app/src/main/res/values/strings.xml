@@ -1,7 +1,60 @@
 <resources>
     <string name="app_name">Pet Hotels</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_splash">Pet \nHotels</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_HI">Добро пожаловать в приложение для поиска временного дома для вашего питомца!</string>
+    <string name="title_registration_method">Выберите способ регистрации</string>
+    <string name="enter">Вход</string>
+    <string name="registration">Регистрация</string>
+    <string name="reg_button">Зарегестрироваться</string>
+    <string name="input_button">Войти</string>
+    <string name="title_method_reg_title">Выберите способ регистрации</string>
+    <string name="method_user_button">Пользователь</string>
+    <string name="method_company_button">Компания</string>
+    <string name="hint_email">Введите Вашу почту</string>
+    <string name="hint_password">Введите пароль</string>
+    <string name="hint_forgot_password">Забыли пароль</string>
+    <string name="hint_input">У вас нет аккаунта?</string>
+    <string name="hint_input_registration">Зарегистрируйтесь</string>
+    <string name="hint_registration">У вас уже есть аккаунт?</string>
+    <string name="hint_INN">Введите ИНН Вашего отеля</string>
+    <string name="hint_return_password">Повторите пароль</string>
+    <string name="hint_name_hotel">Введите название Вашего отеля</string>
+    <string name="title_input">Вход</string>
+    <string name="title_registration">Регистрация</string>
+    <string name="hint_city">Укажите город</string>
+    <string name="hint_address">Укажите адрес</string>
+    <string name="hint_number">Укажите номер для связи</string>
+    <string name="hint_describe_add_ad">Описание Вашего отеля</string>
+    <string name="hint_photo">Загрузите фото</string>
+    <string name="title_company_ads">Ваши объявления</string>
+    <string name="title_add_empty">У Вас сейчас нет объявлений! \n \n Скорее добавьте его! =)</string>
+    <string name="hint_animals_add_ad">Выберите тех питомцев, которых сможете принять</string>
+    <string name="animal_cat">Кошечки</string>
+    <string name="animal_dog">Собачки</string>
+    <string name="animal_rodent">Грызуны</string>
+    <string name="animal_fish">Рыбки</string>
+    <string name="animal_bird">Птички</string>
+    <string name="animal_other">Другие</string>
+    <string name="save">Сохранить</string>
+    <string name="title_menu_ad">Объявления</string>
+    <string name="title_menu_profile">Профиль</string>
+    <string name="title_profile">Название отеля</string>
+    <string name="hint_email_profile"> Ваш email</string>
+    <string name="hint_INN_profile">Ваш ИНН</string>
+    <string name="email_profile">a@mail.ru</string>
+    <string name="INN_profile">111111111111</string>
+    <string name="citi_viewing_ad">Город отеля</string>
+    <string name="address_viewing_ad">Адрес отеля</string>
+    <string name="description_viewing_ad">Friends for pets — гостиница для животных в полном смысле этого слова:
+        питомцев содержат не в клетках, а в комнатах с высокими потолками и декором на стенах, имитирующим домашнюю обстановку.
+        Для котов есть номера площадью 2,5 и 5 м2, а для собак — от 2,7 до 11 м2. Нескольких животных из одной семьи
+        можно разместить в одном номере, чтобы они не скучали друг по другу.
+</string>
+    <string name="number_viewing_ad">89271925654</string>
+
+
     <string name="pet_app_name">Pet \nHotels</string>
     <string name="email_hint">Введите вашу почту</string>
     <string name="password_hint">Введите ваш пароль</string>

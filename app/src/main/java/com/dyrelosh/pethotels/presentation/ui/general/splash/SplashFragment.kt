@@ -23,7 +23,7 @@ class SplashFragment : Fragment() {
 
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_welcomeFragment)
         }, 2000)
         return binding.root
     }

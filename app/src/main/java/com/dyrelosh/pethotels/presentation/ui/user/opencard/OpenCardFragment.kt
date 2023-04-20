@@ -1,20 +1,23 @@
 package com.dyrelosh.pethotels.presentation.ui.user.opencard
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.dyrelosh.pethotels.R
+import androidx.fragment.app.Fragment
+import com.dyrelosh.pethotels.databinding.FragmentViewingAdBinding
 
-class OpenCardFragment : Fragment() {
+class ViewingAdFragment : Fragment() {
+
+    lateinit var binding: FragmentViewingAdBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_open_card, container, false)
-    }
+        binding = FragmentViewingAdBinding.inflate(inflater, container, false)
 
+        return binding.root
+    }
 }
+

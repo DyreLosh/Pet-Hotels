@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/homeBottomItem"
-        android:title= "Главная"
-        android:icon="@drawable/ic_home"/>
-    <item
-        android:id="@+id/searchBottomItem"
-        android:title= "Поиск"
-        android:icon="@drawable/ic_search"/>
-    <item
-        android:id="@+id/favouriteBottomItem"
-        android:title= "Избранное"
-        android:icon="@drawable/ic_heart"/>
-    <item
-        android:id="@+id/accountBottomItem"
-        android:title= "Профиль"
-        android:icon="@drawable/ic_user"/>
+        android:id="@+id/menuAd"
+        android:icon="@drawable/ic_ad"
+        android:title="@string/title_menu_ad" />
+    <item android:id="@+id/menuHotel"
+        android:title="@string/title_menu_profile"
+        android:icon="@drawable/ic_hotel"/>
 
 </menu>

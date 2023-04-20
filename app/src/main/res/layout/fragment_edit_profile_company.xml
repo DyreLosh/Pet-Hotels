@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.profile.EditProfileCompanyFragment">
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_margin="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/INNLayoutEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            app:boxBackgroundColor="@color/text_input"
+            android:textColorHint="@color/text_hint"
+            app:boxStrokeColor="@color/text_hint"
+            app:hintTextColor="@color/text_hint"
+            app:layout_constraintEnd_toEndOf="@+id/imageBack"
+            app:layout_constraintStart_toStartOf="@+id/imageBack"
+            app:layout_constraintTop_toBottomOf="@+id/imageBack">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/INNEditTextEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_INN"
+                android:textSize="16sp"
+                android:minHeight="48dp"
+                android:paddingStart="33dp"
+                android:paddingEnd="33dp"
+                android:fontFamily="@font/poppins"
+                android:textColorLink="@color/text_hint"
+                android:textColor="@color/text_hint"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameHotelLayoutEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            app:boxBackgroundColor="@color/text_input"
+            android:textColorHint="@color/text_hint"
+            app:boxStrokeColor="@color/text_hint"
+            app:hintTextColor="@color/text_hint"
+            app:layout_constraintEnd_toEndOf="@+id/INNLayoutEditProfile"
+            app:layout_constraintStart_toStartOf="@+id/INNLayoutEditProfile"
+            app:layout_constraintTop_toBottomOf="@+id/INNLayoutEditProfile">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameHotelEditTextEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_name_hotel"
+                android:textSize="16sp"
+                android:minHeight="48dp"
+                android:paddingStart="33dp"
+                android:paddingEnd="33dp"
+                android:fontFamily="@font/poppins"
+                android:textColorLink="@color/text_hint"
+                android:textColor="@color/text_hint"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailLayoutEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            app:boxBackgroundColor="@color/text_input"
+            android:textColorHint="@color/text_hint"
+            app:boxStrokeColor="@color/text_hint"
+            app:hintTextColor="@color/text_hint"
+            app:layout_constraintEnd_toEndOf="@+id/nameHotelLayoutEditProfile"
+            app:layout_constraintStart_toStartOf="@+id/nameHotelLayoutEditProfile"
+            app:layout_constraintTop_toBottomOf="@+id/nameHotelLayoutEditProfile">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditTextEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email"
+                android:textSize="16sp"
+                android:minHeight="48dp"
+                android:paddingStart="33dp"
+                android:paddingEnd="33dp"
+                android:fontFamily="@font/poppins"
+                android:textColorLink="@color/text_hint"
+                android:textColor="@color/text_hint"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveButtonEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/save"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/orange"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/emailLayoutEditProfile"
+        app:layout_constraintStart_toStartOf="@+id/emailLayoutEditProfile" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
