@@ -19,10 +19,10 @@ class UserRegisterFragment : Fragment() {
     ): View? {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         binding.registerToLoginButton.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+            findNavController().navigate(R.id.action_userRegisterFragment_to_loginFragment)
         }
         binding.registerToMainButton.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
+            findNavController().navigate(R.id.action_userRegisterFragment_to_mainContainerFragment)
         }
 
         return binding.root

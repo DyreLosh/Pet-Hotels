@@ -24,7 +24,7 @@ class WelcomeFragment : Fragment() {
 
         }
         binding.welcomeToRegisterMethodButton.setOnClickListener {
-            findNavController().navigate(R.id.action_welcomeFragment_to_registrationMethodFragment)
+            findNavController().navigate(R.id.action_welcomeFragment_to_registrationMethodFragment2)
         }
 
         return binding.root

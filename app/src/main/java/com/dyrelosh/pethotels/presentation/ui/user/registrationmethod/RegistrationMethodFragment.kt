@@ -19,7 +19,10 @@ class RegistrationMethodFragment : Fragment() {
     ): View? {
         binding = FragmentRegistrationMethodBinding.inflate(inflater, container, false)
         binding.methodToRegisterButton.setOnClickListener {
-            findNavController().navigate(R.id.action_registrationMethodFragment_to_registerFragment)
+            findNavController().navigate(R.id.action_registrationMethodFragment2_to_userRegisterFragment)
+        }
+        binding.methodToCompanyButton.setOnClickListener {
+            findNavController().navigate(R.id.action_registrationMethodFragment2_to_registerFragment)
         }
         return binding.root
     }

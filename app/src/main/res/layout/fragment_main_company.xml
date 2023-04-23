@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.main.CompanyMainFragment">
+    tools:context=".presentation.ui.company.main.CompanyMainFragment">
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/containerViewCompany"
-                android:name="com.dyrelosh.pethotels.presentation.company_ads.CompanyAdsFragment"
+                android:name="com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toTopOf="@+id/bottomNavigationCompany"

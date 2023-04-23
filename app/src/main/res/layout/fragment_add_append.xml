@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.add_ad.AppendAddFragment">
+    tools:context=".presentation.ui.company.add_ad.AppendAddFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -295,23 +295,23 @@
 <!--                app:layout_constraintStart_toStartOf="@+id/textView"-->
 <!--                app:layout_constraintTop_toBottomOf="@+id/textView" />-->
 
-         <com.google.android.material.button.MaterialButton
-                 android:id="@+id/saveButtonAddAd"
-                 android:layout_width="match_parent"
-                 android:layout_height="60dp"
-                 android:hint="@string/save"
-                 android:textColorHint="@color/white"
-                 android:textSize="20sp"
-                 android:textStyle="bold"
-                 app:backgroundTint="@color/orange"
-                 app:cornerRadius="20dp"
-                 android:fontFamily="@font/poppins"
-                 android:layout_marginTop="20dp"
-                 android:layout_marginEnd="20dp"
-                 android:layout_marginStart="20dp"
-                 app:layout_constraintEnd_toEndOf="@+id/describeHotelLayoutAppendAdd"
-                 app:layout_constraintStart_toStartOf="@+id/describeHotelLayoutAppendAdd"
-                 app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButtonAddAd"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/save"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/orange"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/describeHotelLayoutAppendAdd"
+                app:layout_constraintStart_toStartOf="@+id/describeHotelLayoutAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />
 
             <TextView
                 android:layout_width="match_parent"

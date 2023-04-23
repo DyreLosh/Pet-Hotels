@@ -1,11 +1,11 @@
 package com.dyrelosh.pethotels.di
 
-import com.dyrelosh.pethotels.presentation.add_ad.AppendAddViewModel
-import com.dyrelosh.pethotels.presentation.company_ads.CompanyAdsViewModel
+import com.dyrelosh.pethotels.presentation.ui.company.add_ad.AppendAddViewModel
+import com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsViewModel
 import com.dyrelosh.pethotels.presentation.login.CompanyLoginViewModel
-import com.dyrelosh.pethotels.presentation.profile.CompanyProfileFragmentViewModel
-import com.dyrelosh.pethotels.presentation.profile.EditProfileCompanyFragmentViewModel
-import com.dyrelosh.pethotels.presentation.register.CompanyRegisterViewModel
+import com.dyrelosh.pethotels.presentation.ui.company.company_profile.CompanyProfileFragmentViewModel
+import com.dyrelosh.pethotels.presentation.ui.company.company_profile.EditProfileCompanyFragmentViewModel
+import com.dyrelosh.pethotels.presentation.ui.company.register.CompanyRegisterViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
