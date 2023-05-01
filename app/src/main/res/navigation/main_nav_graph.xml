@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_mainFragment_to_viewingAdFragment"
             app:destination="@id/viewingAdFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_editProfileCompanyFragment"
+            app:destination="@id/editProfileCompanyFragment" />
     </fragment>
     <fragment
         android:id="@+id/companyAdsEmptyFragment"
@@ -152,7 +155,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewingAdFragment"
-        android:name="com.dyrelosh.pethotels.presentation.ViewingAdFragment"
+        android:name="com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.ViewingAdFragment"
         android:label="fragment_viewing_ad"
         tools:layout="@layout/fragment_viewing_ad" />
     <fragment

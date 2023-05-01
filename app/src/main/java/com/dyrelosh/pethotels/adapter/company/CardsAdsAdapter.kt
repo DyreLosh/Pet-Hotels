@@ -9,7 +9,7 @@ import com.dyrelosh.pethotels.databinding.CardAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 
 class CardsAdsAdapter(
-//    private val items: List<CardAd>
+    private val clickListener: () -> Unit
     ) : RecyclerView.Adapter<CardViewHolder>() {
 
     private var cardsAd = mutableListOf<HotelAddsModel?>()
@@ -28,7 +28,7 @@ class CardsAdsAdapter(
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        holder.bind(cardsAd[position])
+        cardsAd[position]?.let { holder.bind(it, clickListener) }
     }
 
     override fun getItemCount(): Int = cardsAd.size

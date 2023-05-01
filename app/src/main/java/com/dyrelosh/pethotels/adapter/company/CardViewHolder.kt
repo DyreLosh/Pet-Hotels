@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.databinding.CardAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 
-class CardViewHolder(private val binding: CardAdBinding) : RecyclerView.ViewHolder(binding.root){
+class CardViewHolder(private val binding: CardAdBinding) :
+    RecyclerView.ViewHolder(binding.root){
     @RequiresApi(Build.VERSION_CODES.O)
+
     fun bind(
-        cardAd: HotelAddsModel?
+        cardAd: HotelAddsModel?,
+        clickListener: () -> Unit
     ) = with(binding){
         textViewAddressCard.text = cardAd?.address
         textViewNameCardAd.text = cardAd?.name
@@ -25,7 +28,12 @@ class CardViewHolder(private val binding: CardAdBinding) : RecyclerView.ViewHold
             textViewRodentCard.visibility = View.VISIBLE
         if(cardAd?.other == true)
             textViewOtherCard.visibility = View.VISIBLE
+        itemView.setOnClickListener {
+            clickListener(
+            )
+        }
 
     }
+
 
 }

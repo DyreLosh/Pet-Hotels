@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
@@ -27,7 +28,7 @@ class CompanyAdsFragment : Fragment() {
     ): View {
         binding = FragmentCompanyAdsBinding.inflate(inflater, container, false)
         viewModel.getAdds()
-        val adapter = CardsAdsAdapter()
+        val adapter = CardsAdsAdapter{ -> findNavController().navigate(R.id.action_mainFragment_to_viewingAdFragment)}
         binding.recyclerViewCardAd.adapter = adapter
 
         viewModel.responseAdds.observe(viewLifecycleOwner){ responseAdds ->
@@ -36,18 +37,8 @@ class CompanyAdsFragment : Fragment() {
             adapter.submitList(listAdd)
         }
 
-//        val cardCompanyAd = listOf(
-//
-//            CardAd(
-//                nameHotel = "Petwish",
-//                addressHotel = "Московская область, Пушкинск..."
-//            )
-//        )
-//
-//        binding.recyclerViewCardAd.adapter = CardsAdsAdapter(cardCompanyAd)
+
         binding.newAddButton.setOnClickListener {
-//            val intent = Intent(activity, AppendAddFragment::class.java)
-//            startActivity(intent)
             findNavController().navigate(R.id.action_mainFragment_to_appendAddFragment)
         }
         return binding.root

@@ -1,4 +1,4 @@
- package com.dyrelosh.pethotels.presentation
+ package com.dyrelosh.pethotels.presentation.ui.company.viewing_ad
 
 import android.os.Bundle
 import android.view.LayoutInflater

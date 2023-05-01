@@ -150,6 +150,7 @@
                 android:textColorHint="@color/text_hint"
                 app:boxStrokeColor="@color/text_hint"
                 app:hintTextColor="@color/text_hint"
+                app:passwordToggleEnabled="true"
                 app:layout_constraintEnd_toEndOf="@+id/emailLayoutRegistration"
                 app:layout_constraintStart_toStartOf="@+id/emailLayoutRegistration"
                 app:layout_constraintTop_toBottomOf="@+id/emailLayoutRegistration">
@@ -165,6 +166,7 @@
                     android:paddingEnd="33dp"
                     android:fontFamily="@font/poppins"
                     android:inputType="textPassword"
+                    app:passwordToggleEnabled="true"
                     android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
                     tools:ignore="TextContrastCheck" />

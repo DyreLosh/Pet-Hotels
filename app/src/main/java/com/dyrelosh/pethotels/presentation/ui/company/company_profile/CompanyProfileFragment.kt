@@ -31,7 +31,7 @@ class CompanyProfileFragment : Fragment() {
         viewModel.getUserInfo()
 
        binding.editIcon.setOnClickListener {
-           findNavController().navigate(R.id.action_companyProfileFragment_to_editProfileCompanyFragment)
+           findNavController().navigate(R.id.action_mainFragment_to_editProfileCompanyFragment)
        }
 
         return binding.root
