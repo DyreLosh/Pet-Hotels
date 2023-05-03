@@ -4,16 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/card_ad.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_change_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_change_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_company_ads.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_edit_ad.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_edit_profile_company.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_edit_profile_company.xml" value="0.264" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_login_company.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_open_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_profile_company.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_register_company.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/Pet-Hotels/app/src/main/res/layout/fragment_viewing_ad.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dinar/AndroidStudioProjects/PetHotels/app/src/main/res/layout-v28/fragment_splash.xml" value="0.25" />
         <entry key="..\:/Users/dinar/AndroidStudioProjects/PetHotels/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dinar/AndroidStudioProjects/PetHotels/app/src/main/res/layout/fragment_splash.xml" value="0.33" />

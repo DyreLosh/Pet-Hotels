@@ -1,36 +1,32 @@
 package com.dyrelosh.pethotels.adapter.company
 
-import android.os.Build
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.dyrelosh.pethotels.databinding.CardAdBinding
+import com.dyrelosh.pethotels.databinding.ItemCardAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 
-class CardViewHolder(private val binding: CardAdBinding) :
-    RecyclerView.ViewHolder(binding.root){
-    @RequiresApi(Build.VERSION_CODES.O)
+class CardViewHolder(private val binding: ItemCardAdBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
-        cardAd: HotelAddsModel?,
-        clickListener: () -> Unit
-    ) = with(binding){
-        textViewAddressCard.text = cardAd?.address
-        textViewNameCardAd.text = cardAd?.name
-        textViewCityCard.text = cardAd?.city
-        textViewNumberCard.text = cardAd?.number
-        textViewDescriptionCard.text = cardAd?.description
-        if(cardAd?.cat == true)
+        cardAd: HotelAddsModel,
+        clickListener: (String) -> Unit
+    ) = with(binding) {
+        textViewAddressCard.text = cardAd.address
+        textViewNameCardAd.text = cardAd.name
+        textViewCityCard.text = cardAd.city
+        textViewNumberCard.text = cardAd.number
+        textViewDescriptionCard.text = cardAd.description
+        if (cardAd.cat)
             textViewCatCard.visibility = View.VISIBLE
-        if(cardAd?.dog == true)
+        if (cardAd.dog)
             textViewDogCard.visibility = View.VISIBLE
-        if(cardAd?.rodent == true)
+        if (cardAd.rodent)
             textViewRodentCard.visibility = View.VISIBLE
-        if(cardAd?.other == true)
+        if (cardAd.other)
             textViewOtherCard.visibility = View.VISIBLE
-        itemView.setOnClickListener {
-            clickListener(
-            )
+        root.setOnClickListener {
+            clickListener.invoke(cardAd.id)
         }
 
     }

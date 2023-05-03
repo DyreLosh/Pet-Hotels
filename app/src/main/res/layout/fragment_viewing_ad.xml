@@ -25,7 +25,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/titleProfile"
+                android:id="@+id/titleViewingAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -42,14 +42,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/photoHotelViewingAd"
+                android:id="@+id/photoViewingAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/ic_photo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleProfile" />
+                app:layout_constraintTop_toBottomOf="@+id/titleViewingAd" />
 
             <TextView
                 android:id="@+id/citiTextViewViewingAd"
@@ -58,12 +58,12 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/citi_viewing_ad"
+                tools:text="@string/citi_viewing_ad"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/photoHotelViewingAd" />
+                app:layout_constraintTop_toBottomOf="@+id/photoViewingAd" />
 
             <TextView
                 android:id="@+id/addressTextViewViewingAd"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/address_viewing_ad"
+                tools:text="@string/address_viewing_ad"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -86,7 +86,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/description_viewing_ad"
+                tools:text="@string/description_viewing_ad"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/addressTextViewViewingAd"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/number_viewing_ad"
+                tools:text="@string/number_viewing_ad"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/addressTextViewViewingAd"

@@ -25,6 +25,13 @@ interface ApiPetHotels {
         @Body body: HotelInfoModel
     ): Response<HotelInfoModel>
 
+    @GET("api/pethotel/advertisement/{id}")
+    suspend fun getAddInfo(
+        @Header("Authorization") token: String?,
+        @Path("id") id: String
+    ): Response<HotelAddsModel>
+
+
     @GET("api/pethotel/advertisement")
     suspend fun getAdds(
         @Header("Authorization") token: String?

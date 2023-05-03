@@ -1,41 +1,42 @@
 package com.dyrelosh.pethotels.adapter.company
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.dyrelosh.pethotels.databinding.CardAdBinding
+import com.dyrelosh.pethotels.databinding.ItemCardAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 
-class CardsAdsAdapter(
-    private val clickListener: () -> Unit
-    ) : RecyclerView.Adapter<CardViewHolder>() {
+class CardsAdsAdapter() : RecyclerView.Adapter<CardViewHolder>() {
 
-    private var cardsAd = mutableListOf<HotelAddsModel?>()
+    private var cardsAd = mutableListOf<HotelAddsModel>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): CardViewHolder {
         return CardViewHolder(
-            CardAdBinding.inflate(
+            ItemCardAdBinding.inflate(
             LayoutInflater.from(parent.context),
                 parent,
                 false
             )
         )
     }
+    var itemClick: (String) -> Unit = {}
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        cardsAd[position]?.let { holder.bind(it, clickListener) }
-    }
+     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
+        holder.bind(cardsAd[position], itemClick) }
+
+
 
     override fun getItemCount(): Int = cardsAd.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun submitList(listAdModel: MutableList<HotelAddsModel>) {
         cardsAd.clear()
         cardsAd.addAll(listAdModel)
-
+        notifyDataSetChanged()
     }
 }

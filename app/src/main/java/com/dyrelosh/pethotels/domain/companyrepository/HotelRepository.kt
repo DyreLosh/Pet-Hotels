@@ -18,6 +18,8 @@ interface HotelRepository {
 
     suspend fun getAdds(token: String): List<HotelAddsModel>?
 
+    suspend fun getAddInfo(token: String, id: String) : HotelAddsModel
+
     suspend fun appendAdd(
         token: String,
         hotelAppendAddModel: HotelAppendAddModel

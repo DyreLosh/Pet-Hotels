@@ -26,7 +26,7 @@ class CompanyProfileFragment : Fragment() {
                 binding.titleProfile.text = hotelInfo.name
                 binding.emailTextviewCompanyProfile.text = hotelInfo.email
                 binding.INNTextviewCompanyProfile.text = hotelInfo.inn
-            }
+                }
         }
         viewModel.getUserInfo()
 

@@ -34,4 +34,7 @@ val domainDi = module {
     factory {
         GetAddUseCase(get())
     }
+    factory {
+        GetOneAddUseCase(get())
+    }
 }

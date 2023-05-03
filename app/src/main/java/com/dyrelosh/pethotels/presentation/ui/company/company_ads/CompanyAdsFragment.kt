@@ -6,13 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentCompanyAdsBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.adapter.company.CardsAdsAdapter
+import com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.ViewingAdFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CompanyAdsFragment : Fragment() {
@@ -20,6 +22,12 @@ class CompanyAdsFragment : Fragment() {
     lateinit var binding: FragmentCompanyAdsBinding
     private val listAdd = mutableListOf<HotelAddsModel>()
     private val viewModel by viewModel<CompanyAdsViewModel>()
+    private val cardAdapter by lazy { CardsAdsAdapter()  }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.getAdds()
+    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -27,21 +35,28 @@ class CompanyAdsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentCompanyAdsBinding.inflate(inflater, container, false)
-        viewModel.getAdds()
-        val adapter = CardsAdsAdapter{ -> findNavController().navigate(R.id.action_mainFragment_to_viewingAdFragment)}
-        binding.recyclerViewCardAd.adapter = adapter
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.recyclerViewCardAd.adapter = cardAdapter
 
         viewModel.responseAdds.observe(viewLifecycleOwner){ responseAdds ->
-            listAdd.clear()
             listAdd.addAll(responseAdds)
-            adapter.submitList(listAdd)
+            cardAdapter.submitList(listAdd)
+            listAdd.clear()
         }
 
 
         binding.newAddButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_appendAddFragment)
         }
-        return binding.root
-    }
 
+        cardAdapter.itemClick = {
+            ViewingAdFragment.newInstance(it)
+            findNavController().navigate(R.id.action_mainFragment_to_viewingAdFragment, bundleOf( "ParamKey" to it ))
+        }
+    }
 }

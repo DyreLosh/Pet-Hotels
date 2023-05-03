@@ -48,6 +48,10 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 //        return BitmapFactory.decodeStream(ApiService.retrofit.getUserPhoto("Bearer $token", id).body()!!.byteStream())
 //    }
 
+    override suspend fun getAddInfo(token: String, id: String): HotelAddsModel {
+        return ApiService.retrofit.getAddInfo("Bearer $token", id).body()!!
+    }
+
     override suspend fun getAdds(token: String): List<HotelAddsModel>? {
         return ApiService.retrofit.getAdds("Bearer $token").body()
     }
