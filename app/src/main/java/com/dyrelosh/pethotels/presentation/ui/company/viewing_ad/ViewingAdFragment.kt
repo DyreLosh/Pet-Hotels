@@ -43,7 +43,7 @@ class ViewingAdFragment : Fragment() {
                 addressTextViewViewingAd.text = addInfo.address
                 descriptionTextViewViewingAd.text = addInfo.description
                 numberTextViewViewingAd.text = addInfo.number
-                Picasso.get().load("")
+                Picasso.get().load("https://st.cherinfo.ru/pages/2019/06/21/luntik-32.png")
                         // TODO нужно добавить плейсхолдер, на то время пока загружается картинка
                    // .placeholder(R.drawable.hotel_placeholder)
                     .into(photoViewingAd)
