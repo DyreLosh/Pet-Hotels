@@ -1,7 +1,10 @@
 package com.dyrelosh.pethotels.adapter.company
 
 import android.view.View
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.ItemCardAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 
@@ -28,7 +31,9 @@ class CardViewHolder(private val binding: ItemCardAdBinding) :
         root.setOnClickListener {
             clickListener.invoke(cardAd.id)
         }
-
+//        editAdCompanyCard.setOnClickListener {
+//            clickListener()
+//        }
     }
 
 

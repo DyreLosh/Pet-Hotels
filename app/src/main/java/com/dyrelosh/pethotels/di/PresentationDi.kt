@@ -6,9 +6,11 @@ import com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsView
 import com.dyrelosh.pethotels.presentation.login.CompanyLoginViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.company_profile.CompanyProfileFragmentViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.company_profile.EditProfileCompanyFragmentViewModel
+import com.dyrelosh.pethotels.presentation.ui.company.edit_ad.EditAdViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.register.CompanyRegisterViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.CompanyViewingAdViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.scope.get
 import org.koin.dsl.module
 
 val presentationDi = module {
@@ -36,7 +38,8 @@ val presentationDi = module {
     viewModel{
         EditProfileCompanyFragmentViewModel(
             editProfileCompanyUseCase = get(),
-            getTokenUseCase= get()
+            getTokenUseCase= get(),
+            getHotelInfoUseCase = get(),
         )
     }
     viewModel{
@@ -54,6 +57,13 @@ val presentationDi = module {
     viewModel{
         CompanyViewingAdViewModel(
             getTokenHotelUseCase = get(),
+            getOneAddUseCase = get()
+        )
+    }
+    viewModel{
+        EditAdViewModel(
+            getTokenUseCase = get(),
+            editAdCompanyUseCase = get(),
             getOneAddUseCase = get()
         )
     }

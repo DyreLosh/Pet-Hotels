@@ -31,6 +31,11 @@ interface ApiPetHotels {
         @Path("id") id: String
     ): Response<HotelAddsModel>
 
+    @PUT("api/pethotel/advertisement")
+    suspend fun editAdCompany(
+        @Header("Authorization") token: String?,
+        @Body body: HotelAddsModel
+    ): Response<HotelAddsModel>
 
     @GET("api/pethotel/advertisement")
     suspend fun getAdds(

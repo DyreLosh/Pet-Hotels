@@ -26,5 +26,4 @@ class CompanyViewingAdViewModel (
             _addInfo.value = getOneAddUseCase.execute(token!!, id)
         }
     }
-
 }

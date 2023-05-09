@@ -53,9 +53,6 @@
             android:id="@+id/action_mainFragment_to_appendAddFragment"
             app:destination="@id/appendAddFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_editAdFragment"
-            app:destination="@id/editAdFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_viewingAdFragment"
             app:destination="@id/viewingAdFragment">
 
@@ -66,6 +63,9 @@
         <action
             android:id="@+id/action_mainFragment_to_editProfileCompanyFragment"
             app:destination="@id/editProfileCompanyFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewingAdFragment2"
+            app:destination="@id/viewingAdFragment" />
     </fragment>
     <fragment
         android:id="@+id/companyAdsEmptyFragment"
@@ -162,7 +162,15 @@
         android:id="@+id/viewingAdFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.ViewingAdFragment"
         android:label="fragment_viewing_ad"
-        tools:layout="@layout/fragment_viewing_ad" />
+        tools:layout="@layout/fragment_viewing_ad" >
+        <action
+            android:id="@+id/action_viewingAdFragment_to_editAdFragment"
+            app:destination="@id/editAdFragment">
+            <argument
+                android:name="postId"
+                app:argType="string" />
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/companyProfileFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.company.company_profile.CompanyProfileFragment"

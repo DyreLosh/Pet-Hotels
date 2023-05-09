@@ -28,6 +28,15 @@ class EditProfileCompanyFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+        viewModel.hotelInfo.observe(viewLifecycleOwner) { hotelInfo ->
+            if (hotelInfo != null) {
+                binding.INNEditTextEditProfile.setText(hotelInfo.inn)
+                binding.nameHotelEditTextEditProfile.setText(hotelInfo.name)
+                binding.emailEditTextEditProfile.setText(hotelInfo.email)
+            }
+        }
+        viewModel.getUserInfo()
+
         binding.saveButtonEditProfile.setOnClickListener {
             with(binding) {
                 nameHotelLayoutEditProfile.error =
@@ -50,6 +59,7 @@ class EditProfileCompanyFragment : Fragment() {
 
                 }
             }
+            findNavController().popBackStack()
         }
 
         return binding.root

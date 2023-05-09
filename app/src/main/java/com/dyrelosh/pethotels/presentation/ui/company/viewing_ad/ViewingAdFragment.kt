@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentViewingAdBinding
 import com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsFragment
 import com.squareup.picasso.Picasso
@@ -50,8 +52,16 @@ class ViewingAdFragment : Fragment() {
             }
         }
 
+        binding.editAdCompanyCard.setOnClickListener {
+            findNavController().navigate(R.id.action_viewingAdFragment_to_editAdFragment, bundleOf( ID_KEY to it ))
+        }
+
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
+    }
+    companion object {
+        const val REQ_KEY = "ViewingAdFragment"
+        const val ID_KEY = "EditAdFragment"
     }
 }

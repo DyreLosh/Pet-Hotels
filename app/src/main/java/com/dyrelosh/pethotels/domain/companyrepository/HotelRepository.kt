@@ -29,6 +29,11 @@ interface HotelRepository {
 //
     suspend fun getHotelInfo(token: String): HotelInfoModel?
 
+    suspend fun editAdCompany(
+        token: String,
+        addsModel: HotelAddsModel
+    ): HotelAddsModel?
+
     suspend fun editProfileCompany(
         token: String,
         hotelInfoModel: HotelInfoModel

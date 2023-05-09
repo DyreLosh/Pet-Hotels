@@ -53,7 +53,6 @@ class CompanyAdsFragment : Fragment() {
         binding.newAddButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_appendAddFragment)
         }
-
         cardAdapter.itemClick = {
              findNavController().navigate(R.id.action_mainFragment_to_viewingAdFragment, bundleOf( PAIR_KEY to it ))
         }
