@@ -57,6 +57,7 @@ val presentationDi = module {
     viewModel{
         CompanyViewingAdViewModel(
             getTokenHotelUseCase = get(),
+            editAdCompanyUseCase = get(),
             getOneAddUseCase = get()
         )
     }

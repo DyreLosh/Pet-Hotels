@@ -23,7 +23,7 @@ class EditAdFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        itemId = arguments?.getString(ViewingAdFragment.ID_KEY)
+       // itemId = arguments?.getString(ViewingAdFragment.ID_KEY)
     }
 
     override fun onCreateView(
@@ -48,6 +48,11 @@ class EditAdFragment : Fragment() {
                 addressHotelEditTextAdd.setText(adInfo.address)
                 numberEditText.setText(adInfo.number)
                 hintDescribeAddAd.setText(adInfo.description)
+                if(adInfo.dog == true)
+                checkboxRodentAddAd.isChecked
+                checkboxCatAddAd.isChecked
+                checkboxDogAddAd.isChecked
+                checkboxOtherAnimalAddAd.isChecked
             }
         }
 
@@ -55,7 +60,7 @@ class EditAdFragment : Fragment() {
             with(binding){
                 viewModel.editAdCompany(
                     HotelAddsModel(
-                        id = it.id.toString(),
+                        id = itemId.toString(),
                         name = nameHotelEditTextAdd.text.toString(),
                         city = cityHotelEditTextAdd.text.toString(),
                         address = addressHotelEditTextAdd.text.toString(),

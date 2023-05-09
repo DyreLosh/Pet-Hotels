@@ -30,6 +30,5 @@ class EditAdViewModel(
             _adInfo.value = editAdCompanyUseCase.execute(token!!, hotelAddsModel)
             _adInfo.value?.let { editAdCompanyUseCase.execute(token, hotelAddsModel) }
         }
-
     }
 }

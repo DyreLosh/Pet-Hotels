@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentViewingAdBinding
+import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsFragment
 import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,28 +41,54 @@ class ViewingAdFragment : Fragment() {
 
         viewModel.addInfo.observe(viewLifecycleOwner) { addInfo ->
             with(binding){
-                titleViewingAd.text = addInfo.name
-                citiTextViewViewingAd.text = addInfo.city
-                addressTextViewViewingAd.text = addInfo.address
-                descriptionTextViewViewingAd.text = addInfo.description
-                numberTextViewViewingAd.text = addInfo.number
-                Picasso.get().load("https://st.cherinfo.ru/pages/2019/06/21/luntik-32.png")
-                        // TODO нужно добавить плейсхолдер, на то время пока загружается картинка
-                   // .placeholder(R.drawable.hotel_placeholder)
-                    .into(photoViewingAd)
+                nameHotelEditTextAdd.setText(addInfo.name)
+                cityHotelEditTextAdd.setText(addInfo.city)
+                addressHotelEditTextAdd.setText(addInfo.address)
+                numberEditText.setText(addInfo.number)
+                hintDescribeAddAd.setText(addInfo.description)
+                if (addInfo.dog == true)
+                    checkboxDogAddAd.toggle()
+                if (addInfo.cat == true)
+                    checkboxCatAddAd.toggle()
+                if (addInfo.other == true)
+                    checkboxOtherAnimalAddAd.toggle()
+                if (addInfo.rodent == true)
+                    checkboxRodentAddAd.toggle()
+
             }
         }
 
-        binding.editAdCompanyCard.setOnClickListener {
-            findNavController().navigate(R.id.action_viewingAdFragment_to_editAdFragment, bundleOf( ID_KEY to it ))
+        binding.saveButtonAd.setOnClickListener {
+            with(binding){
+                viewModel.editAdCompany(
+                    HotelAddsModel(
+                        id = it.id.toString(),
+                        name = nameHotelEditTextAdd.text.toString(),
+                        city = cityHotelEditTextAdd.text.toString(),
+                        address = addressHotelEditTextAdd.text.toString(),
+                        number = numberEditText.text.toString(),
+                        description = hintDescribeAddAd.text.toString(),
+                        cat = checkboxCatAddAd.isChecked,
+                        rodent = checkboxRodentAddAd.isChecked,
+                        dog = checkboxDogAddAd.isChecked,
+                        other = checkboxOtherAnimalAddAd.isChecked
+                    )
+                )
+                findNavController().popBackStack()
+            }
+
         }
+
+//        binding.editAdCompanyCard.setOnClickListener {
+//            findNavController().navigate(R.id.action_viewingAdFragment_to_editAdFragment)
+//        }
 
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
     }
-    companion object {
-        const val REQ_KEY = "ViewingAdFragment"
-        const val ID_KEY = "EditAdFragment"
-    }
+//    companion object {
+//        const val REQ_KEY = "ViewingAdFragment"
+//        const val ID_KEY = "EditAdFragment"
+//    }
 }

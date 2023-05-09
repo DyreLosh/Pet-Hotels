@@ -40,8 +40,8 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.editProfileCompany("Bearer $token", hotelInfoModel).body()
     }
 
-    override suspend fun editAdCompany(token: String, hotelAddsModel: HotelAddsModel): HotelAddsModel? {
-        return ApiService.retrofit.editAdCompany("Bearer $token", hotelAddsModel).body()
+    override suspend fun editAdCompany(token: String, addsModel: HotelAddsModel): HotelAddsModel? {
+        return ApiService.retrofit.editAdCompany("Bearer $token", addsModel).body()
     }
 
 //    override suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int {
