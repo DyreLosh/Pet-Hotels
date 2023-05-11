@@ -21,7 +21,7 @@ class AppendAddFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAddAppendBinding.inflate(inflater, container, false)
        // setContentView(binding.root)
         binding.imageBack.setOnClickListener {
@@ -29,11 +29,6 @@ class AppendAddFragment : Fragment() {
         }
         binding.saveButtonAddAd.setOnClickListener {
             with(binding){
-//
-//                        nameHotelLayoutAppendAdd.isNotEmpty() &&
-//                        numberHotelLayoutAppendAdd.isNotEmpty() &&
-//                        describeHotelLayoutAppendAdd.isNotEmpty()
-
                 val newAdd = HotelAppendAddModel(
                     name = nameHotelEditTextAppendAdd.text.toString(),
                     city = cityHotelEditTextAppendAdd.text.toString(),
@@ -49,7 +44,7 @@ class AppendAddFragment : Fragment() {
             }
             viewModel.appendAddAction.observe(viewLifecycleOwner){
                 if (it) {
-                    findNavController().popBackStack()
+                    findNavController().navigate(R.id.action_appendAddFragment_to_mainFragment)
                 }
             }
         }

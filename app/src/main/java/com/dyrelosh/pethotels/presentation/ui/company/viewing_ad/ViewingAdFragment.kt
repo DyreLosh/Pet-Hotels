@@ -62,7 +62,7 @@ class ViewingAdFragment : Fragment() {
             with(binding){
                 viewModel.editAdCompany(
                     HotelAddsModel(
-                        id = it.id.toString(),
+                        id = itemId.toString(),
                         name = nameHotelEditTextAdd.text.toString(),
                         city = cityHotelEditTextAdd.text.toString(),
                         address = addressHotelEditTextAdd.text.toString(),
@@ -74,21 +74,12 @@ class ViewingAdFragment : Fragment() {
                         other = checkboxOtherAnimalAddAd.isChecked
                     )
                 )
-                findNavController().popBackStack()
             }
-
+            findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
         }
-
-//        binding.editAdCompanyCard.setOnClickListener {
-//            findNavController().navigate(R.id.action_viewingAdFragment_to_editAdFragment)
-//        }
 
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
     }
-//    companion object {
-//        const val REQ_KEY = "ViewingAdFragment"
-//        const val ID_KEY = "EditAdFragment"
-//    }
 }
