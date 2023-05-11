@@ -303,14 +303,31 @@
                 app:layout_constraintStart_toStartOf="@+id/hintPhotoAddAd"
                 app:layout_constraintTop_toBottomOf="@+id/hintPhotoAddAd" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteButtonAd"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/delete"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/orange"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/saveButtonAd"
+                app:layout_constraintStart_toStartOf="@+id/saveButtonAd"
+                app:layout_constraintTop_toBottomOf="@+id/saveButtonAd" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/poppins"
-                app:layout_constraintEnd_toEndOf="@+id/saveButtonAd"
-                app:layout_constraintStart_toStartOf="@+id/saveButtonAd"
-                app:layout_constraintTop_toBottomOf="@+id/saveButtonAd" />
+                app:layout_constraintEnd_toEndOf="@+id/deleteButtonAd"
+                app:layout_constraintStart_toStartOf="@+id/deleteButtonAd"
+                app:layout_constraintTop_toBottomOf="@+id/deleteButtonAd" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

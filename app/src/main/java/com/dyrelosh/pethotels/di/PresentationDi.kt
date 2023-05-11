@@ -55,7 +55,8 @@ val presentationDi = module {
         CompanyViewingAdViewModel(
             getTokenHotelUseCase = get(),
             editAdCompanyUseCase = get(),
-            getOneAddUseCase = get()
+            getOneAddUseCase = get(),
+            deleteAddUseCase = get()
         )
     }
 }

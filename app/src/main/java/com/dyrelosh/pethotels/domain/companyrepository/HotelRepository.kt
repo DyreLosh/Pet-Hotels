@@ -25,8 +25,8 @@ interface HotelRepository {
         hotelAppendAddModel: HotelAppendAddModel
     ): Boolean
 
-//    suspend fun deleteAdd(token: String, id: String): Boolean
-//
+    suspend fun deleteAdd(token: String, id: String): Boolean
+
     suspend fun getHotelInfo(token: String): HotelInfoModel?
 
     suspend fun editAdCompany(

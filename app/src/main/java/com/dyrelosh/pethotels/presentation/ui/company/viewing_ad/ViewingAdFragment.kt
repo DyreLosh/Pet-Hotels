@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -81,5 +82,11 @@ class ViewingAdFragment : Fragment() {
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        binding.deleteButtonAd.setOnClickListener {
+            viewModel.deleteAdd(itemId.toString())
+            findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
+        }
+
     }
 }

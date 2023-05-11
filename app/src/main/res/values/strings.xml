@@ -38,6 +38,7 @@
     <string name="animal_bird">Птички</string>
     <string name="animal_other">Другие</string>
     <string name="save">Сохранить</string>
+    <string name="delete">Удалить объявление</string>
     <string name="title_menu_ad">Объявления</string>
     <string name="title_menu_profile">Профиль</string>
     <string name="title_profile">Название отеля</string>

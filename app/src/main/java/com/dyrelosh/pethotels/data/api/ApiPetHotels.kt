@@ -48,14 +48,11 @@ interface ApiPetHotels {
         @Body body: HotelAppendAddModel
     ): Response<Unit>
 
-//    @DELETE("api/todos/{id}")
-//    suspend fun deleteTodos(
-//        @Header("Authorization") token: String?,
-//        @Path("id") id: String
-//    ): Response<Unit>
-//
-//
-//
+    @DELETE("api/pethotel/advertisement/{id}")
+    suspend fun deleteAdd(
+        @Header("Authorization") token: String?,
+        @Path("id") id: String
+    ): Response<Unit>
 
 
 //    @Multipart

@@ -63,17 +63,9 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     override suspend fun appendAdd(token: String, hotelAppendAddModel: HotelAppendAddModel): Boolean {
         return ApiService.retrofit.appendAdd("Bearer $token", hotelAppendAddModel).isSuccessful
     }
-//
-//    override suspend fun deleteAdd(token: String, id: String): Boolean {
-//        return ApiService.retrofit.deleteTodos("Bearer $token", id).isSuccessful
-//    }
 
-//    override suspend fun loginCompany(hotelLoginModel: HotelLoginModel): TokenCompanyModel? {
-//        return ApiService.retrofit.login(userLoginModel).body()
-//    }
+    override suspend fun deleteAdd(token: String, id: String): Boolean {
+        return ApiService.retrofit.deleteAdd("Bearer $token", id).isSuccessful
+    }
 
-//    fun authUser(param: LoginHotelUseCase.Param): String {
-//     //TODO ApiService.users.filter { it.email == param.email && it.password == param.password }
-//    return ApiService.getToken()
-//    }
 }

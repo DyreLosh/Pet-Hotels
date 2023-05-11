@@ -44,11 +44,11 @@ class CompanyAdsFragment : Fragment() {
         binding.recyclerViewCardAd.adapter = cardAdapter
 
         viewModel.responseAdds.observe(viewLifecycleOwner){ responseAdds ->
+            listAdd.clear()
             listAdd.addAll(responseAdds)
             cardAdapter.submitList(listAdd)
-            listAdd.clear()
-        }
 
+        }
 
         binding.newAddButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_appendAddFragment)
