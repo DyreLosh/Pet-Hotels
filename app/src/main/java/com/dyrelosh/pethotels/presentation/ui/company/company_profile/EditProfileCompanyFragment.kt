@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.dyrelosh.pethotels.Validator
+import com.dyrelosh.pethotels.common.Validator
 import com.dyrelosh.pethotels.databinding.FragmentEditProfileCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelInfoModel
 import org.koin.androidx.viewmodel.ext.android.viewModel

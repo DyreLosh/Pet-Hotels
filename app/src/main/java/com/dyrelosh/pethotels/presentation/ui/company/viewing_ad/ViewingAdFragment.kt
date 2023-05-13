@@ -7,12 +7,10 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.URIPathHelper
+import com.dyrelosh.pethotels.common.URIPathHelper
 import com.dyrelosh.pethotels.databinding.FragmentViewingAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsFragment
@@ -68,7 +66,7 @@ class ViewingAdFragment : Fragment() {
                     checkboxOtherAnimalAddAd.toggle()
                 if (addInfo.rodent == true)
                     checkboxRodentAddAd.toggle()
-                Picasso.get().load(addInfo.imageId).into(PhotoAd)
+              //  Picasso.get().load(addInfo.imageId).into(PhotoAd)
             }
         }
 
@@ -88,7 +86,7 @@ class ViewingAdFragment : Fragment() {
                 viewModel.editAdCompany(
                     HotelAddsModel(
                         id = itemId.toString(),
-                        imageId = "",
+                        //imageId = "",
                         name = nameHotelEditTextAdd.text.toString(),
                         city = cityHotelEditTextAdd.text.toString(),
                         address = addressHotelEditTextAdd.text.toString(),

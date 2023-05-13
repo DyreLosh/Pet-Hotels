@@ -1,5 +1,6 @@
 package com.dyrelosh.pethotels.data.api
 
+import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.domain.companymodels.*
 import okhttp3.MultipartBody
 import okhttp3.ResponseBody
@@ -42,13 +43,13 @@ interface ApiPetHotels {
     @GET("api/pethotel/advertisement")
     suspend fun getAdds(
         @Header("Authorization") token: String?
-    ): Response<List<HotelAddsModel>>
+    ): Response<List<HotelResponse>>
 
     @POST("api/pethotel/advertisement")
     suspend fun appendAdd(
         @Header("Authorization") token: String?,
         @Body body: HotelAppendAddModel
-    ): Response<Unit>
+    ): Response<HotelResponse>
 
     @DELETE("api/pethotel/advertisement/{id}")
     suspend fun deleteAdd(
@@ -60,7 +61,8 @@ interface ApiPetHotels {
     @POST("api/pethotel/advertisement/{advertisementId}/photo")
     suspend fun setHotelPhoto(
         @Header("Authorization") token: String?,
-        @Part uploadedFile: MultipartBody.Part
+        @Path("advertisementId") advertisementId: String,
+        @Part file: MultipartBody.Part,
     ): Response<Unit>
 
     @GET("photo/{fileId}")

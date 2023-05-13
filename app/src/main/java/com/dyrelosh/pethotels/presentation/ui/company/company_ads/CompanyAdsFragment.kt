@@ -8,14 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
-import androidx.navigation.fragment.findNavController
+ import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentCompanyAdsBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.adapter.company.CardsAdsAdapter
-import com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.ViewingAdFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
+ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CompanyAdsFragment : Fragment() {
 
@@ -44,10 +42,7 @@ class CompanyAdsFragment : Fragment() {
         binding.recyclerViewCardAd.adapter = cardAdapter
 
         viewModel.responseAdds.observe(viewLifecycleOwner){ responseAdds ->
-            listAdd.clear()
-            listAdd.addAll(responseAdds)
-            cardAdapter.submitList(listAdd)
-
+            cardAdapter.submitList(responseAdds)
         }
 
         binding.newAddButton.setOnClickListener {

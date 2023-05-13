@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.URIPathHelper
+import com.dyrelosh.pethotels.common.URIPathHelper
 import com.dyrelosh.pethotels.databinding.FragmentAddAppendBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAppendAddModel
 import okhttp3.MediaType
@@ -25,13 +25,12 @@ class AppendAddFragment : Fragment() {
     private val viewModel by viewModel<AppendAddViewModel>()
     lateinit var binding: FragmentAddAppendBinding
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAddAppendBinding.inflate(inflater, container, false)
-       // setContentView(binding.root)
+        // setContentView(binding.root)
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -46,30 +45,32 @@ class AppendAddFragment : Fragment() {
             startActivityForResult(photoIntent, 1)
         }
         binding.saveButtonAddAd.setOnClickListener {
-            with(binding){
-                val newAdd = HotelAppendAddModel(
-                    imageId = "",
-                    name = nameHotelEditTextAppendAdd.text.toString(),
-                    city = cityHotelEditTextAppendAdd.text.toString(),
-                    address = addressHotelEditTextAppendAdd.text.toString(),
-                    number = numberHotelEditTextAppendAdd.text.toString(),
-                    description = describeHotelEditTextAppendAdd.text.toString(),
-                    cat = checkboxCatAppendAdd.isChecked,
-                    rodent = checkboxRodentAppendAdd.isChecked,
-                    dog = checkboxDogAppendAdd.isChecked,
-                    other = checkboxOtherAnimalAppendAdd.isChecked
+            with(binding) {
+                viewModel.appendAdd(
+                    HotelAppendAddModel(
+                        name = nameHotelEditTextAppendAdd.text.toString(),
+                        city = cityHotelEditTextAppendAdd.text.toString(),
+                        address = addressHotelEditTextAppendAdd.text.toString(),
+                        number = numberHotelEditTextAppendAdd.text.toString(),
+                        description = describeHotelEditTextAppendAdd.text.toString(),
+                        cat = checkboxCatAppendAdd.isChecked,
+                        rodent = checkboxRodentAppendAdd.isChecked,
+                        dog = checkboxDogAppendAdd.isChecked,
+                        other = checkboxOtherAnimalAppendAdd.isChecked
+                    )
                 )
-                viewModel.appendAdd(newAdd)
             }
 
-            viewModel.appendAddAction.observe(viewLifecycleOwner){
-                if (it) {
+            viewModel.appendAddAction.observe(viewLifecycleOwner) {
+                if (it.image != null) {
                     findNavController().navigate(R.id.action_appendAddFragment_to_mainFragment)
                 }
             }
         }
         return binding.root
     }
+
+    // TODO запрос пермишенов перед открытием галереи
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && data != null) {
@@ -78,9 +79,15 @@ class AppendAddFragment : Fragment() {
             val file = File(path)
             val requestFile =
                 RequestBody.create(MediaType.parse("multipart/form-data"), file)
-            val part = MultipartBody.Part.createFormData("uploadedFile", file.name, requestFile)
+            viewModel.setHotelPhoto(
+                MultipartBody.Part.createFormData(
+                    "file",
+                    file.name,
+                    requestFile
+                )
+            )
+
             binding.PhotoAddAd.setImageURI(data.data)
-            viewModel.setHotelPhoto(part)
         }
     }
 }

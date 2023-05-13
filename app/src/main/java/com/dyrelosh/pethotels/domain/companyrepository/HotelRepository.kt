@@ -1,6 +1,7 @@
 package com.dyrelosh.pethotels.domain.companyrepository
 
 import android.graphics.Bitmap
+import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.domain.companymodels.*
 import okhttp3.MultipartBody
 
@@ -19,14 +20,14 @@ interface HotelRepository {
 
     suspend fun loginCompany(hotelLoginModel: HotelLoginModel): TokenHotelModel?
 
-    suspend fun getAdds(token: String): List<HotelAddsModel>?
+    suspend fun getAdds(token: String): List<Hotel>?
 
     suspend fun getAddInfo(token: String, id: String) : HotelAddsModel
 
     suspend fun appendAdd(
         token: String,
         hotelAppendAddModel: HotelAppendAddModel
-    ): Boolean
+    ): Hotel
 
     suspend fun deleteAdd(token: String, id: String): Boolean
 
@@ -42,7 +43,7 @@ interface HotelRepository {
         hotelInfoModel: HotelInfoModel
     ): HotelInfoModel?
 
-    suspend fun setHotelPhoto(token: String, image: MultipartBody.Part): Int
+    suspend fun setHotelPhoto(token: String, image: MultipartBody.Part, id: String): Int
 
     suspend fun getHotelPhoto(token: String, id: String): Bitmap?
 }

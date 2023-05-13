@@ -1,18 +1,15 @@
 package com.dyrelosh.pethotels.adapter.company
 
 import android.view.View
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.ItemCardAdBinding
-import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
+import com.dyrelosh.pethotels.domain.companymodels.Hotel
 
 class CardViewHolder(private val binding: ItemCardAdBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
-        cardAd: HotelAddsModel,
+        cardAd: Hotel,
         clickListener: (String) -> Unit
     ) = with(binding) {
         textViewAddressCard.text = cardAd.address

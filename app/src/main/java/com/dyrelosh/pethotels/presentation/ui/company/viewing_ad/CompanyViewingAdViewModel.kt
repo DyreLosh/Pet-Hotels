@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
-import com.dyrelosh.pethotels.domain.companymodels.HotelInfoModel
 import com.dyrelosh.pethotels.domain.companyusecase.*
 import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
@@ -46,7 +45,7 @@ class CompanyViewingAdViewModel (
     val userPhotoLoad : LiveData<Int> = _userPhotoLoad
     fun setHotelPhoto(image: MultipartBody.Part){
         viewModelScope.launch {
-            _userPhotoLoad.value = setHotelPhotoUseCase.execute(token!!, image)
+        //    _userPhotoLoad.value = setHotelPhotoUseCase.execute(token!!, image, result.id)
         }
     }
 

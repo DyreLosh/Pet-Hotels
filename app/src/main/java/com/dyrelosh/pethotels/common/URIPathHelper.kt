@@ -1,4 +1,4 @@
-package com.dyrelosh.pethotels
+package com.dyrelosh.pethotels.common
 
 import android.content.ContentUris
 import android.content.Context
