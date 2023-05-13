@@ -42,7 +42,9 @@ val presentationDi = module {
     viewModel{
         AppendAddViewModel(
             appendAddUseCase = get(),
-            getTokenHotelUseCase = get()
+            getTokenHotelUseCase = get(),
+            getHotelPhotoUseCase = get(),
+            setHotelPhotoUseCase = get()
         )
     }
     viewModel{
@@ -56,7 +58,9 @@ val presentationDi = module {
             getTokenHotelUseCase = get(),
             editAdCompanyUseCase = get(),
             getOneAddUseCase = get(),
-            deleteAddUseCase = get()
+            deleteAddUseCase = get(),
+            getHotelPhotoUseCase = get(),
+            setHotelPhotoUseCase = get()
         )
     }
 }

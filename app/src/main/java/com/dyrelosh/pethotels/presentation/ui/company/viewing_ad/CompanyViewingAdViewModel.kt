@@ -9,12 +9,15 @@ import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.domain.companymodels.HotelInfoModel
 import com.dyrelosh.pethotels.domain.companyusecase.*
 import kotlinx.coroutines.launch
+import okhttp3.MultipartBody
 
 class CompanyViewingAdViewModel (
     private val getTokenHotelUseCase: GetTokenHotelUseCase,
     private val getOneAddUseCase: GetOneAddUseCase,
     private val editAdCompanyUseCase: EditAdCompanyUseCase,
-    private val deleteAddUseCase: DeleteAddUseCase
+    private val deleteAddUseCase: DeleteAddUseCase,
+    private val getHotelPhotoUseCase: GetHotelPhotoUseCase,
+    private val setHotelPhotoUseCase: SetHotelPhotoUseCase
     ) : ViewModel() {
     private val token = getTokenHotelUseCase.execute()
 
@@ -37,6 +40,21 @@ class CompanyViewingAdViewModel (
     fun deleteAdd(id: String) {
         viewModelScope.launch {
             deleteAction.value = deleteAddUseCase.execute(token!!, id)
+        }
+    }
+    private var _userPhotoLoad : MutableLiveData<Int> = MutableLiveData<Int>()
+    val userPhotoLoad : LiveData<Int> = _userPhotoLoad
+    fun setHotelPhoto(image: MultipartBody.Part){
+        viewModelScope.launch {
+            _userPhotoLoad.value = setHotelPhotoUseCase.execute(token!!, image)
+        }
+    }
+
+    private var _userPhoto :MutableLiveData<Bitmap> = MutableLiveData<Bitmap>()
+    val userPhoto :LiveData<Bitmap> = _userPhoto
+    fun getHotelPhoto(id: String){
+        viewModelScope.launch {
+            _userPhoto.value = getHotelPhotoUseCase.execute(token!!, id)
         }
     }
 }

@@ -43,4 +43,10 @@ val domainDi = module {
     factory {
         DeleteAddUseCase(get())
     }
+    factory {
+        GetHotelPhotoUseCase(get())
+    }
+    factory {
+        SetHotelPhotoUseCase(get())
+    }
 }

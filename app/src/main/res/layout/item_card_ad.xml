@@ -16,14 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/editAdCompanyCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="7dp"
-            android:src="@drawable/ic_edit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <ImageView-->
+<!--            android:id="@+id/editAdCompanyCard"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="7dp"-->
+<!--            android:src="@drawable/ic_edit"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
 <!--        <ImageView-->
 <!--            android:id="@+id/imageCardAd"-->
@@ -38,13 +38,13 @@
             android:id="@+id/textViewNameCardAd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins"
-            android:textColor="@color/orange"
             android:text="Название"
+            android:textColor="@color/orange"
             android:textSize="27sp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/editAdCompanyCard"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

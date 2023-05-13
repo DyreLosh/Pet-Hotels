@@ -1,6 +1,9 @@
 package com.dyrelosh.pethotels.domain.companyrepository
 
+import android.graphics.Bitmap
 import com.dyrelosh.pethotels.domain.companymodels.*
+import okhttp3.MultipartBody
+
 //import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
 
 interface HotelRepository {
@@ -39,7 +42,7 @@ interface HotelRepository {
         hotelInfoModel: HotelInfoModel
     ): HotelInfoModel?
 
-    //suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int
+    suspend fun setHotelPhoto(token: String, image: MultipartBody.Part): Int
 
-    //suspend fun getUserPhoto(token: String, id: String): Bitmap?
+    suspend fun getHotelPhoto(token: String, id: String): Bitmap?
 }

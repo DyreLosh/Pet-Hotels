@@ -6,7 +6,7 @@ data class HotelAppendAddModel (
     val address: String,
     val number: String,
     val description: String,
- //   val photoHotel: String,
+    val imageId: String? = null,
     val cat: Boolean,
     val rodent: Boolean,
     val dog: Boolean,

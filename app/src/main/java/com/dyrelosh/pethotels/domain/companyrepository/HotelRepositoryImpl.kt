@@ -1,9 +1,12 @@
 package com.dyrelosh.pethotels.domain.companyrepository
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import com.dyrelosh.pethotels.data.api.ApiService
 import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
 import com.dyrelosh.pethotels.domain.companymodels.*
+import okhttp3.MultipartBody
 
 class HotelRepositoryImpl(context: Context) : HotelRepository {
 
@@ -44,13 +47,13 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.editAdCompany("Bearer $token", addsModel).body()
     }
 
-//    override suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int {
-//        return ApiService.retrofit.setUserPhoto("Bearer $token", image).code()
-//    }
-//
-//    override suspend fun getUserPhoto(token: String, id: String): Bitmap? {
-//        return BitmapFactory.decodeStream(ApiService.retrofit.getUserPhoto("Bearer $token", id).body()!!.byteStream())
-//    }
+    override suspend fun setHotelPhoto(token: String, image: MultipartBody.Part): Int {
+        return ApiService.retrofit.setHotelPhoto("Bearer $token", image).code()
+    }
+
+    override suspend fun getHotelPhoto(token: String, id: String): Bitmap? {
+        return BitmapFactory.decodeStream(ApiService.retrofit.getHotelPhoto("Bearer $token", id).body()!!.byteStream())
+    }
 
     override suspend fun getAddInfo(token: String, id: String): HotelAddsModel {
         return ApiService.retrofit.getAddInfo("Bearer $token", id).body()!!

@@ -263,7 +263,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/hintDescribeHotelAddAd" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/hintPhotoAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -275,15 +275,15 @@
                 app:layout_constraintTop_toBottomOf="@+id/hintDescribeAddAd" />
 
             <ImageView
-                android:id="@+id/hintPhotoAddAd"
+                android:id="@+id/PhotoAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="7dp"
                 android:src="@drawable/ic_photo"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintEnd_toEndOf="@+id/hintPhotoAd"
+                app:layout_constraintStart_toStartOf="@+id/hintPhotoAd"
+                app:layout_constraintTop_toBottomOf="@+id/hintPhotoAd" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/saveButtonAd"
@@ -299,9 +299,9 @@
                 android:textStyle="bold"
                 app:backgroundTint="@color/orange"
                 app:cornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/hintPhotoAddAd"
-                app:layout_constraintStart_toStartOf="@+id/hintPhotoAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/hintPhotoAddAd" />
+                app:layout_constraintEnd_toEndOf="@+id/PhotoAd"
+                app:layout_constraintStart_toStartOf="@+id/PhotoAd"
+                app:layout_constraintTop_toBottomOf="@+id/PhotoAd" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/deleteButtonAd"

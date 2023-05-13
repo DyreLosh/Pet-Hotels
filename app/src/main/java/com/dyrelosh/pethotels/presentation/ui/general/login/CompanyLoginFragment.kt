@@ -41,10 +41,6 @@ class CompanyLoginFragment : Fragment() {
                 passwordLayoutInput.error =
                     validator.validatePasswordHotel(passwordEditTextInput.text)
                 if (emailLayoutInput.error == passwordLayoutInput.error) {
-//                    hotelLoginModel = HotelLoginModel(
-//                        emailHotel = emailEditTextInput.text.toString(),
-//                        passwordHotel = passwordEditTextInput.text.toString()
-//                    )
                     viewModel.loginHotel(HotelLoginModel(
                         email = emailEditTextInput.text.toString(),
                         password = passwordEditTextInput.text.toString()
@@ -59,18 +55,6 @@ class CompanyLoginFragment : Fragment() {
                 Toast.makeText(context, "Не успешно", Toast.LENGTH_SHORT).show()
             }
         }
-//            viewModel.auth(
-//                    LoginHotelUseCase.Param(
-//                        email = binding.emailEditTextInput.text.toString(),
-//                        password = binding.passwordEditTextInput.text.toString()
-//                    )
-//                )
-//                viewModel.token.observe(viewLifecycleOwner) {
-//                    if (it != null) {
-//                        findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
-//                    }
-//                }
-//            }
         return binding.root
     }
 

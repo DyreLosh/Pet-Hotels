@@ -1,6 +1,8 @@
 package com.dyrelosh.pethotels.data.api
 
 import com.dyrelosh.pethotels.domain.companymodels.*
+import okhttp3.MultipartBody
+import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -54,18 +56,17 @@ interface ApiPetHotels {
         @Path("id") id: String
     ): Response<Unit>
 
+    @Multipart
+    @POST("api/pethotel/advertisement/{advertisementId}/photo")
+    suspend fun setHotelPhoto(
+        @Header("Authorization") token: String?,
+        @Part uploadedFile: MultipartBody.Part
+    ): Response<Unit>
 
-//    @Multipart
-//    @POST("api/user/photo")
-//    suspend fun setUserPhoto(
-//        @Header("Authorization") token: String?,
-//        @Part uploadedFile: MultipartBody.Part
-//    ): Response<Unit>
-//
-//    @GET("api/user/photo/{fileId}")
-//    suspend fun getUserPhoto(
-//        @Header("Authorization") token: String?,
-//        @Path("fileId") id: String
-//    ): Response<ResponseBody>
+    @GET("photo/{fileId}")
+    suspend fun getHotelPhoto(
+        @Header("Authorization") token: String?,
+        @Path("fileId") id: String
+    ): Response<ResponseBody>
 
 }

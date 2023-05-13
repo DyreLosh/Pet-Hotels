@@ -25,11 +25,10 @@ class EditProfileCompanyFragmentViewModel(
             _hotelInfo.value = getHotelInfoUseCase.execute(token!!)
         }
     }
-        fun editProfileCompany(hotelInfoModel: HotelInfoModel) {
-            viewModelScope.launch {
-                _hotelInfo.value = editProfileCompanyUseCase.execute(token!!, hotelInfoModel)
-                _hotelInfo.value?.let { editProfileCompanyUseCase.execute(token, hotelInfoModel) }
-            }
-
+    fun editProfileCompany(hotelInfoModel: HotelInfoModel) {
+        viewModelScope.launch {
+            _hotelInfo.value = editProfileCompanyUseCase.execute(token!!, hotelInfoModel)
+            _hotelInfo.value?.let { editProfileCompanyUseCase.execute(token, hotelInfoModel) }
         }
+    }
 }
