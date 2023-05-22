@@ -27,18 +27,18 @@ class AppendAddViewModel(
 
     private var hotelPhoto: MultipartBody.Part? = null
     fun appendAdd(hotelAppendAddModel: HotelAppendAddModel) {
-        viewModelScope.launch {
-            val result = appendAddUseCase.execute(token!!, hotelAppendAddModel)
-            hotelPhoto?.let {
-                setHotelPhotoUseCase.execute(
-                    SetHotelPhotoUseCase.Params(
-                        token,
-                        it,
-                        result.id
-                    )
-                )
-            }
-        }
+//        viewModelScope.launch {
+//            val result = appendAddUseCase.execute(token!!, hotelAppendAddModel)
+//            hotelPhoto?.let {
+//                setHotelPhotoUseCase.execute(
+//                    SetHotelPhotoUseCase.Params(
+//                        token,
+//                        it,
+//                        result.id
+//                    )
+//                )
+//            }
+//        }
     }
 
     private var _userPhotoLoad: MutableLiveData<Int> = MutableLiveData<Int>()

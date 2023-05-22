@@ -7,12 +7,17 @@ import com.dyrelosh.pethotels.data.api.ApiService
 import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.domain.companymodels.*
-import okhttp3.MultipartBody
+import com.dyrelosh.pethotels.extensions.toMultipartPart
+import java.io.File
 import java.lang.Exception
 
 class HotelRepositoryImpl(context: Context) : HotelRepository {
 
     private val preferenceStorage = PreferenceStorage(context)
+
+    companion object {
+        private const val AVATAR_PART_NAME = "file"
+    }
 
     override suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): TokenHotelModel? {
         return ApiService.retrofit.registration(hotelRegisterModel).body()
@@ -53,8 +58,10 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.editAdCompany("Bearer $token", addsModel).body()
     }
 
-    override suspend fun setHotelPhoto(token: String, image: MultipartBody.Part, id: String): Int {
-        return ApiService.retrofit.setHotelPhoto("Bearer $token", id, image).code()
+    override suspend fun setHotelPhoto(token: String, imageUrl: String?, id: String): Boolean {
+        return ApiService.retrofit.setHotelPhoto(
+            "Bearer $token", id, File(imageUrl).toMultipartPart(AVATAR_PART_NAME)
+        ).isSuccessful
     }
 
     override suspend fun getHotelPhoto(token: String, id: String): Bitmap? {
@@ -62,7 +69,7 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
             BitmapFactory.decodeStream(
                 ApiService.retrofit.getHotelPhoto("Bearer $token", id).body()!!.byteStream()
             )
-        }catch(e: Exception) {
+        } catch (e: Exception) {
             null
         }
     }

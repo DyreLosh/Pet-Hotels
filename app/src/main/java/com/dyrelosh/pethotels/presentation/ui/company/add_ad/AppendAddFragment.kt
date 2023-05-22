@@ -71,23 +71,5 @@ class AppendAddFragment : Fragment() {
     }
 
     // TODO запрос пермишенов перед открытием галереи
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (resultCode == Activity.RESULT_OK && data != null) {
-            val helper = URIPathHelper()
-            val path = helper.getPath(requireContext(), data.data!!)
-            val file = File(path)
-            val requestFile =
-                RequestBody.create(MediaType.parse("multipart/form-data"), file)
-            viewModel.setHotelPhoto(
-                MultipartBody.Part.createFormData(
-                    "file",
-                    file.name,
-                    requestFile
-                )
-            )
 
-            binding.PhotoAddAd.setImageURI(data.data)
-        }
-    }
 }

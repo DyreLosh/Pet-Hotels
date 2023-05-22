@@ -1,25 +1,25 @@
 package com.dyrelosh.pethotels.presentation.ui.company.viewing_ad
 
-import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import coil.load
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.common.URIPathHelper
 import com.dyrelosh.pethotels.databinding.FragmentViewingAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
+import com.dyrelosh.pethotels.extensions.handleImagePickerResult
+import com.dyrelosh.pethotels.extensions.isStoragePermissionGranted
+import com.dyrelosh.pethotels.extensions.pickImage
 import com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsFragment
-import com.squareup.picasso.Picasso
-import okhttp3.MediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.io.File
 
 
 class ViewingAdFragment : Fragment() {
@@ -27,6 +27,22 @@ class ViewingAdFragment : Fragment() {
     lateinit var binding: FragmentViewingAdBinding
     private val viewModel by viewModel<CompanyViewingAdViewModel>()
     private var itemId: String? = null
+
+    private val pickerResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            requireActivity().handleImagePickerResult(
+                result = result,
+                needPath = true,
+                onSuccess = { stringUri ->
+                    val uri = Uri.parse(stringUri)
+                    selectedAvatarUri = uri
+                    binding.PhotoAd.load(uri.path)
+                    Toast.makeText(context, "Load", Toast.LENGTH_SHORT).show()
+                },
+                onFailure = { Toast.makeText(context, "Not load", Toast.LENGTH_SHORT).show() }
+            )
+        }
+    private var selectedAvatarUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,18 +69,19 @@ class ViewingAdFragment : Fragment() {
         viewModel.addInfo.observe(viewLifecycleOwner) { addInfo ->
            // viewModel.getHotelPhoto(addInfo.imageId)
             with(binding){
+
                 nameHotelEditTextAdd.setText(addInfo.name)
                 cityHotelEditTextAdd.setText(addInfo.city)
                 addressHotelEditTextAdd.setText(addInfo.address)
                 numberEditText.setText(addInfo.number)
                 hintDescribeAddAd.setText(addInfo.description)
-                if (addInfo.dog == true)
+                if (addInfo.dog)
                     checkboxDogAddAd.toggle()
-                if (addInfo.cat == true)
+                if (addInfo.cat)
                     checkboxCatAddAd.toggle()
-                if (addInfo.other == true)
+                if (addInfo.other)
                     checkboxOtherAnimalAddAd.toggle()
-                if (addInfo.rodent == true)
+                if (addInfo.rodent)
                     checkboxRodentAddAd.toggle()
               //  Picasso.get().load(addInfo.imageId).into(PhotoAd)
             }
@@ -98,8 +115,11 @@ class ViewingAdFragment : Fragment() {
                         other = checkboxOtherAnimalAddAd.isChecked
                     )
                 )
+                itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
+
+
             }
-            findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
+             findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
         }
 
         binding.imageBack.setOnClickListener {
@@ -111,18 +131,12 @@ class ViewingAdFragment : Fragment() {
             findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
         }
 
-    }
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (resultCode == Activity.RESULT_OK && data != null) {
-            val helper = URIPathHelper()
-            val path = helper.getPath(requireContext(), data.data!!)
-            val file = File(path)
-            val requestFile =
-                RequestBody.create(MediaType.parse("multipart/form-data"), file)
-            val part = MultipartBody.Part.createFormData("uploadedFile", file.name, requestFile)
-            binding.PhotoAd.setImageURI(data.data)
-            viewModel.setHotelPhoto(part)
+        binding.PhotoAd.setOnClickListener {
+            if (isStoragePermissionGranted()) {
+                requireActivity().pickImage(pickerResultLauncher, needCrop = true)
+            }
         }
+
     }
+
 }

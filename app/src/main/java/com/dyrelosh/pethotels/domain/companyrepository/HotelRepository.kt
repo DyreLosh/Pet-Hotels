@@ -22,7 +22,7 @@ interface HotelRepository {
 
     suspend fun getAdds(token: String): List<Hotel>?
 
-    suspend fun getAddInfo(token: String, id: String) : HotelAddsModel
+    suspend fun getAddInfo(token: String, id: String): HotelAddsModel
 
     suspend fun appendAdd(
         token: String,
@@ -43,7 +43,7 @@ interface HotelRepository {
         hotelInfoModel: HotelInfoModel
     ): HotelInfoModel?
 
-    suspend fun setHotelPhoto(token: String, image: MultipartBody.Part, id: String): Int
+    suspend fun setHotelPhoto(token: String, imageUrl: String?, id: String): Boolean
 
     suspend fun getHotelPhoto(token: String, id: String): Bitmap?
 }
