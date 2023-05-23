@@ -54,8 +54,12 @@ class CompanyAdsFragment : Fragment() {
         }
 
         cardAdapter.itemClick = {
-            ViewingAdFragment.newInstance(it)
-            findNavController().navigate(R.id.action_mainFragment_to_viewingAdFragment, bundleOf( "ParamKey" to it ))
+             findNavController().navigate(R.id.action_mainFragment_to_viewingAdFragment, bundleOf( PAIR_KEY to it ))
         }
+    }
+
+    companion object {
+        const val REQUEST_KEY = "CompanyAdsFragment"
+        const val PAIR_KEY = "ViewingAdFragment"
     }
 }
