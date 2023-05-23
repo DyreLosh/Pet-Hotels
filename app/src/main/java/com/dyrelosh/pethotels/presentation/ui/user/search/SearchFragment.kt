@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dyrelosh.pethotels.R
+import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 
-class SearchFragment : Fragment() {
+class SearchFragment : UserBaseFragment() {
+
+    override val showBottomNavigationView = true
 //TODO rename fragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

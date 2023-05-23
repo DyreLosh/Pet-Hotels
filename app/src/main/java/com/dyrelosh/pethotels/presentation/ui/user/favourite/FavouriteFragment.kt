@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dyrelosh.pethotels.R
+import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 
-class FavouriteFragment : Fragment() {
+class FavouriteFragment : UserBaseFragment() {
+    override val showBottomNavigationView = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

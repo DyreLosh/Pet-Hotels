@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.user.opencard.OpenCardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/open_hotel_image" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/openCardBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="100dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_back"/>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/oneHotelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:text="Friend for pets" />
+
+        <TextView
+            android:id="@+id/oneHotelDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/poppins"
+            android:text="dfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf dfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfgdsf gsdfg sdfg sdfg dfgdfsg dfsg sdfgsd fgsdfgsdfg sdfg sdfgsdfg dsfg"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Стоимость одних суток:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Адрес:"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/oneHotelAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ул. Большевитская 68"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/toMapButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Карта >"
+                android:textStyle="bold"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:textAlignment="textEnd"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/orange"/>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:text="Заказать"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:layout_marginHorizontal="20dp"
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/poppins"
+            android:paddingVertical="17dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

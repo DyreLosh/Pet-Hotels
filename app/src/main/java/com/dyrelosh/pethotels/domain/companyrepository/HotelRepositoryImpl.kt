@@ -4,6 +4,9 @@ import android.content.Context
 import com.dyrelosh.pethotels.data.api.ApiService
 import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
 import com.dyrelosh.pethotels.domain.companymodels.*
+import com.dyrelosh.pethotels.domain.models.TokenModel
+import com.dyrelosh.pethotels.domain.models.UserHotelModel
+import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 
 class HotelRepositoryImpl(context: Context) : HotelRepository {
 
@@ -72,4 +75,30 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 //     //TODO ApiService.users.filter { it.email == param.email && it.password == param.password }
 //    return ApiService.getToken()
 //    }
+
+
+
+    override suspend fun userRegister(registerModel: UserRegisterModel): TokenModel? {
+        return ApiService.retrofit.userRegister(registerModel).body()
+    }
+
+    override suspend fun getHotels(token: String): List<UserHotelModel>? {
+        return ApiService.retrofit.getHotels("Bearer $token").body()
+    }
+
+    override suspend fun getOneHotel(token: String, id: String): UserHotelModel {
+        return ApiService.retrofit.getHotelsID("Bearer $token", id).body()!!
+    }
+
+    override suspend fun changePassword() {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun changeUserData() {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getFavourites(userHotelModel: UserHotelModel): UserHotelModel {
+        TODO("Not yet implemented")
+    }
 }

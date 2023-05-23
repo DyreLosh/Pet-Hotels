@@ -7,17 +7,75 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.user.profile.UserProfileFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/orange">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="12dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maksim sdfsdf"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maksimdfssdfsdf@gmail/com"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Выйти"
+            android:textAllCaps="false"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/orange"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
-        android:text="Профиль"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:text="Настройки профиля"
+        android:layout_marginStart="20dp"
         android:textColor="@color/button_color"
-        android:textSize="25sp" />
+        android:textSize="20sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/editProfileCard"
         android:layout_width="match_parent"
         android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
@@ -59,6 +117,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/editPasswordCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -110,5 +169,5 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:textColor="@color/button_color"
-        android:textSize="23sp" />
+        android:textSize="20sp" />
 </LinearLayout>

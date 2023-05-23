@@ -1,6 +1,10 @@
 package com.dyrelosh.pethotels.data.api
 
 import com.dyrelosh.pethotels.domain.companymodels.*
+import com.dyrelosh.pethotels.domain.models.ChangePasswordModel
+import com.dyrelosh.pethotels.domain.models.TokenModel
+import com.dyrelosh.pethotels.domain.models.UserHotelModel
+import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -65,5 +69,37 @@ interface ApiPetHotels {
 //        @Header("Authorization") token: String?,
 //        @Path("fileId") id: String
 //    ): Response<ResponseBody>
+
+    @GET("api/hotels")
+    suspend fun getHotels(
+        @Header("Authorization") token: String?
+    ): Response<List<UserHotelModel>>
+
+    @GET("api/hotels/{id}")
+    suspend fun getHotelsID(
+        @Header("Authorization") token: String?,
+        @Path("id") id: String
+    ): Response<UserHotelModel>
+
+    @POST("api/authentication/registrationUser")
+    suspend fun userRegister(
+        @Body body: UserRegisterModel
+    ): Response<TokenModel>
+
+
+    @POST("api/authentication/ChangePassword")
+    suspend fun changeUserPassword(
+
+    ): Response<ChangePasswordModel>
+
+    @PUT("api/authentication/ChangeEmail/{id}")
+    suspend fun changeUserEmail(
+
+    ): Response<HotelInfoModel>
+
+    @PUT("api/authentication/ChangeUserName{id}")
+    suspend fun changeUserName(
+
+    ): Response<HotelInfoModel>
 
 }

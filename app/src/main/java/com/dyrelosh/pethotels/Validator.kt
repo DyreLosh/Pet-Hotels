@@ -53,4 +53,11 @@ class Validator {
         } else {
             "Is empty"
         }*/
+
+    fun validateUserName(text: Editable?): String? =
+        if (text?.isEmpty() == false && text.length > 3) {
+            null
+        } else {
+            "Error UserName"
+        }
 }

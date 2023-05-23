@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menuMain"
+        android:id="@+id/mainUserFragment"
         android:icon="@drawable/ic_ad"
         android:title="Главная" />
-    <item android:id="@+id/menuSearch"
+    <item android:id="@+id/searchFragment"
         android:title="Поиск"
         android:icon="@drawable/ic_hotel"/>
     <item
-        android:id="@+id/menuFavourite"
+        android:id="@+id/favouriteFragment"
         android:icon="@drawable/ic_ad"
         android:title="Избранное" />
-    <item android:id="@+id/menuProfile"
+    <item android:id="@+id/userProfileFragment"
         android:title="@string/title_menu_profile"
         android:icon="@drawable/ic_hotel"/>
 </menu>

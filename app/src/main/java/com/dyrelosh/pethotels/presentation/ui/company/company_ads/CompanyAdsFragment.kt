@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentCompanyAdsBinding

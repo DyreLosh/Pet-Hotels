@@ -28,9 +28,6 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationMethodFragment2"
             app:destination="@id/registrationMethodFragment2" />
-        <action
-            android:id="@+id/action_loginFragment_to_mainContainerFragment"
-            app:destination="@id/mainContainerFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -116,7 +113,7 @@
             app:destination="@id/openCardFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mainFragment2"
+        android:id="@+id/mainUserFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.user.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
@@ -150,8 +147,8 @@
             android:id="@+id/action_userRegisterFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_userRegisterFragment_to_mainContainerFragment"
-            app:destination="@id/mainContainerFragment" />
+            android:id="@+id/action_userRegisterFragment_to_mainUserFragment"
+            app:destination="@id/mainUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewingAdFragment"
@@ -190,7 +187,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationMethodFragment2"
-        android:name="com.dyrelosh.pethotels.presentation.ui.user.registrationmethod.RegistrationMethodFragment"
+        android:name="com.dyrelosh.pethotels.presentation.ui.general.registrationmethod.RegistrationMethodFragment"
         android:label="fragment_registration_method"
         tools:layout="@layout/fragment_registration_method" >
         <action
@@ -200,9 +197,4 @@
             android:id="@+id/action_registrationMethodFragment2_to_userRegisterFragment"
             app:destination="@id/userRegisterFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/mainContainerFragment"
-        android:name="com.dyrelosh.pethotels.presentation.ui.user.main.MainContainerFragment"
-        android:label="fragment_main_container"
-        tools:layout="@layout/fragment_main_container" />
 </navigation>

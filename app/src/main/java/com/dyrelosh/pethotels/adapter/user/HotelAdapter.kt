@@ -3,7 +3,6 @@ package com.dyrelosh.pethotels.adapter.user
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.dyrelosh.pethotels.domain.models.PopularHotel
 import com.dyrelosh.pethotels.databinding.ItemHotelBinding
 
 class HotelAdapter: RecyclerView.Adapter<HotelViewHolder>() {

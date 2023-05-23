@@ -1,4 +1,4 @@
-package com.dyrelosh.pethotels.presentation.ui.user.registrationmethod
+package com.dyrelosh.pethotels.presentation.ui.general.registrationmethod
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
