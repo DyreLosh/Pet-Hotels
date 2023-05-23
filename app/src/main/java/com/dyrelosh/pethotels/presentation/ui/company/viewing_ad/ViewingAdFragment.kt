@@ -66,11 +66,11 @@ class ViewingAdFragment : Fragment() {
                 binding.PhotoAd.setImageBitmap(it)
             }
         }
-        viewModel.addInfo.observe(viewLifecycleOwner) { addInfo ->
+        viewModel.addInfoID.observe(viewLifecycleOwner) { addInfo ->
            // viewModel.getHotelPhoto(addInfo.imageId)
             with(binding){
 
-                nameHotelEditTextAdd.setText(addInfo.name)
+                nameHotelEditTextAdd.setText(addInfo.imageId)
                 cityHotelEditTextAdd.setText(addInfo.city)
                 addressHotelEditTextAdd.setText(addInfo.address)
                 numberEditText.setText(addInfo.number)

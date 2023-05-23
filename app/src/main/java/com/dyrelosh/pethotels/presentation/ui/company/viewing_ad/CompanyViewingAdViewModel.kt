@@ -5,10 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.domain.companyusecase.*
 import kotlinx.coroutines.launch
-import okhttp3.MultipartBody
 
 class CompanyViewingAdViewModel(
     private val getTokenHotelUseCase: GetTokenHotelUseCase,
@@ -20,15 +20,17 @@ class CompanyViewingAdViewModel(
 ) : ViewModel() {
     private val token = getTokenHotelUseCase.execute()
 
-    private var _addInfo: MutableLiveData<HotelAddsModel> = MutableLiveData<HotelAddsModel>()
-    val addInfo: LiveData<HotelAddsModel> = _addInfo
+    private var _addInfoID: MutableLiveData<HotelResponse> = MutableLiveData<HotelResponse>()
+    val addInfoID: LiveData<HotelResponse> = _addInfoID
 
     fun getAddInfo(id: String) {
         viewModelScope.launch {
-            _addInfo.value = getOneAddUseCase.execute(token!!, id)
+            _addInfoID.value = getOneAddUseCase.execute(token!!, id)
         }
     }
 
+    private var _addInfo: MutableLiveData<HotelAddsModel> = MutableLiveData<HotelAddsModel>()
+    val addInfo: LiveData<HotelAddsModel> = _addInfo
     fun editAdCompany(hotelAddsModel: HotelAddsModel) {
         viewModelScope.launch {
             _addInfo.value = editAdCompanyUseCase.execute(token!!, hotelAddsModel)

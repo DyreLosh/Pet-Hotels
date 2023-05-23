@@ -32,7 +32,7 @@ interface ApiPetHotels {
     suspend fun getAddInfo(
         @Header("Authorization") token: String?,
         @Path("id") id: String
-    ): Response<HotelAddsModel>
+    ): Response<HotelResponse>
 
     @PUT("api/pethotel/advertisement")
     suspend fun editAdCompany(

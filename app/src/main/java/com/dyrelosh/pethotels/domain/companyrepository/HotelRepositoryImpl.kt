@@ -74,7 +74,7 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         }
     }
 
-    override suspend fun getAddInfo(token: String, id: String): HotelAddsModel {
+    override suspend fun getAddInfo(token: String, id: String): HotelResponse {
         return ApiService.retrofit.getAddInfo("Bearer $token", id).body()!!
     }
 
