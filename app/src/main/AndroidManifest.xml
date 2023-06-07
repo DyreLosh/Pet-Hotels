@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
+        android:enableOnBackInvokedCallback="true"
         android:theme="@style/Theme.PetHotels"
         tools:targetApi="31">
         <activity

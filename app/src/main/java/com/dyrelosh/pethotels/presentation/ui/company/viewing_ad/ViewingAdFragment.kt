@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewConfiguration.get
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -13,12 +14,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.dyrelosh.pethotels.R
+import com.dyrelosh.pethotels.common.Validator
 import com.dyrelosh.pethotels.databinding.FragmentViewingAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.extensions.handleImagePickerResult
 import com.dyrelosh.pethotels.extensions.isStoragePermissionGranted
 import com.dyrelosh.pethotels.extensions.pickImage
 import com.dyrelosh.pethotels.presentation.ui.company.company_ads.CompanyAdsFragment
+import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -27,6 +30,8 @@ class ViewingAdFragment : Fragment() {
     lateinit var binding: FragmentViewingAdBinding
     private val viewModel by viewModel<CompanyViewingAdViewModel>()
     private var itemId: String? = null
+    private var photoID = ""
+    private val validator = Validator()
 
     private val pickerResultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -67,10 +72,10 @@ class ViewingAdFragment : Fragment() {
             }
         }
         viewModel.addInfoID.observe(viewLifecycleOwner) { addInfo ->
-           // viewModel.getHotelPhoto(addInfo.imageId)
+            addInfo.photos.firstOrNull()?.let { viewModel.getHotelPhoto(it) }
+            photoID = addInfo.photos.firstOrNull().toString()
             with(binding){
-
-                nameHotelEditTextAdd.setText(addInfo.imageId)
+                nameHotelEditTextAdd.setText(addInfo.name)
                 cityHotelEditTextAdd.setText(addInfo.city)
                 addressHotelEditTextAdd.setText(addInfo.address)
                 numberEditText.setText(addInfo.number)
@@ -83,43 +88,56 @@ class ViewingAdFragment : Fragment() {
                     checkboxOtherAnimalAddAd.toggle()
                 if (addInfo.rodent)
                     checkboxRodentAddAd.toggle()
-              //  Picasso.get().load(addInfo.imageId).into(PhotoAd)
+                Picasso.with(context)
+                    .load(addInfo.photos.firstOrNull())
+                    .placeholder(R.drawable.ic_app_logo)
+                    .into(PhotoAd)
             }
         }
 
-        viewModel.userPhoto.observe(viewLifecycleOwner) {
-            if (it != null) {
-                binding.PhotoAd.setImageBitmap(it)
-            }
-        }
-        binding.PhotoAd.setOnClickListener {
-            val photoIntent =
-                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(photoIntent, 1)
-        }
-
+//        binding.PhotoAd.setOnClickListener {
+//            val photoIntent =
+//                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//            startActivityForResult(photoIntent, 1)
+//        }
+        //itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
         binding.saveButtonAd.setOnClickListener {
-            with(binding){
-                viewModel.editAdCompany(
-                    HotelAddsModel(
-                        id = itemId.toString(),
-                        //imageId = "",
-                        name = nameHotelEditTextAdd.text.toString(),
-                        city = cityHotelEditTextAdd.text.toString(),
-                        address = addressHotelEditTextAdd.text.toString(),
-                        number = numberEditText.text.toString(),
-                        description = hintDescribeAddAd.text.toString(),
-                        cat = checkboxCatAddAd.isChecked,
-                        rodent = checkboxRodentAddAd.isChecked,
-                        dog = checkboxDogAddAd.isChecked,
-                        other = checkboxOtherAnimalAddAd.isChecked
+            with(binding) {
+                nameHotelLayoutAdd.error =
+                    validator.validateAdd(nameHotelEditTextAdd.text)
+                cityHotelLayoutAdd.error =
+                    validator.validateAdd(cityHotelEditTextAdd.text)
+                addressHotelLayoutAdd.error =
+                    validator.validateAdd(addressHotelEditTextAdd.text)
+                numberLayout.error =
+                    validator.validateAdd(numberEditText.text)
+                hintDescribeHotelAddAd.error =
+                    validator.validateAdd(hintDescribeAddAd.text)
+                if (nameHotelLayoutAdd.error == null &&
+                    cityHotelLayoutAdd.error == null &&
+                    addressHotelLayoutAdd.error == null &&
+                    numberLayout.error == null &&
+                    hintDescribeHotelAddAd.error == null
+                ) {
+                    viewModel.editAdCompany(
+                        HotelAddsModel(
+                            advertisementId = itemId.toString(),
+                            //imageId = "",
+                            name = nameHotelEditTextAdd.text.toString(),
+                            city = cityHotelEditTextAdd.text.toString(),
+                            address = addressHotelEditTextAdd.text.toString(),
+                            number = numberEditText.text.toString(),
+                            description = hintDescribeAddAd.text.toString(),
+                            cat = checkboxCatAddAd.isChecked,
+                            rodent = checkboxRodentAddAd.isChecked,
+                            dog = checkboxDogAddAd.isChecked,
+                            other = checkboxOtherAnimalAddAd.isChecked
+                        ), itemId.toString()
                     )
-                )
-                itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
-
-
+                    itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
+                    findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
+                }
             }
-             findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
         }
 
         binding.imageBack.setOnClickListener {
@@ -130,7 +148,6 @@ class ViewingAdFragment : Fragment() {
             viewModel.deleteAdd(itemId.toString())
             findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
         }
-
         binding.PhotoAd.setOnClickListener {
             if (isStoragePermissionGranted()) {
                 requireActivity().pickImage(pickerResultLauncher, needCrop = true)

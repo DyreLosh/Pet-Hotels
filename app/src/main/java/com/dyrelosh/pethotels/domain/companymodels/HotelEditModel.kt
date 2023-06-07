@@ -1,6 +1,7 @@
 package com.dyrelosh.pethotels.domain.companymodels
 
-data class HotelLoginModel(
+class HotelEditModel (
+    val hotelName: String,
     val email: String,
-    val password: String
+    val inn: String
 )

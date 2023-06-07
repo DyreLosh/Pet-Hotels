@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dyrelosh.pethotels.domain.companymodels.Hotel
-import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.domain.companyusecase.GetAddUseCase
 import com.dyrelosh.pethotels.domain.companyusecase.GetTokenHotelUseCase
 import kotlinx.coroutines.launch

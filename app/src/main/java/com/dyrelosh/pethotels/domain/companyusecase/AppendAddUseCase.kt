@@ -6,7 +6,7 @@ import com.dyrelosh.pethotels.domain.companymodels.HotelAppendAddModel
 import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
 class AppendAddUseCase (private val hotelRepository: HotelRepository) {
-    suspend fun execute(token: String, hotelAppendModel: HotelAppendAddModel): Hotel {
+    suspend fun execute(token: String, hotelAppendModel: HotelAppendAddModel): HotelResponse {
         return hotelRepository.appendAdd(token, hotelAppendModel)
     }
 }

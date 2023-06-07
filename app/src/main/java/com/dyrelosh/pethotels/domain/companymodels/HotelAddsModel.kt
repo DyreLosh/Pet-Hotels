@@ -1,7 +1,7 @@
 package com.dyrelosh.pethotels.domain.companymodels
 
 data class HotelAddsModel(
-    val id: String,
+    val advertisementId: String,
     val name: String,
     val city: String,
     val address: String,

@@ -19,8 +19,8 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         private const val AVATAR_PART_NAME = "file"
     }
 
-    override suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): TokenHotelModel? {
-        return ApiService.retrofit.registration(hotelRegisterModel).body()
+    override suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Boolean {
+        return ApiService.retrofit.registration(hotelRegisterModel).isSuccessful
     }
 
     override fun getToken(): String? {
@@ -49,18 +49,18 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 
     override suspend fun editProfileCompany(
         token: String,
-        hotelInfoModel: HotelInfoModel
-    ): HotelInfoModel? {
-        return ApiService.retrofit.editProfileCompany("Bearer $token", hotelInfoModel).body()
+        hotelEditModel: HotelEditModel
+    ): HotelEditModel? {
+        return ApiService.retrofit.editProfileCompany("Bearer $token",hotelEditModel).body()
     }
 
-    override suspend fun editAdCompany(token: String, addsModel: HotelAddsModel): HotelAddsModel? {
-        return ApiService.retrofit.editAdCompany("Bearer $token", addsModel).body()
+    override suspend fun editAdCompany(token: String, addsModel: HotelAddsModel, id: String): HotelAddsModel? {
+        return ApiService.retrofit.editAdCompany("Bearer $token", addsModel, id).body()
     }
 
-    override suspend fun setHotelPhoto(token: String, imageUrl: String?, id: String): Boolean {
+    override suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Boolean {
         return ApiService.retrofit.setHotelPhoto(
-            "Bearer $token", id, File(imageUrl).toMultipartPart(AVATAR_PART_NAME)
+            "Bearer $token", idAdvertisement, File(imageUrl).toMultipartPart(AVATAR_PART_NAME)
         ).isSuccessful
     }
 
@@ -79,37 +79,46 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     }
 
     override suspend fun getAdds(token: String): List<Hotel>? {
-        return ApiService.retrofit.getAdds("Bearer $token").body()
-            ?.map { hotelResponseToModel(it, getHotelPhoto(token, it.imageId)) }
+        return ApiService.retrofit.getAdds("Bearer $token").body()!!
+            ?.map { hotelResponseToModel(it,
+                it.photos.firstOrNull()?.let { it1 -> getHotelPhoto(token, it1) }) }
     }
 
     override suspend fun appendAdd(
         token: String,
         hotelAppendAddModel: HotelAppendAddModel
-    ): Hotel {
-        return ApiService.retrofit.appendAdd("Bearer $token", hotelAppendAddModel).body()!!.let {
-            hotelResponseToModel(it, getHotelPhoto(token, it.imageId))
-        }
+    ):HotelResponse {
+        return ApiService.retrofit.appendAdd("Bearer $token", hotelAppendAddModel).body()!!
     }
+
+    override suspend fun changePassword(token: String, changePasswordModel: ChangePasswordModel): Boolean {
+        return ApiService.retrofit.changePassword("Bearer $token", changePasswordModel).isSuccessful
+    }
+
 
     override suspend fun deleteAdd(token: String, id: String): Boolean {
         return ApiService.retrofit.deleteAdd("Bearer $token", id).isSuccessful
+    }
+    override fun clearPreference(): Boolean {
+        preferenceStorage.clearPreference()
+        return true
     }
 
 }
 
 private fun hotelResponseToModel(response: HotelResponse, hotelPhoto: Bitmap?): Hotel {
     return Hotel(
-        id = response.id,
+        advertisementId = response.advertisementId,
         name = response.name,
         city = response.city,
         address = response.address,
         number = response.number,
         description = response.description,
-        image = hotelPhoto,
+        photos = hotelPhoto,
         cat = response.cat,
         rodent = response.rodent,
         dog = response.dog,
         other = response.other,
+        companyId = response.companyId
     )
 }

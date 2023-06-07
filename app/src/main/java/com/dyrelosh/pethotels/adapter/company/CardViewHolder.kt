@@ -16,7 +16,7 @@ class CardViewHolder(private val binding: ItemCardAdBinding) :
         textViewNameCardAd.text = cardAd.name
         textViewCityCard.text = cardAd.city
         textViewNumberCard.text = cardAd.number
-        textViewDescriptionCard.text = cardAd.description
+      //  textViewINNCard.text = cardAd.inn
         if (cardAd.cat)
             textViewCatCard.visibility = View.VISIBLE
         if (cardAd.dog)
@@ -26,7 +26,7 @@ class CardViewHolder(private val binding: ItemCardAdBinding) :
         if (cardAd.other)
             textViewOtherCard.visibility = View.VISIBLE
         root.setOnClickListener {
-            clickListener.invoke(cardAd.id)
+            clickListener.invoke(cardAd.advertisementId)
         }
 //        editAdCompanyCard.setOnClickListener {
 //            clickListener()

@@ -8,7 +8,7 @@ import okhttp3.MultipartBody
 //import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
 
 interface HotelRepository {
-    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): TokenHotelModel?
+    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Boolean
 
     fun getToken(): String?
 
@@ -27,7 +27,7 @@ interface HotelRepository {
     suspend fun appendAdd(
         token: String,
         hotelAppendAddModel: HotelAppendAddModel
-    ): Hotel
+    ): HotelResponse
 
     suspend fun deleteAdd(token: String, id: String): Boolean
 
@@ -35,15 +35,21 @@ interface HotelRepository {
 
     suspend fun editAdCompany(
         token: String,
-        addsModel: HotelAddsModel
+        addsModel: HotelAddsModel,
+        id: String
     ): HotelAddsModel?
 
     suspend fun editProfileCompany(
         token: String,
-        hotelInfoModel: HotelInfoModel
-    ): HotelInfoModel?
+        hotelEditModel: HotelEditModel
+    ): HotelEditModel?
 
-    suspend fun setHotelPhoto(token: String, imageUrl: String?, id: String): Boolean
+    suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Boolean
 
     suspend fun getHotelPhoto(token: String, id: String): Bitmap?
+
+    suspend fun changePassword(token: String, changePasswordModel: ChangePasswordModel): Boolean
+
+    fun clearPreference(): Boolean
+
 }

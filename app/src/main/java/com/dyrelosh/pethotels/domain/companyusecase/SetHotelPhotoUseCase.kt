@@ -4,12 +4,12 @@ import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
 class SetHotelPhotoUseCase(private val hotelRepository: HotelRepository) {
     suspend fun execute(params: Params): Boolean {
-        return hotelRepository.setHotelPhoto(params.token, params.imageUrl, params.id)
+        return hotelRepository.setHotelPhoto(params.token, params.imageUrl, params.idAdvertisement)
     }
 
     data class Params(
         val token: String,
         val imageUrl: String?,
-        val id: String,
+        val idAdvertisement: String,
     )
 }

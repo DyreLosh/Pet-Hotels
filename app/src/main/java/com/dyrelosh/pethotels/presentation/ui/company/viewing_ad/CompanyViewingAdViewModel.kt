@@ -31,9 +31,9 @@ class CompanyViewingAdViewModel(
 
     private var _addInfo: MutableLiveData<HotelAddsModel> = MutableLiveData<HotelAddsModel>()
     val addInfo: LiveData<HotelAddsModel> = _addInfo
-    fun editAdCompany(hotelAddsModel: HotelAddsModel) {
+    fun editAdCompany(hotelAddsModel: HotelAddsModel, id: String) {
         viewModelScope.launch {
-            _addInfo.value = editAdCompanyUseCase.execute(token!!, hotelAddsModel)
+            _addInfo.value = editAdCompanyUseCase.execute(token!!, hotelAddsModel, id)
         }
     }
 

@@ -66,6 +66,9 @@
         <action
             android:id="@+id/action_mainFragment_to_viewingAdFragment2"
             app:destination="@id/viewingAdFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/companyAdsEmptyFragment"
@@ -82,7 +85,11 @@
         android:id="@+id/editProfileCompanyFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.company.company_profile.EditProfileCompanyFragment"
         android:label="fragment_edit_profile_company"
-        tools:layout="@layout/fragment_edit_profile_company" />
+        tools:layout="@layout/fragment_edit_profile_company" >
+        <action
+            android:id="@+id/action_editProfileCompanyFragment_to_companyProfileFragment"
+            app:destination="@id/companyProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/appendAddFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.company.add_ad.AppendAddFragment"
@@ -196,6 +203,9 @@
         <action
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationMethodFragment2"

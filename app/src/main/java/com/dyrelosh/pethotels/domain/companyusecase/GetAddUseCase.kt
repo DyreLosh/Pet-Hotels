@@ -1,5 +1,6 @@
 package com.dyrelosh.pethotels.domain.companyusecase
 
+import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.domain.companymodels.Hotel
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository

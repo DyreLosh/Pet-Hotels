@@ -8,7 +8,6 @@ data class HotelAppendAddModel (
     val address: String,
     val number: String,
     val description: String,
-    val image: MultipartBody.Part? = null,
     val cat: Boolean,
     val rodent: Boolean,
     val dog: Boolean,

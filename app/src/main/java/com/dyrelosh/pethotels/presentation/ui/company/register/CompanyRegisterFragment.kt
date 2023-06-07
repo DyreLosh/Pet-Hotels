@@ -57,11 +57,14 @@ class CompanyRegisterFragment : Fragment() {
                     viewModel.registrationHotel(
                         HotelRegisterModel(
                             inn = INNEditTextRegistration.text.toString(),
-                            name = nameHotelEditTextRegistration.text.toString(),
+                            hotelName = nameHotelEditTextRegistration.text.toString(),
                             email = emailEditTextRegistration.text.toString(),
-                            password = passwordEditTextRegistration.text.toString()
+                            password = passwordEditTextRegistration.text.toString(),
+                            userName = loginEditTextRegistration.text.toString(),
+                            roles = arrayOf("Companyy")
                         )
                     )
+                   // findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                 }
             }
         }

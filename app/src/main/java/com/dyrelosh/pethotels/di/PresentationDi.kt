@@ -29,7 +29,8 @@ val presentationDi = module {
     viewModel {
         CompanyProfileFragmentViewModel(
             getHotelInfoUseCase = get(),
-            getTokenUseCase = get()
+            getTokenUseCase = get(),
+            clearPreferenceUseCase = get()
         )
     }
     viewModel{
@@ -37,6 +38,7 @@ val presentationDi = module {
             editProfileCompanyUseCase = get(),
             getTokenUseCase= get(),
             getHotelInfoUseCase = get(),
+            changePasswordUseCase = get()
         )
     }
     viewModel{

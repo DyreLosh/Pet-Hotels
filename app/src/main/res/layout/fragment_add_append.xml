@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/ic_back"
+                android:src="@drawable/ic_action_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -277,36 +277,33 @@
                     tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/hintPhotoAddAd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:text="@string/hint_photo"
-                android:textColor="@color/text"
-                android:textSize="16sp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAppendAdd"
-                app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />
+<!--            <TextView-->
+<!--                android:id="@+id/hintPhotoAddAd"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/poppins"-->
+<!--                android:text="@string/hint_photo"-->
+<!--                android:textColor="@color/text"-->
+<!--                android:textSize="16sp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAppendAdd"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />-->
 
-            <ImageView
-                android:id="@+id/PhotoAddAd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:src="@drawable/ic_photo"
-                app:layout_constraintEnd_toEndOf="@+id/hintPhotoAddAd"
-                android:layout_marginStart="18dp"
-                app:layout_constraintStart_toStartOf="@+id/hintPhotoAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/hintPhotoAddAd" />
+<!--            <ImageView-->
+<!--                android:id="@+id/PhotoAddAd"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="7dp"-->
+<!--                android:src="@drawable/ic_photo"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/hintPhotoAddAd"-->
+<!--                android:layout_marginStart="18dp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/hintPhotoAddAd"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/hintPhotoAddAd" />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/saveButtonAddAd"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
                 android:fontFamily="@font/poppins"
                 android:hint="@string/save"
                 android:textColorHint="@color/white"
@@ -314,9 +311,9 @@
                 android:textStyle="bold"
                 app:backgroundTint="@color/orange"
                 app:cornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/PhotoAddAd"
-                app:layout_constraintStart_toStartOf="@+id/PhotoAddAd"
-                app:layout_constraintTop_toBottomOf="@+id/PhotoAddAd" />
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/describeHotelLayoutAppendAdd"
+                app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />
 
             <TextView
                 android:layout_width="match_parent"

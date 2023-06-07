@@ -5,7 +5,7 @@ import android.text.Editable
 class Validator {
     companion object {
         private const val INN_LENGTH = 12
-        private const val PASS_LENGTH = 6
+        private const val PASS_LENGTH = 10
     }
 
     fun validateNameHotel(text: Editable?): String? =
@@ -47,10 +47,10 @@ class Validator {
             "Error confirm password"
         }
 
-    /*fun validateAdd(text: Editable?): String? =
+    fun validateAdd(text: Editable?): String? =
         if (text?.isEmpty() == false) {
             null
         } else {
             "Is empty"
-        }*/
+        }
 }

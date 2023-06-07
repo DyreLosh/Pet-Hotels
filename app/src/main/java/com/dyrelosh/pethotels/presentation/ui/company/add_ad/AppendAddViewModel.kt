@@ -21,14 +21,17 @@ class AppendAddViewModel(
     private val setHotelPhotoUseCase: SetHotelPhotoUseCase,
 ) : ViewModel() {
     private val token = getTokenHotelUseCase.execute()
+
     private val _appendAddAction: MutableLiveData<Hotel> =
         MutableLiveData<Hotel>()
     val appendAddAction: LiveData<Hotel> = _appendAddAction
 
     private var hotelPhoto: MultipartBody.Part? = null
     fun appendAdd(hotelAppendAddModel: HotelAppendAddModel) {
-//        viewModelScope.launch {
-//            val result = appendAddUseCase.execute(token!!, hotelAppendAddModel)
+       // _appendAddAction.value = appendAddUseCase.execute(token!!, hotelAppendAddModel)
+        viewModelScope.launch {
+            //val result =
+             appendAddUseCase.execute(token!!, hotelAppendAddModel)
 //            hotelPhoto?.let {
 //                setHotelPhotoUseCase.execute(
 //                    SetHotelPhotoUseCase.Params(
@@ -38,21 +41,23 @@ class AppendAddViewModel(
 //                    )
 //                )
 //            }
-//        }
-    }
-
-    private var _userPhotoLoad: MutableLiveData<Int> = MutableLiveData<Int>()
-    val userPhotoLoad: LiveData<Int> = _userPhotoLoad
-
-    fun setHotelPhoto(image: MultipartBody.Part) {
-         hotelPhoto = image
-    }
-
-    private var _userPhoto: MutableLiveData<Bitmap> = MutableLiveData<Bitmap>()
-    val userPhoto: LiveData<Bitmap> = _userPhoto
-    fun getHotelPhoto(id: String) {
-        viewModelScope.launch {
-            _userPhoto.value = getHotelPhotoUseCase.execute(token!!, id)
         }
     }
+
+//    private var _userPhotoLoad: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
+//    val userPhotoLoad: LiveData<Boolean> = _userPhotoLoad
+//    fun setHotelPhoto(imageUrl: String?, id: String) {
+//        viewModelScope.launch {
+//            _userPhotoLoad.value =
+//                setHotelPhotoUseCase.execute(SetHotelPhotoUseCase.Params(token!!, imageUrl, id))
+//        }
+//    }
+//
+//    private var _userPhoto: MutableLiveData<Bitmap> = MutableLiveData<Bitmap>()
+//    val userPhoto: LiveData<Bitmap> = _userPhoto
+//    fun getHotelPhoto(id: String) {
+//        viewModelScope.launch {
+//            _userPhoto.value = getHotelPhotoUseCase.execute(token!!, id)
+//        }
+//    }
 }

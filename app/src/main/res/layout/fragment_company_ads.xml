@@ -15,7 +15,43 @@
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:visibility="invisible"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+        <TextView
+            android:id="@+id/titleTextviewCompanyAdsEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_add_empty"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+
+            android:visibility="invisible"
+            android:textSize="30sp"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="30dp" />
+
+        <ImageView
+            android:id="@+id/imageCompanyAdsEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:visibility="invisible"
+            android:src="@drawable/bg_empty_ads"
+            android:layout_gravity="center"
+            />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/splash_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newAddButton"
