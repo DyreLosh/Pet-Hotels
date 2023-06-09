@@ -54,7 +54,6 @@ class ViewingAdFragment : Fragment() {
         itemId = arguments?.getString(CompanyAdsFragment.PAIR_KEY)
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -95,12 +94,6 @@ class ViewingAdFragment : Fragment() {
             }
         }
 
-//        binding.PhotoAd.setOnClickListener {
-//            val photoIntent =
-//                Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-//            startActivityForResult(photoIntent, 1)
-//        }
-        //itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
         binding.saveButtonAd.setOnClickListener {
             with(binding) {
                 nameHotelLayoutAdd.error =
@@ -122,7 +115,6 @@ class ViewingAdFragment : Fragment() {
                     viewModel.editAdCompany(
                         HotelAddsModel(
                             advertisementId = itemId.toString(),
-                            //imageId = "",
                             name = nameHotelEditTextAdd.text.toString(),
                             city = cityHotelEditTextAdd.text.toString(),
                             address = addressHotelEditTextAdd.text.toString(),
@@ -134,9 +126,9 @@ class ViewingAdFragment : Fragment() {
                             other = checkboxOtherAnimalAddAd.isChecked
                         ), itemId.toString()
                     )
-                    itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
                     findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
                 }
+                itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
             }
         }
 
@@ -148,6 +140,7 @@ class ViewingAdFragment : Fragment() {
             viewModel.deleteAdd(itemId.toString())
             findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
         }
+
         binding.PhotoAd.setOnClickListener {
             if (isStoragePermissionGranted()) {
                 requireActivity().pickImage(pickerResultLauncher, needCrop = true)

@@ -44,8 +44,8 @@ class CompanyViewingAdViewModel(
         }
     }
 
-    private var _userPhotoLoad: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
-    val userPhotoLoad: LiveData<Boolean> = _userPhotoLoad
+    private var _userPhotoLoad: MutableLiveData<Bitmap> = MutableLiveData<Bitmap>()
+    val userPhotoLoad: LiveData<Bitmap> = _userPhotoLoad
     fun setHotelPhoto(imageUrl: String?, id: String) {
         viewModelScope.launch {
             _userPhotoLoad.value =

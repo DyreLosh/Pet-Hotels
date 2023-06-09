@@ -44,7 +44,7 @@ interface HotelRepository {
         hotelEditModel: HotelEditModel
     ): HotelEditModel?
 
-    suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Boolean
+    suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Bitmap?
 
     suspend fun getHotelPhoto(token: String, id: String): Bitmap?
 

@@ -72,20 +72,25 @@ class EditProfileCompanyFragment : Fragment() {
                 } else {
                     Toast.makeText(context, "Проверьте данные", Toast.LENGTH_SHORT).show()
                 }
-                if(passwordLayoutEditProfile.visibility == View.VISIBLE){
-                    passwordLayoutEditProfile.error = validator.validateAdd(passwordEditTextEditProfile.text)
-                    passwordNewLayoutEditProfile.error = validator.validateAdd(passwordNewEditTextEditProfile.text)
-                    if(passwordLayoutEditProfile.error == null &&
-                        passwordNewLayoutEditProfile.error == null){
-                        viewModel.changePassword(
-                            ChangePasswordModel(
-                                email = emailEditTextEditProfile.text.toString(),
-                                currentPassword = passwordEditTextEditProfile.text.toString(),
-                                newPassword = passwordNewEditTextEditProfile.text.toString()
-                            )
-                        )
-                    }
+                if(passwordLayoutEditProfile.visibility == View.VISIBLE) {
+                    passwordLayoutEditProfile.error =
+                        validator.validateAdd(passwordEditTextEditProfile.text)
+                    passwordNewLayoutEditProfile.error =
+                        validator.validateAdd(passwordNewEditTextEditProfile.text)
                 }
+                if(passwordLayoutEditProfile.error == null &&
+                    passwordNewLayoutEditProfile.error == null){
+                    viewModel.changePassword(
+                        ChangePasswordModel(
+                            email = emailEditTextEditProfile.text.toString(),
+                            currentPassword = passwordEditTextEditProfile.text.toString(),
+                            newPassword = passwordNewEditTextEditProfile.text.toString()
+                        )
+                    )
+                } else {
+                    Toast.makeText(context, "Проверьте данные", Toast.LENGTH_SHORT).show()
+                }
+
                 findNavController().popBackStack()
             }
         }

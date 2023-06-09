@@ -9,7 +9,7 @@ data class Hotel(
     val address: String,
     val number: String,
     val description: String,
-    val photos: Bitmap?,
+    val photos: List<Bitmap?>,
     val cat: Boolean,
     val rodent: Boolean,
     val dog: Boolean,

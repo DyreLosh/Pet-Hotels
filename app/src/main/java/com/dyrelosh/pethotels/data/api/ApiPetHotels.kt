@@ -63,8 +63,8 @@ interface ApiPetHotels {
     suspend fun setHotelPhoto(
         @Header("Authorization") token: String?,
         @Path("idAdvertisement") idAdvertisement: String,
-        @Part file: MultipartBody.Part,
-    ): Response<Unit>
+        @Part uploadedFile: MultipartBody.Part,
+    ): Response<ResponseBody>
 
     @GET("photo/{imageId}")
     suspend fun getHotelPhoto(

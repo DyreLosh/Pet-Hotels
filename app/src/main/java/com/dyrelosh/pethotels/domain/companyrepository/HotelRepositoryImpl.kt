@@ -58,10 +58,24 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.editAdCompany("Bearer $token", addsModel, id).body()
     }
 
-    override suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Boolean {
-        return ApiService.retrofit.setHotelPhoto(
-            "Bearer $token", idAdvertisement, File(imageUrl).toMultipartPart(AVATAR_PART_NAME)
-        ).isSuccessful
+//    override suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Boolean {
+//        return ApiService.retrofit.setHotelPhoto(
+//            "Bearer $token", idAdvertisement, File(imageUrl).toMultipartPart(AVATAR_PART_NAME)
+//        ).isSuccessful
+//    }
+
+    override suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Bitmap?  {
+        return try {
+            BitmapFactory.decodeStream(
+                ApiService.retrofit.setHotelPhoto(
+                    "Bearer $token",
+                    idAdvertisement,
+                    File(imageUrl).toMultipartPart(AVATAR_PART_NAME)
+                ).body()!!.byteStream()
+            )
+        } catch (e: Exception) {
+            null
+        }
     }
 
     override suspend fun getHotelPhoto(token: String, id: String): Bitmap? {
@@ -80,8 +94,14 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 
     override suspend fun getAdds(token: String): List<Hotel>? {
         return ApiService.retrofit.getAdds("Bearer $token").body()!!
-            ?.map { hotelResponseToModel(it,
-                it.photos.firstOrNull()?.let { it1 -> getHotelPhoto(token, it1) }) }
+            ?.map {
+                hotelResponseToModel(
+                    it,
+                    it.photos.map { id ->
+                        getHotelPhoto(token, id)
+                    }
+                )
+            }
     }
 
     override suspend fun appendAdd(
@@ -106,7 +126,7 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 
 }
 
-private fun hotelResponseToModel(response: HotelResponse, hotelPhoto: Bitmap?): Hotel {
+private fun hotelResponseToModel(response: HotelResponse, hotelPhoto: List<Bitmap?>): Hotel {
     return Hotel(
         advertisementId = response.advertisementId,
         name = response.name,
