@@ -16,13 +16,13 @@ class UserRegisterViewModel(
 ) : ViewModel() {
 
 
-    private val _token: MutableLiveData<String?> = MutableLiveData<String?>()
-    val token: LiveData<String?> = _token
+    private val _token: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
+    val token: LiveData<Boolean> = _token
 
     fun registrationHotel(userRegisterModel: UserRegisterModel) {
         viewModelScope.launch {
             _token.value = registerUseCase.execute(userRegisterModel)
-            _token.value?.let { setTokenUserUseCase.execute(it) }
+            //_token.value?.let { setTokenUserUseCase.execute(it) }
         }
     }
 }

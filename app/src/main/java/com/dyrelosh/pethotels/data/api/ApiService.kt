@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
     val retrofit: ApiPetHotels = Retrofit.Builder()
-        .baseUrl("http://45.144.64.179/")
+        .baseUrl("http://185.139.69.220/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(ApiPetHotels::class.java)

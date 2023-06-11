@@ -9,10 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
+import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentSplashBinding
+import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 
-class CompanySplashFragment : Fragment() {
+class CompanySplashFragment : UserBaseFragment() {
 
+    override val showBottomNavigationView = false
     lateinit var binding : FragmentSplashBinding
 
     override fun onCreateView(
@@ -21,7 +24,13 @@ class CompanySplashFragment : Fragment() {
     ): View? {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_welcomeFragment)
+//            if (PreferenceStorage(requireContext()).accessToken?.length!! > 3) {
+//                findNavController().navigate(R.id.action_splashFragment_to_mainUserFragment)
+//            }
+//            else {
+                findNavController().navigate(R.id.action_splashFragment_to_welcomeFragment)
+           //}
+
         }, 2000)
         return binding.root
     }

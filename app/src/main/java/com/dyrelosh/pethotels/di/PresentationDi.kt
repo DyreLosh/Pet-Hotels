@@ -8,6 +8,12 @@ import com.dyrelosh.pethotels.presentation.ui.company.company_profile.CompanyPro
 import com.dyrelosh.pethotels.presentation.ui.company.company_profile.EditProfileCompanyFragmentViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.register.CompanyRegisterViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.CompanyViewingAdViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.changepassword.ChangePasswordViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.main.MainViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.opencard.OpenCardViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.profile.UserProfileViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.register.UserRegisterViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.search.SearchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -24,7 +30,8 @@ val presentationDi = module {
         CompanyLoginViewModel(
             loginHotelUseCase = get(),
             setTokenCompanyUseCase = get(),
-            setEmailCompanyUseCase = get()
+            setEmailCompanyUseCase = get(),
+            setPasswordUseCase = get()
         )
     }
     viewModel {
@@ -33,29 +40,53 @@ val presentationDi = module {
             getTokenUseCase = get()
         )
     }
-    viewModel{
+    viewModel {
         EditProfileCompanyFragmentViewModel(
             editProfileCompanyUseCase = get(),
-            getTokenUseCase= get()
+            getTokenUseCase = get()
         )
     }
-    viewModel{
+    viewModel {
         AppendAddViewModel(
             appendAddUseCase = get(),
             getTokenHotelUseCase = get()
         )
     }
-    viewModel{
+    viewModel {
         CompanyAdsViewModel(
             getAddUseCase = get(),
             getTokenHotelUseCase = get()
         )
     }
-    viewModel{
+    viewModel {
         CompanyViewingAdViewModel(
             getTokenHotelUseCase = get(),
             getOneAddUseCase = get()
         )
+    }
+
+    viewModel {
+        UserRegisterViewModel(registerUseCase = get(), setTokenUserUseCase = get())
+    }
+
+    viewModel {
+        ChangePasswordViewModel(getTokenUseCase =  get(), changeUserPasswordUseCase = get())
+    }
+
+    viewModel {
+        MainViewModel(getHotels = get(), getToken = get())
+    }
+
+    viewModel {
+        OpenCardViewModel(getToken = get(), getOneHotelUseCase = get(), getHotelPhotoForUserUseCase = get())
+    }
+
+    viewModel{
+        SearchViewModel(getHotels = get(), getToken = get())
+    }
+
+    viewModel{
+        UserProfileViewModel(getToken = get(), getUserInfo = get())
     }
 
 

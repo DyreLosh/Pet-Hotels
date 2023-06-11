@@ -21,6 +21,10 @@ class PreferenceStorage (context: Context) {
         get() = preferences.getString(SHARED_EMAIL_KEY, "")
         set(value) = preferences.edit().putString(SHARED_EMAIL_KEY, value).apply()
 
+    var password: String?
+        get() = preferences.getString("password", "")
+        set(value) = preferences.edit().putString("password", value).apply()
+
     fun clearPreference() {
         preferences.edit()?.clear()?.apply()
     }

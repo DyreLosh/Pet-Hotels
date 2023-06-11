@@ -1,6 +1,15 @@
 package com.dyrelosh.pethotels.di
 
 import com.dyrelosh.pethotels.domain.companyusecase.*
+import com.dyrelosh.pethotels.domain.usecase.auth.GetUserInfoUseCase
+import com.dyrelosh.pethotels.domain.usecase.auth.RegisterUseCase
+import com.dyrelosh.pethotels.domain.usecase.hotel.GetHotelPhotoForUserUseCase
+import com.dyrelosh.pethotels.domain.usecase.hotel.GetHotelsUseCase
+import com.dyrelosh.pethotels.domain.usecase.hotel.GetOneHotelUseCase
+import com.dyrelosh.pethotels.domain.usecase.user.ChangeUserPasswordUseCase
+import com.dyrelosh.pethotels.domain.usecase.user.SetPasswordUseCase
+import com.dyrelosh.pethotels.domain.usecase.user.SetTokenUserUseCase
+import com.dyrelosh.pethotels.presentation.ui.user.main.MainViewModel
 import org.koin.dsl.module
 
 val domainDi = module {
@@ -36,5 +45,32 @@ val domainDi = module {
     }
     factory {
         GetOneAddUseCase(get())
+    }
+
+
+
+    factory {
+        RegisterUseCase(get())
+    }
+    factory { SetTokenUserUseCase(get()) }
+
+    factory {
+        ChangeUserPasswordUseCase(get())
+    }
+    factory {
+        GetHotelsUseCase(get())
+    }
+    factory {
+        GetOneHotelUseCase(get())
+    }
+    factory {
+        GetUserInfoUseCase(get())
+    }
+
+    factory {
+        SetPasswordUseCase(get())
+    }
+    factory {
+        GetHotelPhotoForUserUseCase(get())
     }
 }

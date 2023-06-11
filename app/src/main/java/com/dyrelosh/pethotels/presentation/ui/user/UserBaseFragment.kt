@@ -26,4 +26,6 @@ abstract class UserBaseFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
         bottomNavigationViewManager?.setBottomNavVisibility(showBottomNavigationView)
     }
+
+
 }

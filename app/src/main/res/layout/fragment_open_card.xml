@@ -16,6 +16,7 @@
             android:layout_height="250dp">
 
             <ImageView
+                android:id="@+id/oneHotelPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -56,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
             android:fontFamily="@font/poppins"
-            android:text="dfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf dfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfdfsgdfsgsdf gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfgdsf gsdfg sdfg sdfg dfgdfsg dfsg sdfgsd fgsdfgsdfg sdfg sdfgsdfg dsfg"
+            android:text="sf gdsf sdsd fdfs gsdfgdfs gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfgdsf gsdfg sdfg sdfg dfgdfsg dfsg sdfgsd fgsdfgsdfg sdfg sdfgsdfg dsfg"
             android:textColor="@color/black"/>
 
         <TextView
@@ -84,6 +85,15 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/oneHotelCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Саранск"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"/>
+
+            <TextView
                 android:id="@+id/oneHotelAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,23 +102,105 @@
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/black"/>
 
-            <TextView
-                android:id="@+id/toMapButton"
-                android:layout_width="match_parent"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/catCardItem"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Карта >"
-                android:textStyle="bold"
-                android:layout_marginEnd="20dp"
-                android:layout_gravity="end"
-                android:gravity="end"
-                android:textAlignment="textEnd"
-                android:fontFamily="@font/poppins"
-                android:textColor="@color/orange"/>
+                app:cardCornerRadius="30dp"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/pet_one"
+                android:background="@color/pet_one">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Кошки"
+
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dogCardItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:visibility="gone"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/pet_one"
+                android:background="@color/pet_one">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Собаки"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rodentCardItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:visibility="gone"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/pet_one"
+                android:background="@color/pet_one">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Грызуны"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/otherCardItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="30dp"
+                android:visibility="gone"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/pet_one"
+                android:background="@color/pet_one">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Другие"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+
 
 
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/zakazatHotel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
@@ -124,5 +216,7 @@
             android:textSize="20sp"/>
 
     </LinearLayout>
+
+
 
 </androidx.core.widget.NestedScrollView>

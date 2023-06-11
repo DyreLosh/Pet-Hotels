@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.databinding.ItemHotelBinding
 import com.dyrelosh.pethotels.domain.models.UserHotelModel
 
-class PopularHotelAdapter : RecyclerView.Adapter<PopularHotelViewHolder>() {
+class PopularHotelAdapter() : RecyclerView.Adapter<PopularHotelViewHolder>() {
 
     val items = mutableListOf<UserHotelModel>()
     var onItemClick: (String) -> Unit = {}
@@ -32,6 +32,8 @@ class PopularHotelAdapter : RecyclerView.Adapter<PopularHotelViewHolder>() {
         items.addAll(popularHotel)
         notifyDataSetChanged()
     }
+
+
 
 
 }

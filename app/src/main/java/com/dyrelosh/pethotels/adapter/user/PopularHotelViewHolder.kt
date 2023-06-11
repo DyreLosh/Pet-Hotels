@@ -11,7 +11,7 @@ class PopularHotelViewHolder(private val binding: ItemHotelBinding): RecyclerVie
         binding.addressHotelItem.text = popularHotel.address
 
         binding.root.setOnClickListener {
-            onItemClick.invoke(popularHotel.id)
+            onItemClick.invoke(popularHotel.advertisementId)
         }
     }
 }

@@ -5,7 +5,7 @@ import android.text.Editable
 class Validator {
     companion object {
         private const val INN_LENGTH = 12
-        private const val PASS_LENGTH = 6
+        private const val PASS_LENGTH = 10
     }
 
     fun validateNameHotel(text: Editable?): String? =
@@ -59,5 +59,32 @@ class Validator {
             null
         } else {
             "Error UserName"
+        }
+
+    fun validateUserPassword(text: Editable?): String? =
+        when {
+            text?.isEmpty() == true -> "Поле не должно быть пустым"
+            text?.length!! <= PASS_LENGTH -> "Пароль должен быть больше 10 букв"
+            !text.contains("[0-9]".toRegex()) -> "Должна быть хоть одна цифра"
+            else -> null
+        }
+    fun validateUserUserName(text: Editable?): String? =
+        when {
+            text?.isEmpty() == true -> "Поле не должно быть пустым"
+            else -> null
+        }
+    fun validateUserEmail(text: Editable?): String? =
+        when {
+            text?.isEmpty() == true -> "Поле не должно быть пустым"
+            !android.util.Patterns.EMAIL_ADDRESS.matcher(text.toString()).matches() -> "Неправильный формать почты"
+            else -> null
+        }
+    fun returnUserPassword(retPass: Editable?, pass: Editable?): String? =
+        when {
+            retPass?.isEmpty() == true -> "Поле не должно быть пустым"
+            retPass?.length!! <= PASS_LENGTH -> "Пароль должен быть больше 10 букв"
+            !retPass.contains("[0-9]".toRegex()) -> "Должна быть хоть одна цифра"
+            retPass.toString() != pass.toString() -> "Пароли должны совпадать"
+            else -> null
         }
 }
