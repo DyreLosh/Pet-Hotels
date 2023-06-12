@@ -1,16 +1,14 @@
 package com.dyrelosh.pethotels.domain.companyrepository
 
 import android.graphics.Bitmap
+import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.domain.companymodels.*
-import com.dyrelosh.pethotels.domain.models.TokenModel
-import com.dyrelosh.pethotels.domain.models.UserHotelModel
-import com.dyrelosh.pethotels.domain.models.UserInfoModel
-import com.dyrelosh.pethotels.domain.models.UserRegisterModel
+import okhttp3.MultipartBody
 
 //import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
 
 interface HotelRepository {
-    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): TokenHotelModel?
+    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Boolean
 
     fun getToken(): String?
 
@@ -22,25 +20,37 @@ interface HotelRepository {
 
     suspend fun loginCompany(hotelLoginModel: HotelLoginModel): TokenHotelModel?
 
-    suspend fun getAdds(token: String): List<HotelAddsModel>?
+    suspend fun getAdds(token: String): List<Hotel>?
 
-    suspend fun getAddInfo(token: String, id: String) : HotelAddsModel
+    suspend fun getAddInfo(token: String, id: String): HotelResponse
 
     suspend fun appendAdd(
         token: String,
         hotelAppendAddModel: HotelAppendAddModel
-    ): Boolean
+    ): HotelResponse
 
-//    suspend fun deleteAdd(token: String, id: String): Boolean
-//
+    suspend fun deleteAdd(token: String, id: String): Boolean
+
     suspend fun getHotelInfo(token: String): HotelInfoModel?
+
+    suspend fun editAdCompany(
+        token: String,
+        addsModel: HotelAddsModel,
+        id: String
+    ): HotelAddsModel?
 
     suspend fun editProfileCompany(
         token: String,
-        hotelInfoModel: HotelInfoModel
-    ): HotelInfoModel?
+        hotelEditModel: HotelEditModel
+    ): HotelEditModel?
 
-    //suspend fun setUserPhoto(token: String, image: MultipartBody.Part): Int
+    suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Bitmap?
+
+    suspend fun getHotelPhoto(token: String, id: String): Bitmap?
+
+    suspend fun changePassword(token: String, changePasswordModel: ChangePasswordModel): Boolean
+
+    fun clearPreference(): Boolean
 
     //suspend fun getUserPhoto(token: String, id: String): Bitmap?
 

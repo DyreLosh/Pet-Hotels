@@ -1,6 +1,5 @@
 package com.dyrelosh.pethotels.presentation.login
 
-import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,14 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.Validator
+import com.dyrelosh.pethotels.common.Validator
 import com.dyrelosh.pethotels.databinding.FragmentLoginCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class CompanyLoginFragment : UserBaseFragment() {
+class CompanyLoginFragment : Fragment() {
 
     override val showBottomNavigationView = false
     private lateinit var binding: FragmentLoginCompanyBinding
@@ -71,6 +70,18 @@ class CompanyLoginFragment : UserBaseFragment() {
                 }
             } else Toast.makeText(context, "не успешно", Toast.LENGTH_SHORT).show()
         }
+//            viewModel.auth(
+//                    LoginHotelUseCase.Param(
+//                        email = binding.emailEditTextInput.text.toString(),
+//                        password = binding.passwordEditTextInput.text.toString()
+//                    )
+//                )
+//                viewModel.token.observe(viewLifecycleOwner) {
+//                    if (it != null) {
+//                        findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+//                    }
+//                }
+//            }
         return binding.root
     }
 

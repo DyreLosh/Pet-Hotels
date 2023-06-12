@@ -8,13 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.FragmentCompanyAdsBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.adapter.company.CardsAdsAdapter
-import com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.ViewingAdFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
+ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CompanyAdsFragment : Fragment() {
 
@@ -25,7 +25,7 @@ class CompanyAdsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getAdds()
+
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -42,19 +42,34 @@ class CompanyAdsFragment : Fragment() {
 
         binding.recyclerViewCardAd.adapter = cardAdapter
 
-        viewModel.responseAdds.observe(viewLifecycleOwner){ responseAdds ->
-            listAdd.addAll(responseAdds)
-            cardAdapter.submitList(listAdd)
-            listAdd.clear()
-        }
+        viewModel.getAdds()
 
+        viewModel.responseAdds.observe(viewLifecycleOwner) { response ->
+            if (response.size != 0) {
+                with(binding) {
+                    progressBar.visibility= View.INVISIBLE
+                    imageCompanyAdsEmpty.visibility = View.INVISIBLE
+                    titleTextviewCompanyAdsEmpty.visibility = View.INVISIBLE
+                    cardAdapter.submitList(response)
+                    recyclerViewCardAd.visibility = View.VISIBLE
+                }
+            } else {
+                with(binding) {
+                    progressBar.visibility= View.INVISIBLE
+                    titleTextviewCompanyAdsEmpty.visibility = View.VISIBLE
+                    imageCompanyAdsEmpty.visibility = View.VISIBLE
+                }
+            }
+        }
 
         binding.newAddButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_appendAddFragment)
         }
-
         cardAdapter.itemClick = {
-             findNavController().navigate(R.id.action_mainFragment_to_viewingAdFragment, bundleOf( PAIR_KEY to it ))
+             findNavController().navigate(
+                 R.id.action_mainFragment_to_viewingAdFragment,
+                 bundleOf( PAIR_KEY to it )
+             )
         }
     }
 

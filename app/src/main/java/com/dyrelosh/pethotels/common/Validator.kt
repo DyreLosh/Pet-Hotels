@@ -1,7 +1,6 @@
 package com.dyrelosh.pethotels
 
 import android.text.Editable
-import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
 
 class Validator {
     companion object {
@@ -49,12 +48,12 @@ class Validator {
             "Error confirm password"
         }
 
-    /*fun validateAdd(text: Editable?): String? =
+    fun validateAdd(text: Editable?): String? =
         if (text?.isEmpty() == false) {
             null
         } else {
             "Is empty"
-        }*/
+        }
 
     fun validateUserName(text: Editable?): String? =
         if (text?.isEmpty() == false && text.length > 3) {

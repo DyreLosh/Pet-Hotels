@@ -1,60 +1,53 @@
 package com.dyrelosh.pethotels.data.api
 
 import com.dyrelosh.pethotels.domain.companymodels.*
-import com.dyrelosh.pethotels.domain.models.TokenModel
-import com.dyrelosh.pethotels.domain.models.UserHotelModel
-import com.dyrelosh.pethotels.domain.models.UserInfoModel
-import com.dyrelosh.pethotels.domain.models.UserRegisterModel
+import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiPetHotels {
 
-    @POST("api/pethotel/auth/registration")
+    @POST("api/authentication/registrationCompanyy")
     @Headers("Content-Type: application/json")
-    suspend fun registrationUser(@Body body: HotelRegisterModel): Response<TokenHotelModel>
-
-    @POST("api/pethotel/auth/registration")
-    @Headers("Content-Type: application/json")
-    suspend fun registration(@Body body: HotelRegisterModel): Response<TokenHotelModel>
+    suspend fun registration(@Body body: HotelRegisterModel): Response<Unit> //раньше была токен хотел модель
 
     @POST("api/authentication/login")
     @Headers("Content-Type: application/json")
     suspend fun login(@Body body: HotelLoginModel): Response<TokenHotelModel>
 
-    @GET("api/pethotel/hotelinfo")
+    @GET("api/hotels/GetAutorizeCompany")
     suspend fun getUserInfo(
         @Header("Authorization") token: String?
     ): Response<HotelInfoModel>
 
-    @PUT("api/pethotel/hotelinfo")
+    @PUT("api/hotels/profile")
     suspend fun editProfileCompany(
         @Header("Authorization") token: String?,
-        @Body body: HotelInfoModel
-    ): Response<HotelInfoModel>
+        @Body body: HotelEditModel
+    ): Response<HotelEditModel>
 
-    @GET("api/pethotel/advertisement/{id}")
+    @GET("api/hotels/advertisements/{id}")
     suspend fun getAddInfo(
         @Header("Authorization") token: String?,
         @Path("id") id: String
     ): Response<HotelAddsModel>
 
-    @POST("api/authentication/ChangePassword")
-    suspend fun changePassword(
-        @Header("Authorization") token: String?,
-        @Body body: ChangePasswordModel
-    ): Response<Unit>
-
-    @GET("api/pethotel/advertisement")
+    @GET("api/hotels/GetAutorizeAdv")
     suspend fun getAdds(
         @Header("Authorization") token: String?
-    ): Response<List<HotelAddsModel>>
+    ): Response<List<HotelResponse>>
 
-    @POST("api/pethotel/advertisement")
+    @POST("api/hotels/advertisements/create-advertisement")
     suspend fun appendAdd(
         @Header("Authorization") token: String?,
         @Body body: HotelAppendAddModel
+    ): Response<HotelResponse>
+
+    @DELETE("api/hotels/advertisements/advertisement/{id}")
+    suspend fun deleteAdd(
+        @Header("Authorization") token: String?,
+        @Path("id") id: String
     ): Response<Unit>
 
     @GET("api/hotels/advertisements")
@@ -67,12 +60,24 @@ interface ApiPetHotels {
         @Header("Authorization") token: String?,
         @Path("id") id: String
     ): Response<UserHotelModel>
+    @Multipart
+    @POST("api/hotels/advertisements/{idAdvertisement}")
+    suspend fun setHotelPhoto(
+        @Header("Authorization") token: String?,
+        @Path("idAdvertisement") idAdvertisement: String,
+        @Part uploadedFile: MultipartBody.Part,
+    ): Response<ResponseBody>
 
     @POST("api/authentication/registrationUser")
     @Headers("Content-Type: application/json")
     suspend fun userRegister(
         @Body body: UserRegisterModel
     ): Response<Unit>
+    @GET("photo/{imageId}")
+    suspend fun getHotelPhoto(
+        @Header("Authorization") token: String?,
+        @Path("imageId") id: String
+    ): Response<ResponseBody>
 
 
     @POST("api/authentication/ChangePassword")
@@ -100,5 +105,10 @@ interface ApiPetHotels {
         @Header("Authorization") token: String?,
         @Path("imageId") id: String
     ): Response<ResponseBody>
+    @POST("api/authentication/ChangePassword")
+    suspend fun changePassword(
+        @Header("Authorization") token: String?,
+        @Body body: ChangePasswordModel
+    ): Response<Unit>
 
 }

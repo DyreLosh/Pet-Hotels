@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.Validator
+import com.dyrelosh.pethotels.common.Validator
 import com.dyrelosh.pethotels.databinding.FragmentRegisterCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -57,11 +57,14 @@ class CompanyRegisterFragment : Fragment() {
                     viewModel.registrationHotel(
                         HotelRegisterModel(
                             inn = INNEditTextRegistration.text.toString(),
-                            name = nameHotelEditTextRegistration.text.toString(),
+                            hotelName = nameHotelEditTextRegistration.text.toString(),
                             email = emailEditTextRegistration.text.toString(),
-                            password = passwordEditTextRegistration.text.toString()
+                            password = passwordEditTextRegistration.text.toString(),
+                            userName = loginEditTextRegistration.text.toString(),
+                            roles = arrayOf("Companyy")
                         )
                     )
+                   // findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                 }
             }
         }

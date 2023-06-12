@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/ic_back"
+                android:src="@drawable/ic_action_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -248,12 +248,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginEnd="20dp"
-                app:boxBackgroundColor="@color/text_input"
-                android:layout_marginTop="10dp"
-                android:textColorHint="@color/text_hint"
-                app:boxStrokeColor="@color/text_hint"
-                app:hintTextColor="@color/text_hint"
+                android:backgroundTint="@color/text"
+                android:fontFamily="@font/poppins"
+                android:gravity="top|left"
+                android:maxLines="20"
+                android:minLines="1"
+                android:scrollbars="vertical"
+                android:shadowColor="@color/text_hint"
+                android:shadowRadius="15"
+                android:textColorLink="@color/text"
                 app:layout_constraintEnd_toEndOf="@+id/hintDescribeHotelAppendAdd"
                 app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAppendAdd"
                 app:layout_constraintTop_toBottomOf="@+id/hintDescribeHotelAppendAdd">
@@ -262,46 +267,43 @@
                     android:id="@+id/describeHotelEditTextAppendAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:minHeight="48dp"
                     android:fontFamily="@font/poppins"
+                    android:minHeight="48dp"
                     android:paddingStart="33dp"
                     android:paddingEnd="33dp"
-                    android:textColorLink="@color/text_hint"
                     android:textColor="@color/text_hint"
-                    tools:ignore="TextContrastCheck" />
+                    android:textColorLink="@color/text_hint"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
 <!--            <TextView-->
-<!--                android:id="@+id/textView"-->
+<!--                android:id="@+id/hintPhotoAddAd"-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
 <!--                android:fontFamily="@font/poppins"-->
 <!--                android:text="@string/hint_photo"-->
 <!--                android:textColor="@color/text"-->
 <!--                android:textSize="16sp"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/passwordLayoutRegistration"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/hintDescribeAddAd" />-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/hintDescribeHotelAppendAdd"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />-->
 
 <!--            <ImageView-->
-<!--                android:id="@+id/hintPhotoAddAd"-->
+<!--                android:id="@+id/PhotoAddAd"-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:layout_marginTop="7dp"-->
 <!--                android:src="@drawable/ic_photo"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/textView"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/hintPhotoAddAd"-->
 <!--                android:layout_marginStart="18dp"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/textView"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+<!--                app:layout_constraintStart_toStartOf="@+id/hintPhotoAddAd"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/hintPhotoAddAd" />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/saveButtonAddAd"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
                 android:fontFamily="@font/poppins"
                 android:hint="@string/save"
                 android:textColorHint="@color/white"
@@ -309,8 +311,8 @@
                 android:textStyle="bold"
                 app:backgroundTint="@color/orange"
                 app:cornerRadius="20dp"
+                android:layout_margin="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/describeHotelLayoutAppendAdd"
-                app:layout_constraintStart_toStartOf="@+id/describeHotelLayoutAppendAdd"
                 app:layout_constraintTop_toBottomOf="@+id/describeHotelLayoutAppendAdd" />
 
             <TextView

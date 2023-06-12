@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_back"
+                android:src="@drawable/ic_action_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,17 +113,7 @@
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/hintForgotTextInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hint_forgot_password"
-                android:textColor="@color/orange"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins"
-                app:layout_constraintEnd_toEndOf="@+id/passwordLayoutInput"
-                app:layout_constraintTop_toBottomOf="@+id/passwordLayoutInput" />
+
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/inputButtonInput"

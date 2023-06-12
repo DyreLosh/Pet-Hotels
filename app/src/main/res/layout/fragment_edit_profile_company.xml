@@ -10,7 +10,7 @@
             android:id="@+id/imageBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/ic_action_name"
             android:layout_margin="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -102,12 +102,72 @@
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayoutEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:boxBackgroundColor="@color/text_input"
+        android:textColorHint="@color/text_hint"
+        app:boxStrokeColor="@color/text_hint"
+        app:hintTextColor="@color/text_hint"
+        app:layout_constraintEnd_toEndOf="@+id/emailLayoutEditProfile"
+        app:layout_constraintStart_toStartOf="@+id/emailLayoutEditProfile"
+        app:layout_constraintTop_toBottomOf="@+id/emailLayoutEditProfile">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditTextEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_password"
+            android:textSize="16sp"
+            android:minHeight="48dp"
+            android:paddingStart="33dp"
+            android:paddingEnd="33dp"
+            android:fontFamily="@font/poppins"
+            android:textColorLink="@color/text_hint"
+            android:textColor="@color/text_hint"
+            tools:ignore="TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordNewLayoutEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:boxBackgroundColor="@color/text_input"
+        android:textColorHint="@color/text_hint"
+        app:boxStrokeColor="@color/text_hint"
+        app:hintTextColor="@color/text_hint"
+        app:layout_constraintEnd_toEndOf="@+id/passwordLayoutEditProfile"
+        app:layout_constraintStart_toStartOf="@+id/passwordLayoutEditProfile"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayoutEditProfile">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordNewEditTextEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите новый пароль"
+            android:textSize="16sp"
+            android:minHeight="48dp"
+            android:paddingStart="33dp"
+            android:paddingEnd="33dp"
+            android:fontFamily="@font/poppins"
+            android:textColorLink="@color/text_hint"
+            android:textColor="@color/text_hint"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButtonEditProfile"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
         android:fontFamily="@font/poppins"
         android:hint="@string/save"
         android:textColorHint="@color/white"
@@ -115,12 +175,35 @@
         android:textStyle="bold"
         app:backgroundTint="@color/orange"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintEnd_toEndOf="@+id/emailLayoutEditProfile"
-        app:layout_constraintStart_toStartOf="@+id/emailLayoutEditProfile" />
+        app:layout_constraintEnd_toEndOf="@+id/passButtonEditProfile"
+        app:layout_constraintStart_toStartOf="@+id/passButtonEditProfile"
+        app:layout_constraintTop_toBottomOf="@+id/passButtonEditProfile" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/passButtonEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/poppins"
+        android:hint="Редактировать пароль"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/orange"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintEnd_toEndOf="@+id/passwordNewLayoutEditProfile"
+        app:layout_constraintStart_toStartOf="@+id/passwordNewLayoutEditProfile" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

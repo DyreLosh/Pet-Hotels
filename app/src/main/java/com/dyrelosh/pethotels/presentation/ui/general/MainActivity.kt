@@ -1,4 +1,4 @@
-package com.dyrelosh.pethotels
+package com.dyrelosh.pethotels.presentation.ui.general
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

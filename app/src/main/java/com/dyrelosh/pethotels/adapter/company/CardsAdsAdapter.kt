@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.databinding.ItemCardAdBinding
+import com.dyrelosh.pethotels.domain.companymodels.Hotel
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 
 class CardsAdsAdapter() : RecyclerView.Adapter<CardViewHolder>() {
 
-    private var cardsAd = mutableListOf<HotelAddsModel>()
+    private var cardsAd = mutableListOf<Hotel>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
@@ -34,7 +35,7 @@ class CardsAdsAdapter() : RecyclerView.Adapter<CardViewHolder>() {
     override fun getItemCount(): Int = cardsAd.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(listAdModel: MutableList<HotelAddsModel>) {
+    fun submitList(listAdModel: List<Hotel>) {
         cardsAd.clear()
         cardsAd.addAll(listAdModel)
         notifyDataSetChanged()

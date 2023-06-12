@@ -1,4 +1,4 @@
-package com.dyrelosh.pethotels.data.api.preference
+package com.dyrelosh.pethotels.data.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
