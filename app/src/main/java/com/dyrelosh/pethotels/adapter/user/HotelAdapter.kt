@@ -6,19 +6,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.databinding.ItemHotelBinding
 import com.dyrelosh.pethotels.domain.models.UserHotelModel
 
-class HotelAdapter(var mList: List<UserHotelModel>): RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
+class HotelAdapter(private val cellClickListener: CellClickListener): RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
 
     val items = mutableListOf<UserHotelModel>()
-    var onItemClick: (String) -> Unit = {}
+    var onItemClick: ((UserHotelModel) -> Unit)? = {}
 
     inner class HotelViewHolder(private val binding: ItemHotelBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(popularHotel: UserHotelModel, onItemClick: (String) -> Unit) {
+        fun bind(popularHotel: UserHotelModel, onItemClick: ((UserHotelModel) -> Unit)?) {
             binding.nameHotelItem.text = popularHotel.name
             binding.addressHotelItem.text = popularHotel.address
 
-            binding.root.setOnClickListener {
-                onItemClick.invoke(popularHotel.advertisementId)
-            }
+
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelViewHolder {
@@ -33,6 +31,10 @@ class HotelAdapter(var mList: List<UserHotelModel>): RecyclerView.Adapter<HotelA
 
     override fun onBindViewHolder(holder: HotelViewHolder, position: Int) {
         holder.bind(items[position], onItemClick)
+        holder.itemView.setOnClickListener {
+                cellClickListener.onCellClickListener(items[position])
+            }
+
     }
 
     override fun getItemCount(): Int = items.size

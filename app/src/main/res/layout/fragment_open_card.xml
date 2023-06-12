@@ -49,7 +49,7 @@
             android:textColor="@color/black"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:text="Friend for pets" />
+            tools:text="Friend for pets" />
 
         <TextView
             android:id="@+id/oneHotelDescription"
@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
             android:fontFamily="@font/poppins"
-            android:text="sf gdsf sdsd fdfs gsdfgdfs gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfgdsf gsdfg sdfg sdfg dfgdfsg dfsg sdfgsd fgsdfgsdfg sdfg sdfgsdfg dsfg"
+            tools:text="sf gdsf sdsd fdfs gsdfgdfs gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfgdsf gsdfg sdfg sdfg dfgdfsg dfsg sdfgsd fgsdfgsdfg sdfg sdfgsdfg dsfg"
             android:textColor="@color/black"/>
 
         <TextView
@@ -88,7 +88,7 @@
                 android:id="@+id/oneHotelCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Саранск"
+                tools:text="Саранск"
                 android:layout_marginStart="4dp"
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/black"/>
@@ -97,7 +97,7 @@
                 android:id="@+id/oneHotelAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ул. Большевитская 68"
+                tools:text="ул. Большевитская 68"
                 android:layout_marginStart="4dp"
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/black"/>

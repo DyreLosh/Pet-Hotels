@@ -6,18 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dyrelosh.pethotels.R
+import com.dyrelosh.pethotels.databinding.FragmentChangeProfileBinding
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ChangeProfileFragment : UserBaseFragment() {
 
     override val showBottomNavigationView = false
+    lateinit var binding: FragmentChangeProfileBinding
+    private val viewModel by viewModel<ChangeProfileViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_change_profile, container, false)
+        binding = FragmentChangeProfileBinding.inflate(inflater, container, false)
+        viewModel.getUserInfo()
+        viewModel.response.observe(viewLifecycleOwner) { info ->
+            binding.newUserNameChangeProfileEdit.hint = info.userName
+            binding.newEmailChangeProfileEdit.hint = info.email
+        }
+        return binding.root
     }
+
+
 
 }

@@ -25,6 +25,7 @@
         android:textColor="@color/button_color"
         android:textSize="25sp" />
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/newUserNameChangeProfileInput"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="20dp"
         app:boxCornerRadiusBottomEnd="20dp"
@@ -37,11 +38,13 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newUserNameChangeProfileEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/newEmailChangeProfileInput"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="20dp"
         app:boxCornerRadiusBottomEnd="20dp"
@@ -54,6 +57,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newEmailChangeProfileEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>

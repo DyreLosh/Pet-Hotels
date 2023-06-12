@@ -68,6 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
+                    android:maxLength="25"
                     android:hint="Введите ваш логин"
                     android:minHeight="48dp"
                     android:paddingStart="33dp"

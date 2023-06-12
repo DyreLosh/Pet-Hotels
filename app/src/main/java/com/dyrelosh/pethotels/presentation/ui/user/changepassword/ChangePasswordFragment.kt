@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.Validator
@@ -36,7 +37,12 @@ class ChangePasswordFragment : UserBaseFragment() {
                     validator.validateUserPassword(userOldPasswordEditText.text)
                 userNewPasswordInputLayout.error =
                     validator.validateUserPassword(userNewPasswordEditText.text)
-                if (userOldPasswordEditText.error == null && userNewPasswordEditText.error == null &&
+                binding.userOldPasswordInputLayout.error =
+                    if (userOldPasswordEditText.text.toString() ==
+                        PreferenceStorage(requireContext()).password.toString()
+                    ) "" else "Неверный старый пароль"
+
+                if (userOldPasswordInputLayout.error == null && userNewPasswordInputLayout.error == null &&
                     userOldPasswordEditText.text.toString() == PreferenceStorage(requireContext())
                         .password.toString()
                 ) {
@@ -47,17 +53,15 @@ class ChangePasswordFragment : UserBaseFragment() {
                             newPassword = userNewPasswordEditText.text.toString()
                         )
                     )
+                    AlertDialog.Builder(context).setTitle("Вы успешно сменили пароль")
+                        .setPositiveButton("Ok", null).show()
+                    findNavController().navigate(R.id.action_changePasswordFragment_to_loginFragment)
+                } else {
+                    AlertDialog.Builder(context).setTitle("Проверьте данные")
+                        .setPositiveButton("Ok", null).show()
                 }
-                else {
-                    AlertDialog.Builder(context).setTitle("Неверный старый пароль")
-                        .setPositiveButton("Ok", null)
-                }
-                AlertDialog.Builder(context).setTitle("Вы успешно сменили пароль")
-                    .setPositiveButton("Ok", null)
-                findNavController().popBackStack()
             }
         }
-
         return binding.root
     }
 

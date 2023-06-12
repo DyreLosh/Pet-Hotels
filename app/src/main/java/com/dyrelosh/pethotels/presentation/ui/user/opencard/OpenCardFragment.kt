@@ -52,8 +52,10 @@ class OpenCardFragment : UserBaseFragment() {
         viewModel.getOneHotel(param1.toString())
         viewModel.userPhoto.observe(viewLifecycleOwner) {
             if (it != null) {
-//                binding.oneHotelPhoto.setImageBitmap(it)
-                Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
+                binding.oneHotelPhoto.setImageBitmap(it)
+            }
+            else {
+
             }
         }
 

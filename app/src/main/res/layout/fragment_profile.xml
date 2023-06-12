@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Maksim sdfsdf"
+                tools:text="Maksim sdfsdf"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Maksimdfssdfsdf@gmail/com"
+                tools:text="Maksimdfssdfsdf@gmail/com"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />

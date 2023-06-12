@@ -1,11 +1,13 @@
 package com.dyrelosh.pethotels
 
 import android.text.Editable
+import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
 
 class Validator {
     companion object {
         private const val INN_LENGTH = 12
         private const val PASS_LENGTH = 10
+        private const val USERNAME_LENGTH = 25
     }
 
     fun validateNameHotel(text: Editable?): String? =
@@ -71,6 +73,7 @@ class Validator {
     fun validateUserUserName(text: Editable?): String? =
         when {
             text?.isEmpty() == true -> "Поле не должно быть пустым"
+            text?.length!! >= USERNAME_LENGTH -> "Логин должен быть меньше 25 букв"
             else -> null
         }
     fun validateUserEmail(text: Editable?): String? =
@@ -87,4 +90,6 @@ class Validator {
             retPass.toString() != pass.toString() -> "Пароли должны совпадать"
             else -> null
         }
+
+
 }

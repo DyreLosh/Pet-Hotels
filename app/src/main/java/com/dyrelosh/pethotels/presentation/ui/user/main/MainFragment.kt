@@ -52,7 +52,12 @@ class MainFragment : UserBaseFragment() {
         viewModel.response.observe(viewLifecycleOwner) { response ->
             listAdd.addAll(response)
             recyclerAdapter.submitList(listAdd)
-            listAdd.clear()
+            val filteredList = mutableListOf<UserHotelModel>()
+            for (i in listAdd) {
+
+
+            }
+
         }
 
 

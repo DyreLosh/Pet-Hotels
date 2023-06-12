@@ -109,7 +109,7 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     }
 
     override fun setPassword(password: String) {
-        preferenceStorage.password == password
+        preferenceStorage.password = password
     }
 
     override fun getPassword(): String? {
