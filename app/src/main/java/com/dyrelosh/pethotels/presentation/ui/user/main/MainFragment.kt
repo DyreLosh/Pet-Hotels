@@ -9,7 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.adapter.user.PopularHotelAdapter
-import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
+import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentMainBinding
 import com.dyrelosh.pethotels.domain.models.UserHotelModel
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment

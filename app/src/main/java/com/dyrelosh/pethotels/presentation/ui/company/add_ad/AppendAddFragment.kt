@@ -14,10 +14,9 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
-import coil.load
 import com.dyrelosh.pethotels.R
+import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.common.URIPathHelper
-import com.dyrelosh.pethotels.common.Validator
 import com.dyrelosh.pethotels.databinding.FragmentAddAppendBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAppendAddModel
 import com.dyrelosh.pethotels.extensions.handleImagePickerResult

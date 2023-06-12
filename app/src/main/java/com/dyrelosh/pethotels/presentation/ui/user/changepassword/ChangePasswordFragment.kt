@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.Validator
-import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
+import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentChangePasswordBinding
 import com.dyrelosh.pethotels.domain.companymodels.ChangePasswordModel
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment

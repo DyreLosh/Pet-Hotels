@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentSplashBinding
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
+import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentProfileBinding
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 import com.dyrelosh.pethotels.presentation.ui.user.opencard.OpenCardViewModel

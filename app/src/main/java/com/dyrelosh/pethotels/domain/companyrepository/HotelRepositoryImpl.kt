@@ -7,6 +7,9 @@ import com.dyrelosh.pethotels.data.api.ApiService
 import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.domain.companymodels.*
+import com.dyrelosh.pethotels.domain.models.UserHotelModel
+import com.dyrelosh.pethotels.domain.models.UserInfoModel
+import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import com.dyrelosh.pethotels.extensions.toMultipartPart
 import java.io.File
 import java.lang.Exception
@@ -51,10 +54,14 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         token: String,
         hotelEditModel: HotelEditModel
     ): HotelEditModel? {
-        return ApiService.retrofit.editProfileCompany("Bearer $token",hotelEditModel).body()
+        return ApiService.retrofit.editProfileCompany("Bearer $token", hotelEditModel).body()
     }
 
-    override suspend fun editAdCompany(token: String, addsModel: HotelAddsModel, id: String): HotelAddsModel? {
+    override suspend fun editAdCompany(
+        token: String,
+        addsModel: HotelAddsModel,
+        id: String
+    ): HotelAddsModel? {
         return ApiService.retrofit.editAdCompany("Bearer $token", addsModel, id).body()
     }
 
@@ -64,7 +71,11 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 //        ).isSuccessful
 //    }
 
-    override suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Bitmap?  {
+    override suspend fun setHotelPhoto(
+        token: String,
+        imageUrl: String?,
+        idAdvertisement: String
+    ): Bitmap? {
         return try {
             BitmapFactory.decodeStream(
                 ApiService.retrofit.setHotelPhoto(
@@ -107,11 +118,14 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     override suspend fun appendAdd(
         token: String,
         hotelAppendAddModel: HotelAppendAddModel
-    ):HotelResponse {
+    ): HotelResponse {
         return ApiService.retrofit.appendAdd("Bearer $token", hotelAppendAddModel).body()!!
     }
 
-    override suspend fun changePassword(token: String, changePasswordModel: ChangePasswordModel): Boolean {
+    override suspend fun changePassword(
+        token: String,
+        changePasswordModel: ChangePasswordModel
+    ): Boolean {
         return ApiService.retrofit.changePassword("Bearer $token", changePasswordModel).isSuccessful
     }
 
@@ -119,19 +133,22 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     override suspend fun deleteAdd(token: String, id: String): Boolean {
         return ApiService.retrofit.deleteAdd("Bearer $token", id).isSuccessful
     }
+
     override fun clearPreference(): Boolean {
         preferenceStorage.clearPreference()
         return true
     }
 
-}
 
 //    fun authUser(param: LoginHotelUseCase.Param): String {
 //     //TODO ApiService.users.filter { it.email == param.email && it.password == param.password }
 //    return ApiService.getToken()
 //    }
 
-    override suspend fun changeUserPassword(token: String, changePasswordModel: ChangePasswordModel): Boolean {
+    override suspend fun changeUserPassword(
+        token: String,
+        changePasswordModel: ChangePasswordModel
+    ): Boolean {
         return ApiService.retrofit.changePassword("Bearer $token", changePasswordModel).isSuccessful
     }
 
@@ -178,19 +195,20 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         }
     }
 
-private fun hotelResponseToModel(response: HotelResponse, hotelPhoto: List<Bitmap?>): Hotel {
-    return Hotel(
-        advertisementId = response.advertisementId,
-        name = response.name,
-        city = response.city,
-        address = response.address,
-        number = response.number,
-        description = response.description,
-        photos = hotelPhoto,
-        cat = response.cat,
-        rodent = response.rodent,
-        dog = response.dog,
-        other = response.other,
-        companyId = response.companyId
-    )
+    private fun hotelResponseToModel(response: HotelResponse, hotelPhoto: List<Bitmap?>): Hotel {
+        return Hotel(
+            advertisementId = response.advertisementId,
+            name = response.name,
+            city = response.city,
+            address = response.address,
+            number = response.number,
+            description = response.description,
+            photos = hotelPhoto,
+            cat = response.cat,
+            rodent = response.rodent,
+            dog = response.dog,
+            other = response.other,
+            companyId = response.companyId
+        )
+    }
 }

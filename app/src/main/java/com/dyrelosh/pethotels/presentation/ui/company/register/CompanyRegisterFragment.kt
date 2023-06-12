@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.common.Validator
+import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.databinding.FragmentRegisterCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import org.koin.androidx.viewmodel.ext.android.viewModel

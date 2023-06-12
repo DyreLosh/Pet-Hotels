@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.data.api.preference.PreferenceStorage
+import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentWelcomeBinding
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 
@@ -27,14 +27,16 @@ class WelcomeFragment : UserBaseFragment() {
         preference = context?.let { PreferenceStorage(it) }!!
         val token = preference.accessToken
 
-        /*binding.welcomeToLoginButton.setOnClickListener {
-            if (token?.isNotEmpty() == false) {
-                findNavController().navigate(R.id.action_welcomeFragment_to_loginFragment)
-            }
-            else {
-                findNavController().navigate(R.id.action_welcomeFragment_to_mainFragment)
-            }
-        }*/
+        binding.welcomeToLoginButton.setOnClickListener {
+            findNavController().navigate(R.id.action_welcomeFragment_to_loginFragment)
+        }
+            /* if (token?.isNotEmpty() == false) {
+                 findNavController().navigate(R.id.action_welcomeFragment_to_loginFragment)
+             }
+             else {
+                 findNavController().navigate(R.id.action_welcomeFragment_to_mainFragment)
+             }
+         }*/
         binding.welcomeToRegisterMethodButton.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeFragment_to_registrationMethodFragment2)
         }

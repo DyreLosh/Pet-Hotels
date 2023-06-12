@@ -8,6 +8,12 @@ import com.dyrelosh.pethotels.presentation.ui.company.company_profile.CompanyPro
 import com.dyrelosh.pethotels.presentation.ui.company.company_profile.EditProfileCompanyFragmentViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.register.CompanyRegisterViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.CompanyViewingAdViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.changepassword.ChangePasswordViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.main.MainViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.opencard.OpenCardViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.profile.UserProfileViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.register.UserRegisterViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.search.SearchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

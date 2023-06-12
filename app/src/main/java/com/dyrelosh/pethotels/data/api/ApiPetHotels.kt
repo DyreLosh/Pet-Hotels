@@ -1,6 +1,10 @@
 package com.dyrelosh.pethotels.data.api
 
+import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.domain.companymodels.*
+import com.dyrelosh.pethotels.domain.models.UserHotelModel
+import com.dyrelosh.pethotels.domain.models.UserInfoModel
+import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -27,11 +31,18 @@ interface ApiPetHotels {
         @Body body: HotelEditModel
     ): Response<HotelEditModel>
 
+    @PUT("api/hotels/advertisements/advertisement/{id}")
+    suspend fun editAdCompany(
+        @Header("Authorization") token: String?,
+        @Body body: HotelAddsModel,
+        @Path("id") id: String
+    ): Response<HotelAddsModel>
+
     @GET("api/hotels/advertisements/{id}")
     suspend fun getAddInfo(
         @Header("Authorization") token: String?,
         @Path("id") id: String
-    ): Response<HotelAddsModel>
+    ): Response<HotelResponse>
 
     @GET("api/hotels/GetAutorizeAdv")
     suspend fun getAdds(
@@ -73,12 +84,6 @@ interface ApiPetHotels {
     suspend fun userRegister(
         @Body body: UserRegisterModel
     ): Response<Unit>
-    @GET("photo/{imageId}")
-    suspend fun getHotelPhoto(
-        @Header("Authorization") token: String?,
-        @Path("imageId") id: String
-    ): Response<ResponseBody>
-
 
     @POST("api/authentication/ChangePassword")
     suspend fun changeUserPassword(

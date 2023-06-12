@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.dyrelosh.pethotels.R
-import com.dyrelosh.pethotels.common.Validator
+import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.databinding.FragmentViewingAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 import com.dyrelosh.pethotels.extensions.handleImagePickerResult

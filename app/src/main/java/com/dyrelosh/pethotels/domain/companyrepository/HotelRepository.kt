@@ -3,6 +3,9 @@ package com.dyrelosh.pethotels.domain.companyrepository
 import android.graphics.Bitmap
 import com.dyrelosh.pethotels.data.api.response.HotelResponse
 import com.dyrelosh.pethotels.domain.companymodels.*
+import com.dyrelosh.pethotels.domain.models.UserHotelModel
+import com.dyrelosh.pethotels.domain.models.UserInfoModel
+import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import okhttp3.MultipartBody
 
 //import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
