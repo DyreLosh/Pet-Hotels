@@ -7,7 +7,10 @@
     android:background="@color/gray"
     app:cardCornerRadius="20dp"
     android:layout_marginTop="10dp"
-    android:backgroundTint="@color/gray"
+    app:rippleColor="@color/orange"
+    app:strokeColor="@color/light_gray"
+    app:strokeWidth="1dp"
+    android:backgroundTint="@color/white"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -51,15 +54,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameHotelItem" />
 
-            <ImageView
-                android:id="@+id/likeItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_like"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

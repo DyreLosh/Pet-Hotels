@@ -43,10 +43,10 @@ class UserRegisterFragment : UserBaseFragment() {
                         passwordConfirmRegisterUserEditText.text,
                         passwordRegisterUserEditText.text
                     )
-                if (userNameRegisterUserEditText.error == null &&
-                    passwordRegisterUserEditText.error == null &&
-                    emailRegisterUserEditText.error == null &&
-                    passwordConfirmRegisterUserEditText.error == null
+                if (userNameRegisterUserLayout.error == null &&
+                    passwordRegisterUserLayout.error == null &&
+                    emailRegisterUserLayout.error == null &&
+                    passwordConfirmRegisterUserLayout.error == null
                 ) {
                     viewModel.registrationHotel(
                         UserRegisterModel(

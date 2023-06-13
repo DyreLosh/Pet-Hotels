@@ -66,10 +66,11 @@ class CompanyLoginFragment : UserBaseFragment() {
                         .navigate(R.id.action_loginFragment_to_mainFragment)
                     else -> AlertDialog.Builder(requireContext())
                         .setTitle("Введите правильные данные для входа")
-                        .setPositiveButton("OK",null)
+                        .setPositiveButton("OK", null)
                         .show()
                 }
-            } else Toast.makeText(context, "не успешно", Toast.LENGTH_SHORT).show()
+            } else AlertDialog.Builder(requireContext()).setTitle("Проверьте введенные данны")
+                .setPositiveButton("OK", null).show()
         }
 //            viewModel.auth(
 //                    LoginHotelUseCase.Param(
