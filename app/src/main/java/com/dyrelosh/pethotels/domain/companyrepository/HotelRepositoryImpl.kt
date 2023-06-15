@@ -178,9 +178,19 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.userRegister(registerModel).isSuccessful
     }
 
-    override suspend fun getHotels(token: String): List<UserHotelModel>? {
+    override suspend fun getHotels(token: String): List<Hotel>? {
         return ApiService.retrofit.getHotels("Bearer $token").body()
+            ?.map {
+                userResponseToModel(
+                    it,
+                    it.photos.map { id ->
+                        getHotelPhoto(token, id)
+                    }
+                )
+            }
     }
+
+
 
     override suspend fun getOneHotel(token: String, id: String): UserHotelModel {
         return ApiService.retrofit.getHotelsID("Bearer $token", id).body()!!
@@ -225,4 +235,22 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
             companyId = response.companyId
         )
     }
+
+    private fun userResponseToModel(response: UserHotelModel, hotelPhoto: List<Bitmap?>) : Hotel {
+        return Hotel(
+            advertisementId = response.advertisementId,
+            name = response.name,
+            city = response.city,
+            address = response.address,
+            number = response.number,
+            description = response.description,
+            photos = hotelPhoto,
+            cat = response.cat,
+            rodent = response.rodent,
+            dog = response.dog,
+            other = response.other,
+            companyId = response.companyId
+        )
+    }
+
 }

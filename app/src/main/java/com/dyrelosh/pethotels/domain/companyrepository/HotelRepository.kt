@@ -60,7 +60,7 @@ interface HotelRepository {
 
     suspend fun userRegister(registerModel: UserRegisterModel): Boolean
 
-    suspend fun getHotels(token: String) : List<UserHotelModel>?
+    suspend fun getHotels(token: String) : List<Hotel>?
 
     suspend fun getOneHotel(token: String, id: String) : UserHotelModel
 

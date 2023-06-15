@@ -7,6 +7,7 @@ import android.icu.number.NumberRangeFormatter.with
 import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.ItemHotelBinding
+import com.dyrelosh.pethotels.domain.companymodels.Hotel
 import com.dyrelosh.pethotels.domain.models.UserHotelModel
 import com.squareup.picasso.Picasso
 import java.io.File
@@ -18,13 +19,13 @@ import java.util.*
 class PopularHotelViewHolder(private val binding: ItemHotelBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(popularHotel: UserHotelModel, onItemClick: (String) -> Unit) {
+    fun bind(popularHotel: Hotel, onItemClick: (String) -> Unit) {
         binding.nameHotelItem.text = popularHotel.name
         binding.addressHotelItem.text = popularHotel.address
         var p = popularHotel.photos
 
         if (p.size != 0) {
-            Picasso.get()
+            Picasso.with(itemView.context)
                 .load(bitmapToFile(p.get(0)!!))
                 .placeholder(R.drawable.ic_app_logo)
                 .into(binding.hotelImage)
@@ -35,7 +36,7 @@ class PopularHotelViewHolder(private val binding: ItemHotelBinding) :
         }
     }
 
-    fun bitmapToFile(bitmap: Bitmap): File? {
+    fun bitmapToFile(bitmap: Bitmap): File {
         val wrapper = ContextWrapper(itemView.context)
         var file = wrapper.getDir("Images", Context.MODE_PRIVATE)
         file = File(file, "${UUID.randomUUID()}.jpg")

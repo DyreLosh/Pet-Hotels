@@ -1,7 +1,7 @@
 package com.dyrelosh.pethotels.adapter.user
 
-import com.dyrelosh.pethotels.domain.models.UserHotelModel
+import com.dyrelosh.pethotels.domain.companymodels.Hotel
 
 interface CellClickListener {
-    fun onCellClickListener(data: UserHotelModel)
+    fun onCellClickListener(data: Hotel)
 }

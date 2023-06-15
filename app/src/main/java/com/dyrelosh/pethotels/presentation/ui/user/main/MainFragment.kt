@@ -11,6 +11,7 @@ import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.adapter.user.PopularHotelAdapter
 import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentMainBinding
+import com.dyrelosh.pethotels.domain.companymodels.Hotel
 import com.dyrelosh.pethotels.domain.models.UserHotelModel
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
 import com.dyrelosh.pethotels.presentation.ui.user.opencard.OpenCardFragment
@@ -20,7 +21,7 @@ class MainFragment : UserBaseFragment() {
 
     override val showBottomNavigationView = true
     lateinit var binding: FragmentMainBinding
-    private val listAdd = mutableListOf<UserHotelModel>()
+    private val listAdd = mutableListOf<Hotel>()
     private val viewModel by viewModel<MainViewModel>()
     private val recyclerAdapter by lazy { PopularHotelAdapter() }
 
@@ -52,7 +53,7 @@ class MainFragment : UserBaseFragment() {
         viewModel.response.observe(viewLifecycleOwner) { response ->
             listAdd.addAll(response)
             recyclerAdapter.submitList(listAdd)
-            val filteredList = mutableListOf<UserHotelModel>()
+            val filteredList = mutableListOf<Hotel>()
             for (i in listAdd) {
 
 
