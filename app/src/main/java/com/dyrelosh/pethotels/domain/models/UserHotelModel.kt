@@ -7,11 +7,10 @@ data class UserHotelModel (
     val address: String,
     val number: String,
     val description: String,
-    //  val photoHotel: String,
     val cat: Boolean,
     val rodent: Boolean,
     val dog: Boolean,
     val other: Boolean,
     val companyId: String,
-    val photos: Array<String>
+    val photos: List<String>
         )

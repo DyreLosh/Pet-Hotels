@@ -152,6 +152,28 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.changePassword("Bearer $token", changePasswordModel).isSuccessful
     }
 
+    override suspend fun changeUserEmail(
+        token: String,
+        changeEmailModel: ChangeEmailModel
+    ): Boolean {
+        return ApiService.retrofit.changeUserEmail(
+            "Bearer $token",
+            changeEmailModel.id,
+            changeEmailModel.email
+        ).isSuccessful
+    }
+
+    override suspend fun changeUserName(
+        token: String,
+        changeUserNameModel: ChangeUserNameModel
+    ): Boolean {
+        return ApiService.retrofit.changeUserName(
+            "Bearer $token",
+            changeUserNameModel.id,
+            changeUserNameModel.userName
+        ).isSuccessful
+    }
+
     override suspend fun userRegister(registerModel: UserRegisterModel): Boolean {
         return ApiService.retrofit.userRegister(registerModel).isSuccessful
     }
@@ -164,14 +186,6 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.getHotelsID("Bearer $token", id).body()!!
     }
 
-
-    override suspend fun changeUserData() {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun getFavourites(userHotelModel: UserHotelModel): UserHotelModel {
-        TODO("Not yet implemented")
-    }
 
     override suspend fun getUserInfoFun(token: String): UserInfoModel {
         return ApiService.retrofit.getUserInfoFun("Bearer $token").body()!!

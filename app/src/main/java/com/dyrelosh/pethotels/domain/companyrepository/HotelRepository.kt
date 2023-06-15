@@ -6,7 +6,7 @@ import com.dyrelosh.pethotels.domain.companymodels.*
 import com.dyrelosh.pethotels.domain.models.UserHotelModel
 import com.dyrelosh.pethotels.domain.models.UserInfoModel
 import com.dyrelosh.pethotels.domain.models.UserRegisterModel
-import okhttp3.MultipartBody
+import com.dyrelosh.pethotels.utils.ApiResult
 
 //import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
 
@@ -66,9 +66,10 @@ interface HotelRepository {
 
     suspend fun changeUserPassword(token: String, changePasswordModel: ChangePasswordModel): Boolean
 
-    suspend fun changeUserData()
+    suspend fun changeUserEmail(token: String, changeEmailModel: ChangeEmailModel): Boolean
 
-    suspend fun getFavourites(userHotelModel: UserHotelModel): UserHotelModel
+    suspend fun changeUserName(token: String, changeUserNameModel: ChangeUserNameModel): Boolean
+
 
     suspend fun getUserInfoFun(token: String) : UserInfoModel
 

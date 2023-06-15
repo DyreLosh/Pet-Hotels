@@ -92,12 +92,16 @@ interface ApiPetHotels {
 
     @PUT("api/authentication/ChangeEmail/{id}")
     suspend fun changeUserEmail(
-
+        @Header("Authorization") token: String?,
+        @Path("id") id: String,
+        @Query("email") email: String
     ): Response<HotelInfoModel>
 
     @PUT("api/authentication/ChangeUserName{id}")
     suspend fun changeUserName(
-
+        @Header("Authorization") token: String?,
+        @Path("id") id: String,
+        @Query("userName") userName: String
     ): Response<HotelInfoModel>
 
     @GET("api/authentication/CheckAuthorization")

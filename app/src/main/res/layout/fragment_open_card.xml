@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/open_hotel_image" />
+                tools:src="@drawable/open_hotel_image" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/openCardBack"

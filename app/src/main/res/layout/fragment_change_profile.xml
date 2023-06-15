@@ -64,6 +64,7 @@
 
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/changeUserInfoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:backgroundTint="@color/button_color"
@@ -72,7 +73,8 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         app:cornerRadius="20dp"
+        android:layout_gravity="bottom"
         android:paddingVertical="15dp"
         android:fontFamily="@font/poppins"
-        android:layout_marginTop="330dp"/>
+        android:layout_marginTop="300dp"/>
 </LinearLayout>

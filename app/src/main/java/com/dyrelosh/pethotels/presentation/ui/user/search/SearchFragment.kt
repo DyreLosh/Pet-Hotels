@@ -40,7 +40,6 @@ class SearchFragment : UserBaseFragment(), CellClickListener {
         viewModel.getHotels()
     }
 
-    //TODO rename fragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -79,29 +78,20 @@ class SearchFragment : UserBaseFragment(), CellClickListener {
                             binding.searchRecycler.visibility = View.INVISIBLE
                             binding.invisibleLayout.visibility = View.VISIBLE
                         }
-
-
                     }
                     if (filteredList.isEmpty()) {
                         filteredList.clear()
                     } else {
                         adapter.submitList(filteredList)
-
                     }
                 }
                 return true
-
             }
         })
         recyclerAdapter.onItemClick = { it ->
 
         }
         return binding.root
-    }
-
-    private fun filterList(newText: String?) {
-
-
     }
 
     override fun onCellClickListener(data: UserHotelModel) {
@@ -111,6 +101,4 @@ class SearchFragment : UserBaseFragment(), CellClickListener {
             bundleOf("OOO" to data.advertisementId)
         )
     }
-
-
 }

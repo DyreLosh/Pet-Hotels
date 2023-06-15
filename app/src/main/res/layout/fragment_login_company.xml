@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_action_name"
+                android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,6 +89,7 @@
                 app:boxBackgroundColor="@color/text_input"
                 android:layout_marginTop="10dp"
                 app:passwordToggleEnabled="true"
+                app:errorEnabled="false"
                 android:textColorHint="@color/text_hint"
                 app:boxStrokeColor="@color/text_hint"
                 app:hintTextColor="@color/text_hint"
@@ -114,59 +115,55 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/inputButtonInput"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins"
                 android:hint="@string/input_button"
                 android:textColorHint="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/orange"
                 app:cornerRadius="20dp"
-                android:fontFamily="@font/poppins"
-                android:layout_marginTop="60dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/passwordLayoutInput"
                 app:layout_constraintStart_toStartOf="@+id/passwordLayoutInput"
                 app:layout_constraintTop_toBottomOf="@+id/passwordLayoutInput" />
 
-            <TextView
-                android:id="@+id/hintTextInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hint_input"
-                android:textColor="@color/text"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="25dp"
-                app:layout_constraintStart_toStartOf="@+id/inputButtonInput"
-                app:layout_constraintTop_toBottomOf="@+id/inputButtonInput" />
-
-            <TextView
-                android:id="@+id/hintRegTextInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hint_input_registration"
-                android:textColor="@color/orange"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="8dp"
-                app:layout_constraintStart_toEndOf="@+id/hintTextInput"
-                app:layout_constraintTop_toBottomOf="@+id/inputButtonInput" />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/poppins"
-                app:layout_constraintEnd_toEndOf="@+id/hintRegTextInput"
-                app:layout_constraintStart_toStartOf="@+id/hintTextInput"
-                app:layout_constraintTop_toBottomOf="@+id/inputButtonInput" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputButtonInput">
+
+                <TextView
+                    android:id="@+id/hintTextInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/hint_input"
+                    android:textColor="@color/text"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/inputButtonInput"
+                    app:layout_constraintTop_toBottomOf="@+id/inputButtonInput" />
+
+                <TextView
+                    android:id="@+id/hintRegTextInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/hint_input_registration"
+                    android:textColor="@color/orange"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

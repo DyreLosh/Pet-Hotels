@@ -6,9 +6,7 @@ import com.dyrelosh.pethotels.domain.usecase.auth.RegisterUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetHotelPhotoForUserUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetHotelsUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetOneHotelUseCase
-import com.dyrelosh.pethotels.domain.usecase.user.ChangeUserPasswordUseCase
-import com.dyrelosh.pethotels.domain.usecase.user.SetPasswordUseCase
-import com.dyrelosh.pethotels.domain.usecase.user.SetTokenUserUseCase
+import com.dyrelosh.pethotels.domain.usecase.user.*
 import org.koin.dsl.module
 
 val domainDi = module {
@@ -87,4 +85,8 @@ val domainDi = module {
     factory {
         ChangePasswordUseCase(get())
     }
+    factory {
+        ChangeUserEmailUseCase(get())
+    }
+    factory { ChangeUserNameUseCase(get()) }
 }

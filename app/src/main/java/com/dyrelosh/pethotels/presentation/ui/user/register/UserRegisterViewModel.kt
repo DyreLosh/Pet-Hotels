@@ -8,14 +8,13 @@ import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import com.dyrelosh.pethotels.domain.usecase.auth.RegisterUseCase
 import com.dyrelosh.pethotels.domain.usecase.user.SetTokenUserUseCase
+import com.dyrelosh.pethotels.utils.ApiResult
 import kotlinx.coroutines.launch
 
 class UserRegisterViewModel(
     private val registerUseCase: RegisterUseCase,
     private val setTokenUserUseCase: SetTokenUserUseCase
 ) : ViewModel() {
-
-
     private val _token: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
     val token: LiveData<Boolean> = _token
 

@@ -9,6 +9,7 @@ import com.dyrelosh.pethotels.presentation.ui.company.company_profile.EditProfil
 import com.dyrelosh.pethotels.presentation.ui.company.register.CompanyRegisterViewModel
 import com.dyrelosh.pethotels.presentation.ui.company.viewing_ad.CompanyViewingAdViewModel
 import com.dyrelosh.pethotels.presentation.ui.user.changepassword.ChangePasswordViewModel
+import com.dyrelosh.pethotels.presentation.ui.user.changeprofile.ChangeProfileViewModel
 import com.dyrelosh.pethotels.presentation.ui.user.main.MainViewModel
 import com.dyrelosh.pethotels.presentation.ui.user.opencard.OpenCardViewModel
 import com.dyrelosh.pethotels.presentation.ui.user.profile.UserProfileViewModel
@@ -100,5 +101,14 @@ val presentationDi = module {
 
     viewModel {
         UserProfileViewModel(getToken = get(), getUserInfo = get())
+    }
+
+    viewModel {
+        ChangeProfileViewModel(
+            getToken = get(),
+            getUserInfo = get(),
+            changeUserEmail = get(),
+            changeUserNameUseCase = get()
+        )
     }
 }
