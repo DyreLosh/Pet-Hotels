@@ -6,14 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.company.company_profile.EditProfileCompanyFragment">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="100dp"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
         <ImageView
-            android:id="@+id/imageBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_name"
-            android:layout_margin="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back" />
+    </androidx.cardview.widget.CardView>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/INNLayoutEditProfile"

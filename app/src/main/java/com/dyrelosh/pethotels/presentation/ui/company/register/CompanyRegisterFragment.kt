@@ -37,22 +37,31 @@ class CompanyRegisterFragment : Fragment() {
             with(binding) {
                 INNLayoutRegistration.error =
                     validator.validateINNHotel(INNEditTextRegistration.text)
+                INNLayoutRegistration.setErrorIconDrawable(0)
                 nameHotelLayoutRegistration.error =
                     validator.validateNameHotel(nameHotelEditTextRegistration.text)
+                nameHotelLayoutRegistration.setErrorIconDrawable(0)
                 passwordLayoutRegistration.error =
                     validator.validatePasswordHotel(passwordEditTextRegistration.text)
+                passwordLayoutRegistration.setErrorIconDrawable(0)
                 emailLayoutRegistration.error =
                     validator.validateEmailHotel(emailEditTextRegistration.text)
+                emailLayoutRegistration.setErrorIconDrawable(0)
                 returnPasswordLayoutRegistration.error =
                     validator.returnPasswordHotel(
                         returnPasswordEditTextRegistration.text,
                         passwordEditTextRegistration.text
                     )
+                returnPasswordLayoutRegistration.setErrorIconDrawable(0)
+                loginLayoutRegistration.error =
+                    validator.validateUserUserName(loginEditTextRegistration.text)
+                loginLayoutRegistration.setErrorIconDrawable(0)
                 if (INNLayoutRegistration.error == null &&
                     nameHotelLayoutRegistration.error == null &&
                     passwordLayoutRegistration.error == null &&
                     emailLayoutRegistration.error == null &&
-                    returnPasswordLayoutRegistration.error == null
+                    returnPasswordLayoutRegistration.error == null &&
+                    loginLayoutRegistration.error == null
                 ) {
                     viewModel.registrationHotel(
                         HotelRegisterModel(
@@ -64,7 +73,6 @@ class CompanyRegisterFragment : Fragment() {
                             roles = arrayOf("Companyy")
                         )
                     )
-                   // findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                 }
             }
         }

@@ -6,15 +6,15 @@
     android:clickable="true"
     android:focusable="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
     android:layout_marginBottom="10dp"
-    app:cardCornerRadius="30sp"
+    app:cardCornerRadius="10sp"
     android:foreground="?selectableItemBackground"
     android:backgroundTint="@color/light_gray">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="220dp">
 
         <TextView
             android:id="@+id/textViewNameCardAd"
@@ -30,16 +30,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNameCardAd"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/PhotoAd"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_app_logo"/>
+        </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/textViewCityCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
+            android:layout_marginStart="10dp"
+            android:text="город"
             android:textColor="@color/text"
             android:textSize="20sp"
-            android:text="город"
-            android:layout_marginStart="30dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toBottomOf="@+id/textViewNameCardAd" />
 
         <TextView
@@ -67,12 +84,27 @@
             android:id="@+id/textViewCatCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="cat"
+            android:text="cat      "
+
             android:visibility="gone"
+            android:layout_marginEnd="10dp"
             android:textColor="@color/text"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/textViewNumberCard"
             app:layout_constraintTop_toBottomOf="@+id/textViewNumberCard" />
+
+        <TextView
+            android:id="@+id/textViewRodentCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rodent"
+
+            android:visibility="gone"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewCatCard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumberCard" />
+
         <TextView
             android:id="@+id/textViewDogCard"
             android:layout_width="wrap_content"
@@ -85,17 +117,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewCatCard" />
 
         <TextView
-            android:id="@+id/textViewRodentCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="rodent"
-            android:textColor="@color/text"
-            android:visibility="gone"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewDogCard"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDogCard" />
-
-        <TextView
             android:id="@+id/textViewOtherCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,7 +124,7 @@
             android:visibility="gone"
             android:textColor="@color/text"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewRodentCard"
+            app:layout_constraintStart_toEndOf="@+id/textViewCatCard"
             app:layout_constraintTop_toBottomOf="@+id/textViewRodentCard" />
 
 <!--        -->

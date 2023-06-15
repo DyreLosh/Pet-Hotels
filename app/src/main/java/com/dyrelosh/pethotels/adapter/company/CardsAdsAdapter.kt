@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.databinding.ItemCardAdBinding
 import com.dyrelosh.pethotels.domain.companymodels.Hotel
 import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
+import com.squareup.picasso.Picasso
 
 class CardsAdsAdapter() : RecyclerView.Adapter<CardViewHolder>() {
 
@@ -28,7 +29,9 @@ class CardsAdsAdapter() : RecyclerView.Adapter<CardViewHolder>() {
     var itemClick: (String) -> Unit = {}
 
      override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        holder.bind(cardsAd[position], itemClick) }
+        holder.bind(cardsAd[position], itemClick)
+
+     }
 
 
 
