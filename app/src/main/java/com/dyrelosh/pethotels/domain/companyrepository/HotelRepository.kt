@@ -7,11 +7,13 @@ import com.dyrelosh.pethotels.domain.models.UserHotelModel
 import com.dyrelosh.pethotels.domain.models.UserInfoModel
 import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import com.dyrelosh.pethotels.utils.ApiResult
+import okhttp3.ResponseBody
 
 //import com.dyrelosh.pethotels.domain.companyusecase.AppendAddUseCase
 
 interface HotelRepository {
-    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Boolean
+
+    suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Int
 
     fun getToken(): String?
 
@@ -58,7 +60,7 @@ interface HotelRepository {
     //suspend fun getUserPhoto(token: String, id: String): Bitmap?
 
 
-    suspend fun userRegister(registerModel: UserRegisterModel): Boolean
+    suspend fun userRegister(registerModel: UserRegisterModel): Int
 
     suspend fun getHotels(token: String) : List<Hotel>?
 

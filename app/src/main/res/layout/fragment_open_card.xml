@@ -13,7 +13,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp">
+            android:layout_height="300dp">
 
             <ImageView
                 android:id="@+id/oneHotelPhoto"
@@ -55,6 +55,7 @@
             android:id="@+id/oneHotelDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textSize="18sp"
             android:layout_marginHorizontal="20dp"
             tools:text="sf gdsf sdsd fdfs gsdfgdfs gsdgdfg sdfg sdfgsdf sdfg sdf gsdfgsdfg sdfg sdfg fdg sdf gsdf gsdfg sdfg dsf gdsf gdfsg dsf gdsfgsdfg sdf gsdf gd fdfs gsdfgdfs sdf gdfsg sdfgdsf gsd fsdfg sdfgsd fgdsf gdsf gsdfgdsf gsdfg sdfg sdfg dfgdfsg dfsg sdfgsd fgsdfgsdfg sdfg sdfgsdfg dsfg"
             android:textColor="@color/black"/>

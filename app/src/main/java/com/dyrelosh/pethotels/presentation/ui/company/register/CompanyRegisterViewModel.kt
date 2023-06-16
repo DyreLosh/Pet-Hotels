@@ -11,18 +11,14 @@ import kotlinx.coroutines.launch
 
 class CompanyRegisterViewModel(
     private val registerHotelUseCase: RegisterHotelUseCase,
-    private val setTokenCompanyUseCase: SetTokenCompanyUseCase,
-   // private val setEmailCompanyUseCase: SetEmailCompanyUseCase
 ) : ViewModel() {
 
-    private val _token: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
-    val token: LiveData<Boolean> = _token
+    private val _errorCode: MutableLiveData<Int> = MutableLiveData<Int>()
+    val errorCode: LiveData<Int> = _errorCode
 
     fun registrationHotel(hotelRegisterModel: HotelRegisterModel) {
         viewModelScope.launch {
-            _token.value = registerHotelUseCase.execute(hotelRegisterModel)
-           // _token.value?.let { setTokenCompanyUseCase.execute(it) }
+            _errorCode.value = registerHotelUseCase.execute(hotelRegisterModel)
         }
     }
-
 }

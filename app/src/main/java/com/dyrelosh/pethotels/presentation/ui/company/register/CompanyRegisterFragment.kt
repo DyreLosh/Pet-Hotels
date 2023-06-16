@@ -1,5 +1,6 @@
 package com.dyrelosh.pethotels.presentation.ui.company.register
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.dyrelosh.pethotels.Validator
 import com.dyrelosh.pethotels.databinding.FragmentRegisterCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.net.HttpURLConnection
 
 class CompanyRegisterFragment : Fragment() {
 
@@ -64,19 +66,27 @@ class CompanyRegisterFragment : Fragment() {
                             roles = arrayOf("Companyy")
                         )
                     )
-                   // findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
                 }
             }
         }
 
-        viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
-            if (tokenResult != null) {
-                this.findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
-            } else {
-                Toast.makeText(context, "не успешно", Toast.LENGTH_SHORT).show()
+        viewModel.errorCode.observe(viewLifecycleOwner) { code ->
+            when (code) {
+                HttpURLConnection.HTTP_BAD_REQUEST -> {
+                    AlertDialog.Builder(requireContext())
+                        .setTitle("Пользователь с таким данными уже зарегистрирован")
+                        .setPositiveButton("OK", null)
+                        .show()
+                }
+                HttpURLConnection.HTTP_CREATED -> {
+                    AlertDialog.Builder(requireContext())
+                        .setTitle("Вы успешно зарегистрированы")
+                        .setPositiveButton("OK", null)
+                        .show()
+                    findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                }
             }
         }
-
         return binding.root
     }
 }

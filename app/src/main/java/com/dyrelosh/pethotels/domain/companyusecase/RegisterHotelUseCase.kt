@@ -4,7 +4,7 @@ import com.dyrelosh.pethotels.domain.companymodels.HotelRegisterModel
 import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
 class RegisterHotelUseCase(private val hotelRepository: HotelRepository){
-    suspend fun execute(hotelRegisterModel: HotelRegisterModel): Boolean {
+    suspend fun execute(hotelRegisterModel: HotelRegisterModel): Int {
         return hotelRepository.registrationHotel(hotelRegisterModel)
     }
 }

@@ -22,9 +22,6 @@ val presentationDi = module {
     viewModel {
         CompanyRegisterViewModel(
             registerHotelUseCase = get(),
-            setTokenCompanyUseCase = get(),
-            //setEmailCompanyUseCase = get()
-
         )
     }
     viewModel {
@@ -76,7 +73,7 @@ val presentationDi = module {
     }
 
     viewModel {
-        UserRegisterViewModel(registerUseCase = get(), setTokenUserUseCase = get())
+        UserRegisterViewModel(registerUseCase = get())
     }
 
     viewModel {

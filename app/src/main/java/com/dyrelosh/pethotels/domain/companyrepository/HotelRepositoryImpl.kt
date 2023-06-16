@@ -11,6 +11,7 @@ import com.dyrelosh.pethotels.domain.models.UserHotelModel
 import com.dyrelosh.pethotels.domain.models.UserInfoModel
 import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import com.dyrelosh.pethotels.extensions.toMultipartPart
+import okhttp3.ResponseBody
 import java.io.File
 import java.lang.Exception
 
@@ -22,8 +23,8 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         private const val AVATAR_PART_NAME = "file"
     }
 
-    override suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Boolean {
-        return ApiService.retrofit.registration(hotelRegisterModel).isSuccessful
+    override suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Int {
+        return ApiService.retrofit.registration(hotelRegisterModel).code()
     }
 
     override fun getToken(): String? {
@@ -174,8 +175,8 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         ).isSuccessful
     }
 
-    override suspend fun userRegister(registerModel: UserRegisterModel): Boolean {
-        return ApiService.retrofit.userRegister(registerModel).isSuccessful
+    override suspend fun userRegister(registerModel: UserRegisterModel): Int {
+        return ApiService.retrofit.userRegister(registerModel).code()
     }
 
     override suspend fun getHotels(token: String): List<Hotel>? {
