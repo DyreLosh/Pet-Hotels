@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.Validator
+import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentEditProfileCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.ChangePasswordModel
 import com.dyrelosh.pethotels.domain.companymodels.HotelEditModel
@@ -58,41 +59,59 @@ class EditProfileCompanyFragment : Fragment() {
                     validator.validateEmailHotel(emailEditTextEditProfile.text)
                 INNLayoutEditProfile.error =
                     validator.validateINNHotel(INNEditTextEditProfile.text)
-                if (INNLayoutEditProfile.error == null &&
-                    nameHotelLayoutEditProfile.error == null &&
-                    emailLayoutEditProfile.error == null
-                ) {
-                    viewModel.editProfileCompany(
-                        HotelEditModel(
-                            inn = INNEditTextEditProfile.text.toString(),
-                            hotelName = nameHotelEditTextEditProfile.text.toString(),
-                            email = emailEditTextEditProfile.text.toString()
+                if(passwordLayoutEditProfile.visibility == View.INVISIBLE){
+                    if (
+                        INNLayoutEditProfile.error == null &&
+                        nameHotelLayoutEditProfile.error == null &&
+                        emailLayoutEditProfile.error == null
+                    ) {
+                        viewModel.editProfileCompany(
+                            HotelEditModel(
+                                inn = INNEditTextEditProfile.text.toString(),
+                                hotelName = nameHotelEditTextEditProfile.text.toString(),
+                                email = emailEditTextEditProfile.text.toString()
+                            )
                         )
-                    )
+                        Toast.makeText(context, "Данные изменены", Toast.LENGTH_SHORT).show()
+                        findNavController().popBackStack()
+                    }
                 } else {
-                    Toast.makeText(context, "Проверьте данные", Toast.LENGTH_SHORT).show()
-                }
-                if(passwordLayoutEditProfile.visibility == View.VISIBLE) {
                     passwordLayoutEditProfile.error =
                         validator.validateAdd(passwordEditTextEditProfile.text)
                     passwordNewLayoutEditProfile.error =
                         validator.validateAdd(passwordNewEditTextEditProfile.text)
-                }
-                if(passwordLayoutEditProfile.error == null &&
-                    passwordNewLayoutEditProfile.error == null){
-                    viewModel.changePassword(
-                        ChangePasswordModel(
-                            email = emailEditTextEditProfile.text.toString(),
-                            currentPassword = passwordEditTextEditProfile.text.toString(),
-                            newPassword = passwordNewEditTextEditProfile.text.toString()
+                    passwordLayoutEditProfile.error =
+                        if (passwordEditTextEditProfile.text.toString() ==
+                            PreferenceStorage(requireContext()).password.toString()
+                        ) "" else "Неверный старый пароль"
+                    if (INNLayoutEditProfile.error == null &&
+                        nameHotelLayoutEditProfile.error == null &&
+                        emailLayoutEditProfile.error == null &&
+                        passwordLayoutEditProfile.error == null && passwordNewLayoutEditProfile.error == null
+                        &&
+                        passwordEditTextEditProfile.text.toString() == PreferenceStorage(
+                            requireContext()).password.toString()
+                    ) {
+                        viewModel.changePassword(
+                            ChangePasswordModel(
+                                email = emailEditTextEditProfile.text.toString(),
+                                currentPassword = passwordEditTextEditProfile.text.toString(),
+                                newPassword = passwordNewEditTextEditProfile.text.toString()
+                            )
                         )
-                    )
-                } else {
-                    Toast.makeText(context, "Проверьте данные", Toast.LENGTH_SHORT).show()
+                        viewModel.editProfileCompany(
+                            HotelEditModel(
+                                inn = INNEditTextEditProfile.text.toString(),
+                                hotelName = nameHotelEditTextEditProfile.text.toString(),
+                                email = emailEditTextEditProfile.text.toString()
+                            )
+                        )
+                        Toast.makeText(context, "Данные изменены", Toast.LENGTH_SHORT).show()
+                        findNavController().popBackStack()
+                    }
                 }
-
-                findNavController().popBackStack()
             }
+
         }
         return binding.root
     }

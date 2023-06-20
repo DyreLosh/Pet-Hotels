@@ -23,6 +23,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins"
             android:text="Название"
+            android:ellipsize="end"
             android:textColor="@color/orange"
             android:textSize="27sp"
             android:textStyle="bold"
@@ -54,6 +55,8 @@
             android:fontFamily="@font/poppins"
             android:layout_marginStart="10dp"
             android:text="город"
+            android:paddingEnd="10dp"
+            android:ellipsize="end"
             android:textColor="@color/text"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/image"
@@ -66,6 +69,8 @@
             android:fontFamily="@font/poppins"
             android:textColor="@color/text"
             android:textSize="20sp"
+            android:ellipsize="end"
+            android:paddingEnd="10dp"
             android:text="адрес"
             app:layout_constraintStart_toStartOf="@+id/textViewCityCard"
             app:layout_constraintTop_toBottomOf="@+id/textViewCityCard" />
@@ -77,6 +82,8 @@
             android:textColor="@color/text"
             android:textSize="20sp"
             android:text="номер телефона"
+            android:paddingEnd="10dp"
+            android:ellipsize="end"
             app:layout_constraintStart_toStartOf="@+id/textViewAddressCard"
             app:layout_constraintTop_toBottomOf="@+id/textViewAddressCard" />
 
@@ -84,50 +91,27 @@
             android:id="@+id/textViewCatCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="cat      "
-
-            android:visibility="gone"
-            android:layout_marginEnd="10dp"
+            android:lines="2"
+            android:singleLine="false"
             android:textColor="@color/text"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/textViewNumberCard"
             app:layout_constraintTop_toBottomOf="@+id/textViewNumberCard" />
 
-        <TextView
-            android:id="@+id/textViewRodentCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="rodent"
+<!--        <TextView-->
+<!--            android:id="@+id/textViewDogCard"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingEnd="14dp"-->
+<!--            android:text="dog"-->
 
-            android:visibility="gone"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewCatCard"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNumberCard" />
+<!--            android:visibility="gone"-->
+<!--            android:textColor="@color/text"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/textViewNumberCard"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textViewCatCard" />-->
 
-        <TextView
-            android:id="@+id/textViewDogCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dog"
-            android:visibility="gone"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewCatCard"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCatCard" />
-
-        <TextView
-            android:id="@+id/textViewOtherCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="other"
-            android:visibility="gone"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewCatCard"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRodentCard" />
-
-<!--        -->
+        <!--        -->
 <!--        <TextView-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
