@@ -164,17 +164,6 @@
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/black"/>
 
-            <TextView
-                android:id="@+id/copyTextButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="end"
-                android:layout_marginEnd="20dp"
-                android:fontFamily="@font/poppins"
-                android:textColor="@color/orange"
-                android:textSize="14sp"
-                tools:text="Скопировать" />
 
         </LinearLayout>
 

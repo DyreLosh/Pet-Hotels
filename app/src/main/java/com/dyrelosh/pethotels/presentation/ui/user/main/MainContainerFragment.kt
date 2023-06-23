@@ -31,7 +31,7 @@ class MainContainerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMainContainerBinding.inflate(inflater, container, false)
-        permission()
+
 
 
 

@@ -63,8 +63,6 @@ class CompanyLoginFragment : UserBaseFragment() {
                     "User" -> {
                         this.findNavController()
                             .navigate(R.id.action_loginFragment_to_mainUserFragment)
-                        Toast.makeText(context, tokenResult.token.toString(), Toast.LENGTH_SHORT)
-                            .show()
                     }
                     "Companyy" -> this.findNavController()
                         .navigate(R.id.action_loginFragment_to_mainFragment)
@@ -76,18 +74,7 @@ class CompanyLoginFragment : UserBaseFragment() {
             } else AlertDialog.Builder(requireContext()).setTitle("Проверьте введенные данные")
                 .setPositiveButton("OK", null).show()
         }
-//            viewModel.auth(
-//                    LoginHotelUseCase.Param(
-//                        email = binding.emailEditTextInput.text.toString(),
-//                        password = binding.passwordEditTextInput.text.toString()
-//                    )
-//                )
-//                viewModel.token.observe(viewLifecycleOwner) {
-//                    if (it != null) {
-//                        findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
-//                    }
-//                }
-//            }
+
         return binding.root
     }
 

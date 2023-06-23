@@ -41,7 +41,6 @@ class WelcomeFragment : UserBaseFragment() {
             findNavController().navigate(R.id.action_welcomeFragment_to_registrationMethodFragment2)
         }
 
-        Toast.makeText(requireContext(), PreferenceStorage(requireContext()).accessToken.toString(), Toast.LENGTH_SHORT).show()
         return binding.root
     }
 }
