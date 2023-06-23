@@ -42,15 +42,8 @@ class EditProfileCompanyFragment : Fragment() {
         }
         viewModel.getUserInfo()
         binding.passButtonEditProfile.setOnClickListener {
-            with(binding){
-                if(passwordLayoutEditProfile.visibility == View.VISIBLE){
-                    passwordLayoutEditProfile.visibility = View.INVISIBLE
-                    passwordNewLayoutEditProfile.visibility = View.INVISIBLE
-                } else {
-                    passwordLayoutEditProfile.visibility = View.VISIBLE
-                    passwordNewLayoutEditProfile.visibility = View.VISIBLE
-                }
-            }
+            findNavController().navigate(R.id.action_editProfileCompanyFragment_to_changePasswordFragment)
+
         }
 
         binding.saveButtonEditProfile.setOnClickListener {
@@ -77,47 +70,6 @@ class EditProfileCompanyFragment : Fragment() {
                         .setPositiveButton("Ok", null).show()
                     findNavController().navigate(R.id.action_editProfileCompanyFragment_to_mainFragment)
                 }
-
-                if(passwordLayoutEditProfile.visibility == View.VISIBLE) {
-                    passwordLayoutEditProfile.error =
-                        validator.validateAdd(passwordEditTextEditProfile.text)
-                    passwordNewLayoutEditProfile.error =
-                        validator.validateAdd(passwordNewEditTextEditProfile.text)
-                    binding.passwordLayoutEditProfile.error =
-                        if (passwordEditTextEditProfile.text.toString() ==
-                            PreferenceStorage(requireContext()).password.toString()
-                        ) "" else "Неверный старый пароль"
-
-                    if (INNLayoutEditProfile.error == null &&
-                        nameHotelLayoutEditProfile.error == null &&
-                        emailLayoutEditProfile.error == null &&
-                        passwordLayoutEditProfile.error == null &&
-                        passwordNewLayoutEditProfile.error == null &&
-                        passwordEditTextEditProfile.text.toString() == PreferenceStorage(requireContext()).password.toString()
-                    ) {
-                        viewModel.changePassword(
-                            ChangePasswordModel(
-                                email = emailEditTextEditProfile.text.toString(),
-                                currentPassword = passwordEditTextEditProfile.text.toString(),
-                                newPassword = passwordNewEditTextEditProfile.text.toString()
-                            )
-                        )
-                        viewModel.editProfileCompany(
-                            HotelEditModel(
-                                inn = INNEditTextEditProfile.text.toString(),
-                                hotelName = nameHotelEditTextEditProfile.text.toString(),
-                                email = emailEditTextEditProfile.text.toString()
-                            )
-                        )
-                        PreferenceStorage(requireContext()).clearPreference()
-                        AlertDialog.Builder(context).setTitle("Вы успешно изменили данные")
-                            .setPositiveButton("Ok", null).show()
-                        findNavController().navigate(R.id.action_editProfileCompanyFragment_to_loginFragment)
-                    } else {
-                        Toast.makeText(context, "Проверьте данные", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
             }
         }
         return binding.root

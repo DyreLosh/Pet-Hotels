@@ -35,7 +35,7 @@ class CompanyLoginFragment : UserBaseFragment() {
             findNavController().navigate(R.id.action_loginFragment_to_registrationMethodFragment2)
         }
 
-        binding.imageBack.setOnClickListener {
+        binding.openCardBack.setOnClickListener {
             findNavController().popBackStack()
         }
 

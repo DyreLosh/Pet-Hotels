@@ -101,6 +101,9 @@
         <action
             android:id="@+id/action_editProfileCompanyFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_editProfileCompanyFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/appendAddFragment"

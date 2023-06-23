@@ -127,6 +127,8 @@ class ViewingAdFragment : Fragment() {
                             other = checkboxOtherAnimalAddAd.isChecked
                         ), itemId.toString()
                     )
+                    android.app.AlertDialog.Builder(context).setTitle("Вы успешно обновили объявление")
+                        .setPositiveButton("Ok", null).show()
                     findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
                 }
                 itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
@@ -135,7 +137,7 @@ class ViewingAdFragment : Fragment() {
         binding.deleteButtonPhoto.setOnClickListener {
             viewModel.addInfoID.observe(viewLifecycleOwner) { addInfo ->
                 var id = addInfo.photos[0]
-                android.app.AlertDialog.Builder(context).setTitle("Уверены, что хотите сменить пароль?")
+                android.app.AlertDialog.Builder(context).setTitle("Уверены, что хотите удалить фотографию?")
                     .setPositiveButton("Да") { dialogInterface, which ->
                         viewModel.deletePhoto(id)
                         findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)

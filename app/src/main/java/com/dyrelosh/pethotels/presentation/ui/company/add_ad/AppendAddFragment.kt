@@ -1,6 +1,7 @@
 package com.dyrelosh.pethotels.presentation.ui.company.add_ad
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -70,7 +71,12 @@ class AppendAddFragment : Fragment() {
                             other = checkboxOtherAnimalAppendAdd.isChecked
                         )
                     )
+                    AlertDialog.Builder(context).setTitle("Вы успешно создали объявление")
+                        .setPositiveButton("Ok", null).show()
                     findNavController().navigate(R.id.action_appendAddFragment_to_mainFragment)
+                } else{
+                    AlertDialog.Builder(context).setTitle("Проверьте данные")
+                        .setPositiveButton("Ok", null).show()
                 }
 
             }

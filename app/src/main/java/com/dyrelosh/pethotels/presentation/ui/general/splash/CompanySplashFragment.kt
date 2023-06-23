@@ -24,6 +24,9 @@ class CompanySplashFragment : UserBaseFragment() {
     ): View? {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         val pref = PreferenceStorage(requireContext())
+        binding.imageView.setOnClickListener {
+            PreferenceStorage(requireContext()).clearPreference()
+        }
         Handler(Looper.getMainLooper()).postDelayed({
             if (pref.accessToken?.length!! > 3) {
                 when (pref.loginRole) {
