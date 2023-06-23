@@ -91,4 +91,5 @@ val domainDi = module {
     }
     factory { ChangeUserNameUseCase(get()) }
     factory { GetCompanyForIdUseCase(get()) }
+    factory { DeletePhotoUseCase(get()) }
 }

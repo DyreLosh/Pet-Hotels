@@ -16,7 +16,8 @@ class CompanyViewingAdViewModel(
     private val editAdCompanyUseCase: EditAdCompanyUseCase,
     private val deleteAddUseCase: DeleteAddUseCase,
     private val getHotelPhotoUseCase: GetHotelPhotoUseCase,
-    private val setHotelPhotoUseCase: SetHotelPhotoUseCase
+    private val setHotelPhotoUseCase: SetHotelPhotoUseCase,
+    private val deletePhotoUseCase: DeletePhotoUseCase
 ) : ViewModel() {
     private val token = getTokenHotelUseCase.execute()
 
@@ -41,6 +42,12 @@ class CompanyViewingAdViewModel(
     fun deleteAdd(id: String) {
         viewModelScope.launch {
             deleteAction.value = deleteAddUseCase.execute(token!!, id)
+        }
+    }
+
+    fun deletePhoto(imageId: String){
+        viewModelScope.launch {
+            deleteAction.value = deletePhotoUseCase.execute(token!!, imageId)
         }
     }
 

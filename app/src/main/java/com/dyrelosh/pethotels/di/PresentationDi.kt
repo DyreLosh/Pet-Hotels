@@ -68,7 +68,8 @@ val presentationDi = module {
             getOneAddUseCase = get(),
             deleteAddUseCase = get(),
             getHotelPhotoUseCase = get(),
-            setHotelPhotoUseCase = get()
+            setHotelPhotoUseCase = get(),
+            deletePhotoUseCase = get()
         )
     }
 

@@ -132,6 +132,18 @@ class ViewingAdFragment : Fragment() {
                 itemId?.let { viewModel.setHotelPhoto(selectedAvatarUri?.path, it) }
             }
         }
+        binding.deleteButtonPhoto.setOnClickListener {
+            viewModel.addInfoID.observe(viewLifecycleOwner) { addInfo ->
+                var id = addInfo.photos[0]
+                android.app.AlertDialog.Builder(context).setTitle("Уверены, что хотите сменить пароль?")
+                    .setPositiveButton("Да") { dialogInterface, which ->
+                        viewModel.deletePhoto(id)
+                        findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
+                    }
+                    .setNegativeButton("Нет",null).show()
+
+            }
+        }
 
         binding.imageBack.setOnClickListener {
             findNavController().popBackStack()

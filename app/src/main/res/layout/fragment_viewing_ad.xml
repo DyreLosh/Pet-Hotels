@@ -326,15 +326,31 @@
                 app:layout_constraintEnd_toEndOf="@+id/saveButtonAd"
                 app:layout_constraintStart_toStartOf="@+id/saveButtonAd"
                 app:layout_constraintTop_toBottomOf="@+id/saveButtonAd" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteButtonPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins"
+                android:hint="Удалить фотографию"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/orange"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/deleteButtonAd"
+                app:layout_constraintStart_toStartOf="@+id/deleteButtonAd"
+                app:layout_constraintTop_toBottomOf="@+id/deleteButtonAd" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/poppins"
-                app:layout_constraintEnd_toEndOf="@+id/deleteButtonAd"
-                app:layout_constraintStart_toStartOf="@+id/deleteButtonAd"
-                app:layout_constraintTop_toBottomOf="@+id/deleteButtonAd" />
+                app:layout_constraintEnd_toEndOf="@+id/deleteButtonPhoto"
+                app:layout_constraintStart_toStartOf="@+id/deleteButtonPhoto"
+                app:layout_constraintTop_toBottomOf="@+id/deleteButtonPhoto" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

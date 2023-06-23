@@ -61,6 +61,12 @@ interface ApiPetHotels {
         @Path("id") id: String
     ): Response<Unit>
 
+    @DELETE("photo/{imageId}")
+    suspend fun deletePhoto(
+        @Header("Authorization") token: String?,
+        @Path("imageId") id: String
+    ): Response<Unit>
+
     @GET("api/hotels/advertisements")
     suspend fun getHotels(
         @Header("Authorization") token: String?
@@ -71,6 +77,7 @@ interface ApiPetHotels {
         @Header("Authorization") token: String?,
         @Path("id") id: String
     ): Response<UserHotelModel>
+
     @Multipart
     @POST("api/hotels/advertisements/{idAdvertisement}")
     suspend fun setHotelPhoto(
@@ -114,6 +121,7 @@ interface ApiPetHotels {
         @Header("Authorization") token: String?,
         @Path("imageId") id: String
     ): Response<ResponseBody>
+
     @POST("api/authentication/ChangePassword")
     suspend fun changePassword(
         @Header("Authorization") token: String?,

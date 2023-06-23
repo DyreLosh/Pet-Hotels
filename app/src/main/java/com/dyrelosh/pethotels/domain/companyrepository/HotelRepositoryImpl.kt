@@ -129,6 +129,10 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         return ApiService.retrofit.deleteAdd("Bearer $token", id).isSuccessful
     }
 
+    override suspend fun deletePhoto(token: String, imageId: String): Boolean {
+        return ApiService.retrofit.deletePhoto("Bearer $token", imageId).isSuccessful
+    }
+
     override fun clearPreference(): Boolean {
         preferenceStorage.clearPreference()
         return true
