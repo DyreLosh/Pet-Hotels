@@ -28,15 +28,16 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/catCardItemMain"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/pet_one"
-            app:cornerRadius="20dp"
+            android:minWidth="0dp"
             android:text="Кошки"
-            android:textColor="@color/black"
-            android:textSize="14dp"
             android:textAllCaps="false"
-            android:textStyle="bold"/>
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/dogCardItemMain"
@@ -47,7 +48,7 @@
             android:text="Собаки"
             android:layout_marginStart="5dp"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:textAllCaps="false"
             android:textStyle="bold"/>
 
@@ -60,7 +61,7 @@
             android:text="Грызуны"
             android:layout_marginStart="5dp"
             android:textColor="@color/black"
-            android:textSize="14dp"
+            android:textSize="13sp"
             android:textAllCaps="false"
             android:textStyle="bold"/>
 
@@ -73,11 +74,9 @@
             android:text="Другие"
             android:layout_marginStart="5dp"
             android:textColor="@color/black"
-            android:textSize="14dp"
+            android:textSize="13sp"
             android:textAllCaps="false"
             android:textStyle="bold"/>
-
-
 
     </LinearLayout>
 

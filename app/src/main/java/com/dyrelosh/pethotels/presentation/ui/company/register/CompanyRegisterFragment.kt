@@ -83,13 +83,13 @@ class CompanyRegisterFragment : Fragment() {
             when (code) {
                 HttpURLConnection.HTTP_BAD_REQUEST -> {
                     AlertDialog.Builder(requireContext())
-                        .setTitle("Пользователь с таким данными уже зарегистрирован")
+                        .setMessage("Пользователь с таким данными уже зарегистрирован")
                         .setPositiveButton("OK", null)
                         .show()
                 }
                 HttpURLConnection.HTTP_CREATED -> {
                     AlertDialog.Builder(requireContext())
-                        .setTitle("Вы успешно зарегистрированы")
+                        .setMessage("Вы успешно зарегистрированы")
                         .setPositiveButton("OK", null)
                         .show()
                     findNavController().navigate(R.id.action_registerFragment_to_loginFragment)

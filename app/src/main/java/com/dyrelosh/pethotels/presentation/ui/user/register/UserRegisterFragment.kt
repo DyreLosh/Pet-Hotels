@@ -71,13 +71,13 @@ class UserRegisterFragment : UserBaseFragment() {
             when (code) {
                 HttpURLConnection.HTTP_BAD_REQUEST -> {
                     AlertDialog.Builder(requireContext())
-                        .setTitle("Пользователь с таким логином или почтой уже зарегистрирован")
+                        .setMessage("Пользователь с таким логином или почтой уже зарегистрирован")
                         .setPositiveButton("OK", null)
                         .show()
                 }
                 HttpURLConnection.HTTP_CREATED -> {
                     AlertDialog.Builder(requireContext())
-                        .setTitle("Вы успешно зарегистрированы")
+                        .setMessage("Вы успешно зарегистрированы")
                         .setPositiveButton("OK", null)
                         .show()
                     findNavController().navigate(R.id.action_userRegisterFragment_to_loginFragment)

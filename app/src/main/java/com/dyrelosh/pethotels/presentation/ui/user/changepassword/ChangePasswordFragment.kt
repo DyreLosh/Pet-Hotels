@@ -41,7 +41,8 @@ class ChangePasswordFragment : UserBaseFragment() {
                     if (userOldPasswordEditText.text.toString() ==
                         PreferenceStorage(requireContext()).password.toString()
                     ) "" else "Неверный старый пароль"
-
+                userOldPasswordInputLayout.setErrorIconDrawable(0)
+                userNewPasswordInputLayout.setErrorIconDrawable(0)
                 if (userOldPasswordInputLayout.error == null && userNewPasswordInputLayout.error == null &&
                     userOldPasswordEditText.text.toString() == PreferenceStorage(requireContext())
                         .password.toString()
@@ -53,9 +54,11 @@ class ChangePasswordFragment : UserBaseFragment() {
                             newPassword = userNewPasswordEditText.text.toString()
                         )
                     )
+                    PreferenceStorage(requireContext()).clearPreference()
                     AlertDialog.Builder(context).setTitle("Вы успешно сменили пароль")
                         .setPositiveButton("Ok", null).show()
                     findNavController().navigate(R.id.action_changePasswordFragment_to_loginFragment)
+
                 } else {
                     AlertDialog.Builder(context).setTitle("Проверьте данные")
                         .setPositiveButton("Ok", null).show()

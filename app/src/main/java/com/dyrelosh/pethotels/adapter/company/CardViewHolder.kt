@@ -36,14 +36,36 @@ class CardViewHolder(private val binding: ItemCardAdBinding) :
                 .into(PhotoAd)
         }
 
-        if (cardAd.cat)
-            textViewCatCard.visibility = View.VISIBLE
-        if (cardAd.dog)
-            textViewDogCard.visibility = View.VISIBLE
-        if (cardAd.rodent)
-            textViewRodentCard.visibility = View.VISIBLE
-        if (cardAd.other)
-            textViewOtherCard.visibility = View.VISIBLE
+        var animalOne = mutableListOf<String>()
+        var c = 0
+        if (cardAd.cat){
+            animalOne.add("Кошки ")
+            c += 1
+        }
+        if (cardAd.dog){
+            animalOne.add("Собаки ")
+            c += 1
+        }
+        if (cardAd.rodent){
+            animalOne.add("Грызуны ")
+            c += 1
+        }
+        if (cardAd.other){
+            animalOne.add("Другие ")
+            c += 1
+        }
+        if(c == 1){
+            textViewCatCard.text = animalOne[0]
+        }
+        if(c==2){
+            textViewCatCard.text = animalOne[0] + animalOne[1]
+        }
+        if(c==3){
+            textViewCatCard.text = animalOne[0] + animalOne[1] + "\n" + animalOne[2]
+        }
+        if(c==4){
+            textViewCatCard.text = animalOne[0] + animalOne[1] + "\n" + animalOne[2] + animalOne[3]
+        }
         root.setOnClickListener {
             clickListener.invoke(cardAd.advertisementId)
         }

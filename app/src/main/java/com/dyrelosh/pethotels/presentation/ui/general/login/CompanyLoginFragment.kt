@@ -67,11 +67,11 @@ class CompanyLoginFragment : UserBaseFragment() {
                     "Companyy" -> this.findNavController()
                         .navigate(R.id.action_loginFragment_to_mainFragment)
                     else -> AlertDialog.Builder(requireContext())
-                        .setTitle("Введите правильные данные для входа")
+                        .setMessage("Введите правильные данные для входа")
                         .setPositiveButton("OK", null)
                         .show()
                 }
-            } else AlertDialog.Builder(requireContext()).setTitle("Проверьте введенные данные")
+            } else AlertDialog.Builder(requireContext()).setMessage("Проверьте введенные данные")
                 .setPositiveButton("OK", null).show()
         }
 
