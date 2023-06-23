@@ -5,7 +5,7 @@ import android.text.Editable
 class Validator {
     companion object {
         private const val INN_LENGTH = 12
-        private const val PASS_LENGTH = 10
+        private const val PASS_LENGTH = 9
         private const val USERNAME_LENGTH = 25
     }
 

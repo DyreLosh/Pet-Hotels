@@ -13,14 +13,14 @@ import com.dyrelosh.pethotels.domain.models.UserRegisterModel
 import com.dyrelosh.pethotels.extensions.toMultipartPart
 import okhttp3.ResponseBody
 import java.io.File
-import java.lang.Exception
+import kotlin.Exception
 
 class HotelRepositoryImpl(context: Context) : HotelRepository {
 
     private val preferenceStorage = PreferenceStorage(context)
 
     companion object {
-        private const val AVATAR_PART_NAME = "file"
+        private const val AVATAR_PART_NAME = "uploadedFile"
     }
 
     override suspend fun registrationHotel(hotelRegisterModel: HotelRegisterModel): Int {
@@ -65,12 +65,6 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
     ): HotelAddsModel? {
         return ApiService.retrofit.editAdCompany("Bearer $token", addsModel, id).body()
     }
-
-//    override suspend fun setHotelPhoto(token: String, imageUrl: String?, idAdvertisement: String): Boolean {
-//        return ApiService.retrofit.setHotelPhoto(
-//            "Bearer $token", idAdvertisement, File(imageUrl).toMultipartPart(AVATAR_PART_NAME)
-//        ).isSuccessful
-//    }
 
     override suspend fun setHotelPhoto(
         token: String,

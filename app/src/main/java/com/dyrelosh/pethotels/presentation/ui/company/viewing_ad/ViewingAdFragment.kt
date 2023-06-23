@@ -10,6 +10,7 @@ import android.view.ViewConfiguration.get
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import coil.load
@@ -137,8 +138,31 @@ class ViewingAdFragment : Fragment() {
         }
 
         binding.deleteButtonAd.setOnClickListener {
-            viewModel.deleteAdd(itemId.toString())
-            findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
+
+            val builder = AlertDialog.Builder(requireContext())
+            //set message for alert dialog
+            builder.setMessage("Уверены, что хотите удалить объявление?")
+            //builder.setIcon(android.R.drawable.ic_dialog_alert)
+
+            //performing positive action
+            builder.setPositiveButton("Да"){dialogInterface, which ->
+                viewModel.deleteAdd(itemId.toString())
+                findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
+                Toast.makeText(context,"Объявление удалено",Toast.LENGTH_LONG).show()
+            }
+
+            //performing negative action
+            builder.setNegativeButton("Нет"){dialogInterface, which ->
+                Toast.makeText(context,"Объявление не удалено",Toast.LENGTH_LONG).show()
+            }
+            // Create the AlertDialog
+            val alertDialog: AlertDialog = builder.create()
+            // Set other dialog properties
+            alertDialog.setCancelable(false)
+            alertDialog.show()
+
+           // viewModel.deleteAdd(itemId.toString())
+            //findNavController().navigate(R.id.action_viewingAdFragment_to_mainFragment)
         }
 
         binding.PhotoAd.setOnClickListener {
