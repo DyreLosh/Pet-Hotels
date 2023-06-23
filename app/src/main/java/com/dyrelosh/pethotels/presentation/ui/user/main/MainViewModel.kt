@@ -20,6 +20,8 @@ class MainViewModel(
     private var _response: MutableLiveData<List<Hotel>> =
         MutableLiveData<List<Hotel>>()
     val response: LiveData<List<Hotel>> = _response
+    var number: Int = 0
+    lateinit var listAdd: MutableList<Hotel>
 
     fun getHotels() {
         viewModelScope.launch {

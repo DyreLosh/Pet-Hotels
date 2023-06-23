@@ -31,6 +31,9 @@ class ChangeProfileFragment : UserBaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentChangeProfileBinding.inflate(inflater, container, false)
+        binding.backToProfileInChangeProfileButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
         val validator = Validator()
         viewModel.getUserInfo()
         viewModel.response.observe(viewLifecycleOwner) { info ->
@@ -49,8 +52,10 @@ class ChangeProfileFragment : UserBaseFragment() {
 
                 if (newEmailChangeProfileInput.error == null && newUserNameChangeProfileInput.error == null
                 ) {
-                    viewModel.changeUserEmail(ChangeEmailModel(userId, userEmail))
-                    viewModel.changeUserName(ChangeUserNameModel(userId, userName))
+                    viewModel.changeUserEmail(userId,
+                        binding.newEmailChangeProfileEdit.text.toString()
+                    )
+                    viewModel.changeUserName(userId, binding.newUserNameChangeProfileEdit.text.toString())
                     AlertDialog.Builder(context).setTitle("Вы успешно сменили данные")
                         .setPositiveButton("Ok", null).show()
                     findNavController().popBackStack()

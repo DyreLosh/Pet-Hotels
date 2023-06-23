@@ -97,7 +97,7 @@ interface ApiPetHotels {
         @Query("email") email: String
     ): Response<HotelInfoModel>
 
-    @PUT("api/authentication/ChangeUserName{id}")
+    @PUT("api/authentication/ChangeUserName/{id}")
     suspend fun changeUserName(
         @Header("Authorization") token: String?,
         @Path("id") id: String,
@@ -120,4 +120,8 @@ interface ApiPetHotels {
         @Body body: ChangePasswordModel
     ): Response<Unit>
 
+    @GET("api/hotels/{id}")
+    suspend fun getCompanyForId(
+        @Path("id") id: String
+    ): Response<HotelInfoModel>
 }

@@ -68,9 +68,9 @@ interface HotelRepository {
 
     suspend fun changeUserPassword(token: String, changePasswordModel: ChangePasswordModel): Boolean
 
-    suspend fun changeUserEmail(token: String, changeEmailModel: ChangeEmailModel): Boolean
+    suspend fun changeUserEmail(token: String, id: String, email: String): Boolean
 
-    suspend fun changeUserName(token: String, changeUserNameModel: ChangeUserNameModel): Boolean
+    suspend fun changeUserName(token: String, id: String, userName: String): Boolean
 
 
     suspend fun getUserInfoFun(token: String) : UserInfoModel
@@ -80,6 +80,10 @@ interface HotelRepository {
     fun setPassword(password: String)
 
     suspend fun getHotelPhotoUser(token: String, id: String): Bitmap?
+
+    fun setLoginRole(role: String)
+
+    suspend fun getCompanyForId(id: String) : HotelInfoModel
 
 
 }

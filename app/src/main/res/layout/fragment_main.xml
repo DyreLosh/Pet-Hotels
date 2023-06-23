@@ -15,102 +15,87 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
-        <androidx.cardview.widget.CardView
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/catCardItemMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:background="@color/pet_one"
             android:backgroundTint="@color/pet_one"
-            app:cardCornerRadius="30dp">
+            app:cornerRadius="20dp"
+            android:text="Кошки"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
-
-                android:paddingVertical="5dp"
-                android:text="Кошки"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/dogCardItemMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:background="@color/pet_one"
             android:backgroundTint="@color/pet_one"
-            app:cardCornerRadius="20dp">
+            app:cornerRadius="20dp"
+            android:text="Собаки"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="5dp"
-                android:text="Собаки"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/rodentCardItemMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:background="@color/pet_one"
             android:backgroundTint="@color/pet_one"
-            app:cardCornerRadius="20dp">
+            app:cornerRadius="20dp"
+            android:text="Грызуны"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="5dp"
-                android:text="Грызуны"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/otherCardItemMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:background="@color/pet_one"
             android:backgroundTint="@color/pet_one"
-            app:cardCornerRadius="30dp">
+            app:cornerRadius="20dp"
+            android:text="Другие"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="5dp"
-                android:text="Другие"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/mainRecyclerProgressBar"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/popularRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="gone"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"

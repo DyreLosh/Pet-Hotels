@@ -3,6 +3,7 @@ package com.dyrelosh.pethotels.di
 import com.dyrelosh.pethotels.domain.companyusecase.*
 import com.dyrelosh.pethotels.domain.usecase.auth.GetUserInfoUseCase
 import com.dyrelosh.pethotels.domain.usecase.auth.RegisterUseCase
+import com.dyrelosh.pethotels.domain.usecase.hotel.GetCompanyForIdUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetHotelPhotoForUserUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetHotelsUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetOneHotelUseCase
@@ -89,4 +90,5 @@ val domainDi = module {
         ChangeUserEmailUseCase(get())
     }
     factory { ChangeUserNameUseCase(get()) }
+    factory { GetCompanyForIdUseCase(get()) }
 }

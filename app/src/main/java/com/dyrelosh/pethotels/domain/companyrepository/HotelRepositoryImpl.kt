@@ -155,24 +155,18 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
 
     override suspend fun changeUserEmail(
         token: String,
-        changeEmailModel: ChangeEmailModel
+        id: String,
+        email: String
     ): Boolean {
-        return ApiService.retrofit.changeUserEmail(
-            "Bearer $token",
-            changeEmailModel.id,
-            changeEmailModel.email
-        ).isSuccessful
+        return ApiService.retrofit.changeUserEmail("Bearer $token", id, email).isSuccessful
     }
 
     override suspend fun changeUserName(
         token: String,
-        changeUserNameModel: ChangeUserNameModel
+        id: String,
+        userName: String
     ): Boolean {
-        return ApiService.retrofit.changeUserName(
-            "Bearer $token",
-            changeUserNameModel.id,
-            changeUserNameModel.userName
-        ).isSuccessful
+        return ApiService.retrofit.changeUserName("Bearer $token", id, userName).isSuccessful
     }
 
     override suspend fun userRegister(registerModel: UserRegisterModel): Int {
@@ -218,6 +212,14 @@ class HotelRepositoryImpl(context: Context) : HotelRepository {
         } catch (e: Exception) {
             null
         }
+    }
+
+    override fun setLoginRole(role: String) {
+        preferenceStorage.loginRole = role
+    }
+
+    override suspend fun getCompanyForId(id: String): HotelInfoModel {
+        return ApiService.retrofit.getCompanyForId(id).body()!!
     }
 
     private fun hotelResponseToModel(response: HotelResponse, hotelPhoto: List<Bitmap?>): Hotel {

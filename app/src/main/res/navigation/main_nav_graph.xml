@@ -12,10 +12,19 @@
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment" />
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_splashFragment_to_mainUserFragment"
-            app:destination="@id/mainUserFragment" />
+            app:destination="@id/mainUserFragment"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -133,15 +142,6 @@
         android:label="fragment_change_profile"
         tools:layout="@layout/fragment_change_profile" />
     <fragment
-        android:id="@+id/favouriteFragment"
-        android:name="com.dyrelosh.pethotels.presentation.ui.user.favourite.FavouriteFragment"
-        android:label="fragment_favourite"
-        tools:layout="@layout/fragment_favourite">
-        <action
-            android:id="@+id/action_favouriteFragment_to_openCardFragment"
-            app:destination="@id/openCardFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/mainUserFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.user.main.MainFragment"
         android:label="fragment_main"
@@ -150,13 +150,10 @@
         app:popUpToInclusive="true">
         <action
             android:id="@+id/action_mainFragment2_to_openCardFragment"
-            app:destination="@id/openCardFragment" />
+            app:destination="@id/openCardFragment"
+
+            app:popUpToInclusive="true"/>
     </fragment>
-    <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.dyrelosh.pethotels.presentation.ui.user.map.MapFragment"
-        android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.user.profile.UserProfileFragment"
@@ -211,10 +208,14 @@
         android:id="@+id/openCardFragment"
         android:name="com.dyrelosh.pethotels.presentation.ui.user.opencard.OpenCardFragment"
         android:label="fragment_open_card"
-        tools:layout="@layout/fragment_open_card">
+        tools:layout="@layout/fragment_open_card"
+        app:popUpTo="@id/main_nav_graph"
+        app:popUpToInclusive="true">
         <action
-            android:id="@+id/action_openCardFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
+            android:id="@+id/action_openCardFragment_to_mainUserFragment"
+            app:destination="@id/mainUserFragment"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"

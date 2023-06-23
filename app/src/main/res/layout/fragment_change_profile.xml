@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".presentation.ui.user.changeprofile.ChangeProfileFragment">
 
@@ -18,48 +18,68 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="Редактировать профиль"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins"
+        android:text="Редактировать профиль"
         android:textColor="@color/button_color"
         android:textSize="25sp" />
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newUserNameChangeProfileInput"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="20dp"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        android:hint="Новое имя"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_height="wrap_content">
+        android:layout_marginEnd="20dp"
+        android:textColorHint="@color/text_hint"
+        app:boxBackgroundColor="@color/text_input"
+        app:boxStrokeColor="@color/text_hint"
+        app:hintTextColor="@color/text_hint">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/newUserNameChangeProfileEdit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:hint="Новый логин"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingStart="33dp"
+            android:paddingEnd="33dp"
+            android:textColor="@color/text_hint"
+            android:textColorLink="@color/text_hint"
+            android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newEmailChangeProfileInput"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="20dp"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:hint="Новая почта"
-        app:boxCornerRadiusTopStart="20dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColorHint="@color/text_hint"
+        app:boxBackgroundColor="@color/text_input"
+        app:boxStrokeColor="@color/text_hint"
+        app:hintTextColor="@color/text_hint">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/newEmailChangeProfileEdit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:hint="Новая почта"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingStart="33dp"
+            android:paddingEnd="33dp"
+            android:textColor="@color/text_hint"
+            android:textColorLink="@color/text_hint"
+            android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -67,14 +87,14 @@
         android:id="@+id/changeUserInfoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/button_color"
+        android:layout_gravity="bottom"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/poppins"
+        android:paddingVertical="15dp"
         android:text="Сохранить"
         android:textAllCaps="false"
         android:textSize="18sp"
-        app:cornerRadius="20dp"
-        android:layout_gravity="bottom"
-        android:paddingVertical="15dp"
-        android:fontFamily="@font/poppins"
-        android:layout_marginTop="300dp"/>
+        app:backgroundTint="@color/button_color"
+        app:cornerRadius="20dp" />
 </LinearLayout>

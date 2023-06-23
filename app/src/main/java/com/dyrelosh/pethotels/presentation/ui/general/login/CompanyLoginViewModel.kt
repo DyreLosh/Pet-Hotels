@@ -9,6 +9,7 @@ import com.dyrelosh.pethotels.domain.companymodels.TokenHotelModel
 import com.dyrelosh.pethotels.domain.companyusecase.LoginHotelUseCase
 import com.dyrelosh.pethotels.domain.companyusecase.SetEmailCompanyUseCase
 import com.dyrelosh.pethotels.domain.companyusecase.SetTokenCompanyUseCase
+import com.dyrelosh.pethotels.domain.usecase.auth.SetLoginRoleUseCase
 import com.dyrelosh.pethotels.domain.usecase.user.SetPasswordUseCase
 import kotlinx.coroutines.launch
 
@@ -16,8 +17,8 @@ class CompanyLoginViewModel(
     private val loginHotelUseCase: LoginHotelUseCase,
     private val setTokenCompanyUseCase: SetTokenCompanyUseCase,
     private val setEmailCompanyUseCase: SetEmailCompanyUseCase,
-    private val setPasswordUseCase: SetPasswordUseCase
-    ) : ViewModel() {
+    private val setPasswordUseCase: SetPasswordUseCase,
+) : ViewModel() {
 
     private var _token: MutableLiveData<TokenHotelModel> = MutableLiveData<TokenHotelModel>()
     val token: LiveData<TokenHotelModel> = _token
@@ -32,4 +33,4 @@ class CompanyLoginViewModel(
             setPasswordUseCase.execute(hotelLoginModel.password)
         }
     }
-    }
+}

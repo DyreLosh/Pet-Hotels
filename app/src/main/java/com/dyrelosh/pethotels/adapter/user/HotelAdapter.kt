@@ -5,6 +5,7 @@ import android.content.ContextWrapper
 import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.databinding.ItemHotelBinding
@@ -18,13 +19,14 @@ import java.util.*
 
 class HotelAdapter(private val cellClickListener: CellClickListener): RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
 
-    val items = mutableListOf<Hotel>()
+    var items = mutableListOf<Hotel>()
     var onItemClick: ((Hotel) -> Unit)? = {}
 
     inner class HotelViewHolder(private val binding: ItemHotelBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(popularHotel: Hotel, onItemClick: ((Hotel) -> Unit)?) {
             binding.nameHotelItem.text = popularHotel.name
             binding.addressHotelItem.text = popularHotel.address
+
             var p = popularHotel.photos
 
             if (p.size != 0) {
@@ -65,9 +67,10 @@ class HotelAdapter(private val cellClickListener: CellClickListener): RecyclerVi
 
     override fun getItemCount(): Int = items.size
 
-    fun submitList(popularHotel: List<Hotel>) {
-        items.clear()
-        items.addAll(popularHotel)
-        notifyDataSetChanged()
+    fun submitList(popularHotel:  MutableList<Hotel>) {
+        val diffUtil = MyDiffUtil(items, popularHotel)
+        val diffResults = DiffUtil.calculateDiff(diffUtil)
+        items = popularHotel
+        diffResults.dispatchUpdatesTo(this)
     }
 }

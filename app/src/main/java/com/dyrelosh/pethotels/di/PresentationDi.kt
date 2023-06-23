@@ -88,7 +88,8 @@ val presentationDi = module {
         OpenCardViewModel(
             getToken = get(),
             getOneHotelUseCase = get(),
-            getHotelPhotoForUserUseCase = get()
+            getHotelPhotoForUserUseCase = get(),
+            getCompanyForIdUseCase = get()
         )
     }
 

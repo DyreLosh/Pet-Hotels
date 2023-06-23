@@ -45,6 +45,10 @@ class UserRegisterFragment : UserBaseFragment() {
                         passwordConfirmRegisterUserEditText.text,
                         passwordRegisterUserEditText.text
                     )
+                userNameRegisterUserLayout.setErrorIconDrawable(0)
+                passwordRegisterUserLayout.setErrorIconDrawable(0)
+                emailRegisterUserLayout.setErrorIconDrawable(0)
+                passwordConfirmRegisterUserLayout.setErrorIconDrawable(0)
                 if (userNameRegisterUserLayout.error == null &&
                     passwordRegisterUserLayout.error == null &&
                     emailRegisterUserLayout.error == null &&

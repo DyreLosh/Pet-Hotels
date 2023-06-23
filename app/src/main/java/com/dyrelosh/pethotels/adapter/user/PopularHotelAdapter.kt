@@ -2,6 +2,7 @@ package com.dyrelosh.pethotels.adapter.user
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.dyrelosh.pethotels.databinding.ItemHotelBinding
 import com.dyrelosh.pethotels.domain.companymodels.Hotel
@@ -9,7 +10,7 @@ import com.dyrelosh.pethotels.domain.models.UserHotelModel
 
 class PopularHotelAdapter() : RecyclerView.Adapter<PopularHotelViewHolder>() {
 
-    val items = mutableListOf<Hotel>()
+    var items = mutableListOf<Hotel>()
     var onItemClick: (String) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularHotelViewHolder {
@@ -28,9 +29,10 @@ class PopularHotelAdapter() : RecyclerView.Adapter<PopularHotelViewHolder>() {
 
     override fun getItemCount(): Int = items.size
 
-    fun submitList(popularHotel: List<Hotel>) {
+    var list = mutableListOf<Hotel>()
+    fun submitList(newList: MutableList<Hotel>) {
         items.clear()
-        items.addAll(popularHotel)
+        items.addAll(newList)
         notifyDataSetChanged()
     }
 

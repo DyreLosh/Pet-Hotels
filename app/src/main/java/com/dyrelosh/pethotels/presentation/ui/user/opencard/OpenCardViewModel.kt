@@ -9,6 +9,7 @@ import com.dyrelosh.pethotels.domain.companymodels.HotelAddsModel
 
 import com.dyrelosh.pethotels.domain.companyusecase.GetTokenHotelUseCase
 import com.dyrelosh.pethotels.domain.models.UserHotelModel
+import com.dyrelosh.pethotels.domain.usecase.hotel.GetCompanyForIdUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetHotelPhotoForUserUseCase
 import com.dyrelosh.pethotels.domain.usecase.hotel.GetOneHotelUseCase
 import kotlinx.coroutines.launch
@@ -16,7 +17,8 @@ import kotlinx.coroutines.launch
 class OpenCardViewModel (
     private val getToken: GetTokenHotelUseCase,
     private val getOneHotelUseCase: GetOneHotelUseCase,
-    private val getHotelPhotoForUserUseCase: GetHotelPhotoForUserUseCase
+    private val getHotelPhotoForUserUseCase: GetHotelPhotoForUserUseCase,
+    private val getCompanyForIdUseCase: GetCompanyForIdUseCase
 ) : ViewModel() {
     private val token = getToken.execute()
 
@@ -33,6 +35,13 @@ class OpenCardViewModel (
     fun getHotelPhoto(id: String) {
         viewModelScope.launch {
             _userPhoto.value = getHotelPhotoForUserUseCase.execute(token!!, id)
+        }
+    }
+    private var _companyINN: MutableLiveData<String> = MutableLiveData<String>()
+    val companyINN: LiveData<String> = _companyINN
+    fun getCompanyINN(id: String) {
+        viewModelScope.launch {
+            _companyINN.value = getCompanyForIdUseCase.execute(id).inn
         }
     }
 

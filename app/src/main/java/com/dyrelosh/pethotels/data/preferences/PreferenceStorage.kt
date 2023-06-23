@@ -25,6 +25,10 @@ class PreferenceStorage (context: Context) {
         get() = preferences.getString("password", "")
         set(value) = preferences.edit().putString("password", value).apply()
 
+    var loginRole: String?
+        get() = preferences.getString("role", "")
+        set(value) = preferences.edit().putString("role", value).apply()
+
     fun clearPreference() {
         preferences.edit()?.clear()?.apply()
     }

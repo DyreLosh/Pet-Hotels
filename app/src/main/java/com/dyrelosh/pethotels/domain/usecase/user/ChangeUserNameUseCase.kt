@@ -4,7 +4,7 @@ import com.dyrelosh.pethotels.domain.companymodels.ChangeUserNameModel
 import com.dyrelosh.pethotels.domain.companyrepository.HotelRepository
 
 class ChangeUserNameUseCase(private val hotelRepository: HotelRepository) {
-    suspend fun execute(token: String, changeUserNameModel: ChangeUserNameModel): Boolean {
-        return hotelRepository.changeUserName(token, changeUserNameModel)
+    suspend fun execute(token: String, id: String, userName: String): Boolean {
+        return hotelRepository.changeUserName(token, id, userName)
     }
 }

@@ -32,15 +32,15 @@ class ChangeProfileViewModel(
         }
     }
 
-    fun changeUserEmail(changeEmail: ChangeEmailModel) {
+    fun changeUserEmail(id: String, emailUser: String) {
         viewModelScope.launch {
-            email.value = changeUserEmail.execute(token!!, changeEmail)
+            email.value = changeUserEmail.execute(token!!, id, emailUser)
         }
     }
 
-    fun changeUserName(changeUserName: ChangeUserNameModel) {
+    fun changeUserName(id: String, userLogin: String) {
         viewModelScope.launch {
-            email.value = changeUserNameUseCase.execute(token!!, changeUserName)
+            userName.value = changeUserNameUseCase.execute(token!!, id, userLogin)
         }
     }
 }

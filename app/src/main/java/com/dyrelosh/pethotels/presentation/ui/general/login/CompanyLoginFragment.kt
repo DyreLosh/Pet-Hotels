@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dyrelosh.pethotels.R
 import com.dyrelosh.pethotels.Validator
+import com.dyrelosh.pethotels.data.preferences.PreferenceStorage
 import com.dyrelosh.pethotels.databinding.FragmentLoginCompanyBinding
 import com.dyrelosh.pethotels.domain.companymodels.HotelLoginModel
 import com.dyrelosh.pethotels.presentation.ui.user.UserBaseFragment
@@ -43,6 +44,8 @@ class CompanyLoginFragment : UserBaseFragment() {
                 emailLayoutInput.error = validator.validateUserEmail(emailEditTextInput.text)
                 passwordLayoutInput.error =
                     validator.validateUserPassword(passwordEditTextInput.text)
+                emailLayoutInput.setErrorIconDrawable(0)
+                passwordLayoutInput.setErrorIconDrawable(0)
                 if (emailLayoutInput.error == passwordLayoutInput.error) {
                     viewModel.loginHotel(
                         HotelLoginModel(
@@ -55,6 +58,7 @@ class CompanyLoginFragment : UserBaseFragment() {
         }
         viewModel.token.observe(viewLifecycleOwner) { tokenResult ->
             if (tokenResult != null) {
+                PreferenceStorage(requireContext()).loginRole = tokenResult.role.first()
                 when (tokenResult.role.first()) {
                     "User" -> {
                         this.findNavController()
@@ -69,7 +73,7 @@ class CompanyLoginFragment : UserBaseFragment() {
                         .setPositiveButton("OK", null)
                         .show()
                 }
-            } else AlertDialog.Builder(requireContext()).setTitle("Проверьте введенные данны")
+            } else AlertDialog.Builder(requireContext()).setTitle("Проверьте введенные данные")
                 .setPositiveButton("OK", null).show()
         }
 //            viewModel.auth(
