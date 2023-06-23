@@ -56,7 +56,6 @@ class SearchFragment : UserBaseFragment(), CellClickListener {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                Toast.makeText(requireContext(), newText, Toast.LENGTH_SHORT).show()
                 if (newText != null) {
                     filteredList = mutableListOf<Hotel>()
                     filteredList.clear()
